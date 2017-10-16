@@ -1,6 +1,6 @@
 # Dependencies
 markdown:         redcarpet
-highlighter:         pygments
+highlighter:      pygment
 
 # Permalinks
 permalink:        pretty
@@ -21,6 +21,5 @@ paginate:         5
 # Custom vars
 version:          2.0.0
 
-github:
-  repo:           https://github.com/ambuilding
+repo:           https://github.com/ambuilding
 google_analytics: UA-108096934-1
