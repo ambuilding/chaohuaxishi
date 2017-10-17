@@ -1,25 +1,23 @@
-# Dependencies
-markdown:         redcarpet
-highlighter:      pygment
-
 # Permalinks
-permalink:        pretty
+#
+# Use of `relative_permalinks` ensures post links from the index work properly.
+permalink:           pretty
 
 # Setup
 title:            Chao Hua Xi Shi
 tagline:          '0111'
 description:      'A reserved <a href="http://jekyllrb.com" target="_blank">Jekyll</a> theme that places the utmost gravity on content with a hidden drawer. Made by <a href="https://twitter.com/" target="_blank">@Hi</a>.'
-baseurl:          '/zhaohuaxishi/'
-url:              https://ambuilding.github.io/
+baseurl:          '/zhaohuaxishi'
+url:              https://ambuilding.github.io
+paginate:            5
 
+# About/contact
 author:
   name:           'Wo'
   url:            https://twitter.com/
-
-paginate:         5
+  email:             explorewo@gmail.com
 
 # Custom vars
-version:          2.0.0
+version:             1.0.0
 
-repo:           https://github.com/ambuilding
 google_analytics: UA-108096934-1
