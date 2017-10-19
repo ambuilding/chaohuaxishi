@@ -1,16 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
- <title>Chao Hua Xi Shi</title>
+ <title>Zhao Hua Xi Shi</title>
  <link href="http://localhost:4000/zhaohuaxishi/atom.xml" rel="self"/>
  <link href="http://localhost:4000/zhaohuaxishi/"/>
- <updated>2017-10-17T13:02:35+08:00</updated>
+ <updated>2017-10-19T16:05:16+08:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Wo</name>
    <email>explorewo@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Virtual private network</title>
+   <link href="http://localhost:4000/2017/01/02/Virtual-Private-Network/"/>
+   <updated>2017-01-02T00:00:00+08:00</updated>
+   <id>http://localhost:4000/zhaohuaxishi/2017/01/02/Virtual-Private-Network</id>
+   <content type="html">&lt;h2 id=&quot;virtual-private-network&quot;&gt;Virtual private network&lt;/h2&gt;
+
+&lt;p&gt;It redirects your connection to the Internet via a remote server run by a VPN provider. The VPN server becomes secure launching pad for you before you access various websites.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://s1.nordcdn.com/nordvpn/3.15.0/images/global/illustrations/schemes/vpn-scheme.svg&quot; alt=&quot;vpn-scheme&quot; /&gt;
+&lt;small&gt;1. Your device; 2. Encrypted VPN tunnel; 3. The Internet&lt;/small&gt;&lt;/p&gt;
+
+&lt;p&gt;All the network traffic between your device and the VPN server is directed through a secure virtual tunnel. All of the data sent and received is encrypted. Your device appears to have the IP address of the VPN server, protecting your true identity. You’re browsing from the server’s geographical location, not your computer’s location.&lt;/p&gt;
+
+&lt;h2 id=&quot;how-does-it-work&quot;&gt;How does it work?&lt;/h2&gt;
+
+&lt;p&gt;Usually, when you connect to the Internet, you start by connecting to your ISP, which then redirects you to any websites or applications that you wish to visit. All your Internet traffic can be viewed by your ISP as it passes through their servers.&lt;/p&gt;
+
+&lt;p&gt;If you have VPN enabled, you first connect to a server run by your VPN provider through an encrypted connection, which is also called a VPN tunnel. All data traveling between your device and the VPN server is encrypted so that only you and the server can see it.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-happens-when-you-connect-to-it&quot;&gt;What happens when you connect to it?&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Your ISP no longer knows what you do on the Internet.&lt;/li&gt;
+  &lt;li&gt;Your IP address is replaced with the IP of the VPN server.&lt;/li&gt;
+  &lt;li&gt;Your Internet traffic is safe on public Wi-Fi hotspots&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>SSH Secure Shell</title>
+   <link href="http://localhost:4000/2017/01/02/SSH/"/>
+   <updated>2017-01-02T00:00:00+08:00</updated>
+   <id>http://localhost:4000/zhaohuaxishi/2017/01/02/SSH</id>
+   <content type="html">&lt;p&gt;Lanyon is an unassuming &lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll&lt;/a&gt; theme that places content first by tucking away navigation in a hidden drawer. It’s based on &lt;a href=&quot;http://getpoole.com&quot;&gt;Poole&lt;/a&gt;, the Jekyll butler.&lt;/p&gt;
+
+&lt;h3 id=&quot;built-on-poole&quot;&gt;Built on Poole&lt;/h3&gt;
+
+&lt;p&gt;Poole is the Jekyll Butler, serving as an upstanding and effective foundation for Jekyll themes by &lt;a href=&quot;https://twitter.com/mdo&quot;&gt;@mdo&lt;/a&gt;. Poole, and every theme built on it (like Lanyon here) includes the following:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Complete Jekyll setup included (layouts, config, &lt;a href=&quot;/404&quot;&gt;404&lt;/a&gt;, &lt;a href=&quot;/atom.xml&quot;&gt;RSS feed&lt;/a&gt;, posts, and &lt;a href=&quot;/about&quot;&gt;example page&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;Mobile friendly design and development&lt;/li&gt;
+  &lt;li&gt;Easily scalable text and component sizing with &lt;code class=&quot;highlighter-rouge&quot;&gt;rem&lt;/code&gt; units in the CSS&lt;/li&gt;
+  &lt;li&gt;Support for a wide gamut of HTML elements&lt;/li&gt;
+  &lt;li&gt;Related posts (time-based, because Jekyll) below each post&lt;/li&gt;
+  &lt;li&gt;Syntax highlighting, courtesy Pygments (the Python-based code snippet highlighter)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;lanyon-features&quot;&gt;Lanyon features&lt;/h3&gt;
+
+&lt;p&gt;In addition to the features of Poole, Lanyon adds the following:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Toggleable sliding sidebar (built with only CSS) via &lt;strong&gt;☰&lt;/strong&gt; link in top corner&lt;/li&gt;
+  &lt;li&gt;Sidebar includes support for textual modules and a dynamically generated navigation with active link support&lt;/li&gt;
+  &lt;li&gt;Two orientations for content and sidebar, default (left sidebar) and &lt;a href=&quot;https://github.com/poole/lanyon#reverse-layout&quot;&gt;reverse&lt;/a&gt; (right sidebar), available via &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;body&amp;gt;&lt;/code&gt; classes&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/poole/lanyon#themes&quot;&gt;Eight optional color schemes&lt;/a&gt;, available via &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;body&amp;gt;&lt;/code&gt; classes&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/poole/lanyon#readme&quot;&gt;Head to the readme&lt;/a&gt; to learn more.&lt;/p&gt;
+
+&lt;h3 id=&quot;browser-support&quot;&gt;Browser support&lt;/h3&gt;
+
+&lt;p&gt;Lanyon is by preference a forward-thinking project. In addition to the latest versions of Chrome, Safari (mobile and desktop), and Firefox, it is only compatible with Internet Explorer 9 and above.&lt;/p&gt;
+
+&lt;h3 id=&quot;download&quot;&gt;Download&lt;/h3&gt;
+
+&lt;p&gt;Lanyon is developed on and hosted with GitHub. Head to the &lt;a href=&quot;https://github.com/poole/lanyon&quot;&gt;GitHub repository&lt;/a&gt; for downloads, bug reports, and features requests.&lt;/p&gt;
+
+&lt;p&gt;Thanks!&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Introducing Lanyon</title>
