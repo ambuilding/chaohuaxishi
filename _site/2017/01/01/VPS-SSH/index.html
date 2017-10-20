@@ -13,7 +13,7 @@
 
   <title>
     
-      SSH Secure Shell &middot; Zhao Hua Xi Shi
+      VPS SSH &middot; Zhao Hua Xi Shi
     
   </title>
 
@@ -97,45 +97,52 @@
 
       <div class="container content">
         <div class="post">
-  <h1 class="post-title">SSH Secure Shell</h1>
-  <span class="post-date">02 Jan 2017</span>
-  <p>Lanyon is an unassuming <a href="http://jekyllrb.com">Jekyll</a> theme that places content first by tucking away navigation in a hidden drawer. It’s based on <a href="http://getpoole.com">Poole</a>, the Jekyll butler.</p>
+  <h1 class="post-title">VPS SSH</h1>
+  <span class="post-date">01 Jan 2017</span>
+  <h2 id="ssh-基本用法-secure-shell"><a href="https://abcdabcd987.com/ssh/">SSH 基本用法 Secure Shell</a></h2>
 
-<h3 id="built-on-poole">Built on Poole</h3>
+<h2 id="如何把-vps-作为-ssh-代理"><a href="https://zhuanlan.zhihu.com/p/20751490">如何把 VPS 作为 SSH 代理</a></h2>
 
-<p>Poole is the Jekyll Butler, serving as an upstanding and effective foundation for Jekyll themes by <a href="https://twitter.com/mdo">@mdo</a>. Poole, and every theme built on it (like Lanyon here) includes the following:</p>
-
+<h3 id="连接-vps">连接 VPS</h3>
 <ul>
-  <li>Complete Jekyll setup included (layouts, config, <a href="/404">404</a>, <a href="/atom.xml">RSS feed</a>, posts, and <a href="/about">example page</a>)</li>
-  <li>Mobile friendly design and development</li>
-  <li>Easily scalable text and component sizing with <code class="highlighter-rouge">rem</code> units in the CSS</li>
-  <li>Support for a wide gamut of HTML elements</li>
-  <li>Related posts (time-based, because Jekyll) below each post</li>
-  <li>Syntax highlighting, courtesy Pygments (the Python-based code snippet highlighter)</li>
+  <li>Windows: SSH 客户端（Tunnelier）,  Mac: SSH 客户端（Issh）.</li>
+  <li>直接在终端通过以下命令连接：<code class="highlighter-rouge">ssh -N -D 7070 root@94.249.184.93</code></li>
+  <li>“94.249.184.93” is VPS 的 IP 地址，按下 “Return” 键，输入 VPS 登录密码，如果正确，回车后你将看不到任何新的内容。</li>
+  <li>白热喂，不管 VPS 事先是否已经安装了 VPN，都可以把 VPS 作为 SSH 代理，不影响 VPN 的使用。</li>
 </ul>
 
-<h3 id="lanyon-features">Lanyon features</h3>
+<h3 id="技巧">技巧：</h3>
+<p>分享同一个 SSH 代理， 四步新建一受限 VPS 用户:</p>
+<ol>
+  <li>
+    <p>登录 VPS
+在终端应用程序上输入以下命令：<code class="highlighter-rouge">SSH root@94.249.184.93</code></p>
+  </li>
+  <li>
+    <p>创建一个用户组
+输入以下命令：<code class="highlighter-rouge">groupadd internetfreedom</code>  //“internetfreedom”可替换成任意名字。</p>
+  </li>
+  <li>
+    <p>创建受限用户
+输入以下命令：<code class="highlighter-rouge">useradd -d /home/freenutsdotcom -m -g internetfreedom -s /bin/false freenutsdotcom</code>
+以上命令将会在 “internetfreedom” 创建一个新的 SSH 用户 “freenutsdotcom”，该用户只能使用 SSH 代理，不能登录你的 VPS 帐户。</p>
+  </li>
+  <li>
+    <p>为新用户设置密码
+输入以下命令：
+<code class="highlighter-rouge">passwd freenutsdotcom</code>
+然后，为该用户设置任意密码 (例如 “123456”)。
+完了之后，你就可以把该用户名和密码分享给朋友，他们也就可以通过以下命令使用你的 SSH 代理：
+<code class="highlighter-rouge">ssh -N -D 7070 freenutsdotcom@94.249.184.93</code>
+记得把 “freenutsdotcom” 替换成你新建的用户名，把 “94.249.184.93” 替换成你 VPS 的 IP 地址。
+II、配置浏览器代理
+连接上 VPS 之后，你需要在浏览器的网络设置里面将 Socks 代理的服务器 IP 地址设为 127.0.0.1，并且端口为 7070。</p>
+  </li>
+</ol>
 
-<p>In addition to the features of Poole, Lanyon adds the following:</p>
-
-<ul>
-  <li>Toggleable sliding sidebar (built with only CSS) via <strong>☰</strong> link in top corner</li>
-  <li>Sidebar includes support for textual modules and a dynamically generated navigation with active link support</li>
-  <li>Two orientations for content and sidebar, default (left sidebar) and <a href="https://github.com/poole/lanyon#reverse-layout">reverse</a> (right sidebar), available via <code class="highlighter-rouge">&lt;body&gt;</code> classes</li>
-  <li><a href="https://github.com/poole/lanyon#themes">Eight optional color schemes</a>, available via <code class="highlighter-rouge">&lt;body&gt;</code> classes</li>
-</ul>
-
-<p><a href="https://github.com/poole/lanyon#readme">Head to the readme</a> to learn more.</p>
-
-<h3 id="browser-support">Browser support</h3>
-
-<p>Lanyon is by preference a forward-thinking project. In addition to the latest versions of Chrome, Safari (mobile and desktop), and Firefox, it is only compatible with Internet Explorer 9 and above.</p>
-
-<h3 id="download">Download</h3>
-
-<p>Lanyon is developed on and hosted with GitHub. Head to the <a href="https://github.com/poole/lanyon">GitHub repository</a> for downloads, bug reports, and features requests.</p>
-
-<p>Thanks!</p>
+<p>设置界面你可以在 Firefox 浏览器上通过以下路径找到：
+Preference –&gt; Advanced –&gt; Network –&gt; Settings
+顺便一提，HTTP、SSL、FTP 以及其他代理服务器的 IP 地址一律留空或者不要打勾。</p>
 
 </div>
 
@@ -148,24 +155,6 @@
           <a href="/zhaohuaxishi/2017/01/02/Virtual-Private-Network/">
             Virtual private network
             <small>02 Jan 2017</small>
-          </a>
-        </h3>
-      </li>
-    
-      <li>
-        <h3>
-          <a href="/zhaohuaxishi/2014/01/02/introducing-lanyon/">
-            Introducing Lanyon
-            <small>02 Jan 2014</small>
-          </a>
-        </h3>
-      </li>
-    
-      <li>
-        <h3>
-          <a href="/zhaohuaxishi/2014/01/01/example-content/">
-            Example content
-            <small>01 Jan 2014</small>
           </a>
         </h3>
       </li>
