@@ -13,7 +13,7 @@
 
   <title>
     
-      Zhao Hua Xi Shi &middot; 0111
+      Resume &middot; Zhao Hua Xi Shi
     
   </title>
 
@@ -96,18 +96,10 @@
       </div>
 
       <div class="container content">
-        <div class="posts">
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="/zhaohuaxishi/2017/01/03/Resume/">
-        Resume
-      </a>
-    </h1>
-
-    <span class="post-date">03 Jan 2017</span>
-
-    <h1 id="联系方式">联系方式</h1>
+        <div class="post">
+  <h1 class="post-title">Resume</h1>
+  <span class="post-date">03 Jan 2017</span>
+  <h1 id="联系方式">联系方式</h1>
 
 <ul>
   <li>手机：176 1218 2757</li>
@@ -194,108 +186,32 @@
 
 <p>感谢您花时间阅读我的简历，期待能有机会和您共事。</p>
 
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="/zhaohuaxishi/2017/01/02/Virtual-Private-Network/">
-        Virtual private network
-      </a>
-    </h1>
-
-    <span class="post-date">02 Jan 2017</span>
-
-    <h2 id="virtual-private-network">Virtual private network</h2>
-
-<p>It redirects your connection to the Internet via a remote server run by a VPN provider. The VPN server becomes secure launching pad for you before you access various websites.</p>
-
-<p><img src="https://s1.nordcdn.com/nordvpn/3.15.0/images/global/illustrations/schemes/vpn-scheme.svg" alt="vpn-scheme" />
-<small>1. Your device; 2. Encrypted VPN tunnel; 3. The Internet</small></p>
-
-<p>All the network traffic between your device and the VPN server is directed through a secure virtual tunnel. All of the data sent and received is encrypted. Your device appears to have the IP address of the VPN server, protecting your true identity. You’re browsing from the server’s geographical location, not your computer’s location.</p>
-
-<h2 id="how-does-it-work">How does it work?</h2>
-
-<p>Usually, when you connect to the Internet, you start by connecting to your ISP, which then redirects you to any websites or applications that you wish to visit. All your Internet traffic can be viewed by your ISP as it passes through their servers.</p>
-
-<p>If you have VPN enabled, you first connect to a server run by your VPN provider through an encrypted connection, which is also called a VPN tunnel. All data traveling between your device and the VPN server is encrypted so that only you and the server can see it.</p>
-
-<h2 id="what-happens-when-you-connect-to-it">What happens when you connect to it?</h2>
-<ul>
-  <li>Your ISP no longer knows what you do on the Internet.</li>
-  <li>Your IP address is replaced with the IP of the VPN server.</li>
-  <li>Your Internet traffic is safe on public Wi-Fi hotspots</li>
-</ul>
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="/zhaohuaxishi/2017/01/01/VPS-SSH/">
-        VPS SSH
-      </a>
-    </h1>
-
-    <span class="post-date">01 Jan 2017</span>
-
-    <h2 id="ssh-基本用法-secure-shell"><a href="https://abcdabcd987.com/ssh/">SSH 基本用法 Secure Shell</a></h2>
-
-<h2 id="如何把-vps-作为-ssh-代理"><a href="https://zhuanlan.zhihu.com/p/20751490">如何把 VPS 作为 SSH 代理</a></h2>
-
-<h3 id="连接-vps">连接 VPS</h3>
-<ul>
-  <li>Windows: SSH 客户端（Tunnelier）,  Mac: SSH 客户端（Issh）.</li>
-  <li>直接在终端通过以下命令连接：<code class="highlighter-rouge">ssh -N -D 7070 root@94.249.184.93</code></li>
-  <li>“94.249.184.93” is VPS 的 IP 地址，按下 “Return” 键，输入 VPS 登录密码，如果正确，回车后你将看不到任何新的内容。</li>
-  <li>白热喂，不管 VPS 事先是否已经安装了 VPN，都可以把 VPS 作为 SSH 代理，不影响 VPN 的使用。</li>
-</ul>
-
-<h3 id="技巧">技巧：</h3>
-<p>分享同一个 SSH 代理， 四步新建一受限 VPS 用户:</p>
-<ol>
-  <li>
-    <p>登录 VPS
-在终端应用程序上输入以下命令：<code class="highlighter-rouge">SSH root@94.249.184.93</code></p>
-  </li>
-  <li>
-    <p>创建一个用户组
-输入以下命令：<code class="highlighter-rouge">groupadd internetfreedom</code>  //“internetfreedom”可替换成任意名字。</p>
-  </li>
-  <li>
-    <p>创建受限用户
-输入以下命令：<code class="highlighter-rouge">useradd -d /home/freenutsdotcom -m -g internetfreedom -s /bin/false freenutsdotcom</code>
-以上命令将会在 “internetfreedom” 创建一个新的 SSH 用户 “freenutsdotcom”，该用户只能使用 SSH 代理，不能登录你的 VPS 帐户。</p>
-  </li>
-  <li>
-    <p>为新用户设置密码
-输入以下命令：
-<code class="highlighter-rouge">passwd freenutsdotcom</code>
-然后，为该用户设置任意密码 (例如 “123456”)。
-完了之后，你就可以把该用户名和密码分享给朋友，他们也就可以通过以下命令使用你的 SSH 代理：
-<code class="highlighter-rouge">ssh -N -D 7070 freenutsdotcom@94.249.184.93</code>
-记得把 “freenutsdotcom” 替换成你新建的用户名，把 “94.249.184.93” 替换成你 VPS 的 IP 地址。
-II、配置浏览器代理
-连接上 VPS 之后，你需要在浏览器的网络设置里面将 Socks 代理的服务器 IP 地址设为 127.0.0.1，并且端口为 7070。</p>
-  </li>
-</ol>
-
-<p>设置界面你可以在 Firefox 浏览器上通过以下路径找到：
-Preference –&gt; Advanced –&gt; Network –&gt; Settings
-顺便一提，HTTP、SSL、FTP 以及其他代理服务器的 IP 地址一律留空或者不要打勾。</p>
-
-  </div>
-  
 </div>
 
-<div class="pagination">
-  
-    <span class="pagination-item older">Older</span>
-  
-  
-    <span class="pagination-item newer">Newer</span>
-  
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/zhaohuaxishi/2017/01/02/Virtual-Private-Network/">
+            Virtual private network
+            <small>02 Jan 2017</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/zhaohuaxishi/2017/01/01/VPS-SSH/">
+            VPS SSH
+            <small>01 Jan 2017</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
 </div>
-
 
       </div>
     </div>
