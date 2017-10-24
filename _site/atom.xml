@@ -4,107 +4,13 @@
  <title>Zhao Hua Xi Shi</title>
  <link href="http://localhost:4000/zhaohuaxishi/atom.xml" rel="self"/>
  <link href="http://localhost:4000/zhaohuaxishi/"/>
- <updated>2017-10-23T22:36:07+08:00</updated>
+ <updated>2017-10-24T19:49:40+08:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Wo</name>
    <email>explorewo@gmail.com</email>
  </author>
 
- 
- <entry>
-   <title>Resume</title>
-   <link href="http://localhost:4000/2017/01/03/Resume/"/>
-   <updated>2017-01-03T00:00:00+08:00</updated>
-   <id>http://localhost:4000/zhaohuaxishi/2017/01/03/Resume</id>
-   <content type="html">&lt;h1 id=&quot;联系方式&quot;&gt;联系方式&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;手机：176 1218 2757&lt;/li&gt;
-  &lt;li&gt;Email：jmxcn@sina.cn&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h1 id=&quot;个人信息&quot;&gt;个人信息&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;王琪/男&lt;/li&gt;
-  &lt;li&gt;计算机信息管理/中州大学/大专&lt;/li&gt;
-  &lt;li&gt;开发经历：2年&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/ambuilding&quot;&gt;Github&lt;/a&gt;：https://github.com/ambuilding&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://ambuilding.github.io/zhaohuaxishi/&quot;&gt;技术博客&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;期望职位：PHP开发工程师&lt;/li&gt;
-  &lt;li&gt;期望薪资：面谈（根据能力）&lt;/li&gt;
-  &lt;li&gt;上海&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;项目和作品&quot;&gt;项目和作品&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/ambuilding/Forum&quot;&gt;Forum&lt;/a&gt;：论坛功能简介(TDD)
-    &lt;ul&gt;
-      &lt;li&gt;管理员：超级权限，删除/锁定任一帖文，锁定帖文无法被评论；&lt;/li&gt;
-      &lt;li&gt;用户：注册新用户收到确认邮件，确认后可发帖/评论/点赞；帖主可以标注最佳答案；用户关注博文后，博文有新评论，关注者实时收到通知；&lt;/li&gt;
-      &lt;li&gt;帖文：可通过用户名/分类标签/零回复/活跃筛选帖文；唯一URI(标题)；最受欢迎&amp;amp;访问量(Redis)；&lt;/li&gt;
-      &lt;li&gt;评论：可删除/更新评论，评论里@用户，可自动完成用户名，并通知该用户；&lt;/li&gt;
-      &lt;li&gt;反垃圾(帖文和评论)：检测无效恶意输入；一分钟内最多可发一条评论；&lt;/li&gt;
-      &lt;li&gt;个人主页(简介)：上传头像/最近(Timeline)的操作记录(发帖/评论/点赞)；&lt;/li&gt;
-      &lt;li&gt;Laravel Debugbar: 优化查询；&lt;/li&gt;
-      &lt;li&gt;Package: Laravel/Vue/Axios(Ajax)/moment.js/at.js/jquery.caret&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/ambuilding/Mashup&quot;&gt;MashUp&lt;/a&gt;：
-    &lt;ul&gt;
-      &lt;li&gt;PHP 脚本导入 GEO 地理位置数据到数据库；&lt;/li&gt;
-      &lt;li&gt;整合 Google Maps 和 Google News；可通过邮编/城市/省三个字段全文(模糊)搜索，输入自动完成；或拖动地图；&lt;/li&gt;
-      &lt;li&gt;点击地图上 Markers 出现 Info Window 呈现当地新闻标题(链接)列表；&lt;/li&gt;
-      &lt;li&gt;Package：jQuery/typeahead.js/Underscore&lt;/li&gt;
-      &lt;li&gt;XML/Ajax/JSON&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/ambuilding/CS50-Finance&quot;&gt;Finance&lt;/a&gt;：
-    &lt;ul&gt;
-      &lt;li&gt;HTML, CSS, PHP, and SQL 基础；&lt;/li&gt;
-      &lt;li&gt;注册登陆；查询股票实时价格(Yahoo Finance)；&lt;/li&gt;
-      &lt;li&gt;用户的资产组合：股票和可用资金；可存入保证金；&lt;/li&gt;
-      &lt;li&gt;买卖股票；查看历史交易记录；&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h1 id=&quot;技能清单&quot;&gt;技能清单&lt;/h1&gt;
-
-&lt;p&gt;以下为我熟悉使用的技能&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Web开发：PHP/Node&lt;/li&gt;
-  &lt;li&gt;Web框架：Laravel&lt;/li&gt;
-  &lt;li&gt;数据库相关：MySQL/PDO/Reids&lt;/li&gt;
-  &lt;li&gt;版本管理&amp;amp;自动化部署工具：Git/Composer&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;单元测试：PHPUnit&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;前端框架：Bootstrap/Vue/jQuery&lt;/li&gt;
-  &lt;li&gt;前端工具：Gulp/SaSS/LeSS&lt;/li&gt;
-  &lt;li&gt;Linux/Unix/Apache&lt;/li&gt;
-  &lt;li&gt;iOS开发：完成斯坦福公开课(Developing ios apps with Swift)&lt;/li&gt;
-  &lt;li&gt;可阅读英文文档，会弹吉他&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;small&gt;参考Github: &lt;a href=&quot;https://github.com/ambuilding/LevelUp&quot;&gt;Level up&lt;/a&gt; &amp;amp; &lt;a href=&quot;https://github.com/ambuilding/Enjoy&quot;&gt;Enjoy&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h1 id=&quot;致谢&quot;&gt;致谢&lt;/h1&gt;
-
-&lt;p&gt;感谢您花时间阅读我的简历，期待能有机会和您共事。&lt;/p&gt;
-</content>
- </entry>
  
  <entry>
    <title>Virtual private network</title>

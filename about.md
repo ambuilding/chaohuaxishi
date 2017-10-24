@@ -13,7 +13,7 @@ title: About
 # 个人信息
 
  - 王琪/男
- - 计算机信息管理/中州大学/大专
+ - 计算机信息管理/中州大学
  - 开发经历：2年
  - [Github](https://github.com/ambuilding)：https://github.com/ambuilding
  - [技术博客](https://ambuilding.github.io/zhaohuaxishi/)
