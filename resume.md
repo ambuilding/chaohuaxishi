@@ -1,22 +1,26 @@
 ---
 layout: page
-title: About
+title: Resume
 ---
 
-# 联系方式
+<small>[$非移动端点击](https://github.com/ambuilding/Enjoy/blob/master/resume.pdf) ? PDF阅读体验更好 : Markdown</small>
+
+---
+
+## 联系方式
 
 - 手机：176 1218 2757
 - Email：jmxcn@sina.cn
 
 ---
 
-# 个人信息
+## 个人信息
 
  - 王琪/男
  - 计算机信息管理/中州大学
  - 开发经历：2年
  - [Github](https://github.com/ambuilding)：https://github.com/ambuilding
- - [技术博客](https://ambuilding.github.io/zhaohuaxishi/)
+ - [技术博客](https://ambuilding.github.io/life/)
  - 期望职位：PHP开发工程师
  - 期望薪资：面谈（根据能力）
  - 上海
@@ -50,17 +54,17 @@ title: About
 
 ---
 
-# 技能清单
+## 技能清单
 
-以下为我熟悉使用的技能
+以下为我熟悉使用的技能(侧重后端)
 
 - Web开发：PHP/Node
-- Web框架：Laravel
+- Web框架：Laravel/Symfony
 - 数据库相关：MySQL/PDO/Reids
 - 版本管理&自动化部署工具：Git/Composer
 - 单元测试：PHPUnit
 
-- 前端框架：Bootstrap/Vue/jQuery
+- 前端框架：Bootstrap/Vue/jQuery/Bulma
 - 前端工具：Gulp/SaSS/LeSS
 - Linux/Unix/Apache
 - iOS开发：完成斯坦福公开课(Developing ios apps with Swift)
@@ -70,6 +74,6 @@ title: About
 
 ---
 
-# 致谢
+## 致谢
 
 感谢您花时间阅读我的简历，期待能有机会和您共事。

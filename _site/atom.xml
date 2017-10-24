@@ -2,9 +2,9 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
  <title>Zhao Hua Xi Shi</title>
- <link href="http://localhost:4000/zhaohuaxishi/atom.xml" rel="self"/>
- <link href="http://localhost:4000/zhaohuaxishi/"/>
- <updated>2017-10-24T19:49:40+08:00</updated>
+ <link href="http://localhost:4000/life/atom.xml" rel="self"/>
+ <link href="http://localhost:4000/life/"/>
+ <updated>2017-10-24T23:19:12+08:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Wo</name>
@@ -16,7 +16,7 @@
    <title>Virtual private network</title>
    <link href="http://localhost:4000/2017/01/02/Virtual-Private-Network/"/>
    <updated>2017-01-02T00:00:00+08:00</updated>
-   <id>http://localhost:4000/zhaohuaxishi/2017/01/02/Virtual-Private-Network</id>
+   <id>http://localhost:4000/life/2017/01/02/Virtual-Private-Network</id>
    <content type="html">&lt;h2 id=&quot;virtual-private-network&quot;&gt;Virtual private network&lt;/h2&gt;
 
 &lt;p&gt;It redirects your connection to the Internet via a remote server run by a VPN provider. The VPN server becomes secure launching pad for you before you access various websites.&lt;/p&gt;
@@ -45,7 +45,7 @@
    <title>VPS SSH</title>
    <link href="http://localhost:4000/2017/01/01/VPS-SSH/"/>
    <updated>2017-01-01T00:00:00+08:00</updated>
-   <id>http://localhost:4000/zhaohuaxishi/2017/01/01/VPS-SSH</id>
+   <id>http://localhost:4000/life/2017/01/01/VPS-SSH</id>
    <content type="html">&lt;h2 id=&quot;ssh-基本用法-secure-shell&quot;&gt;&lt;a href=&quot;https://abcdabcd987.com/ssh/&quot;&gt;SSH 基本用法 Secure Shell&lt;/a&gt;&lt;/h2&gt;
 
 &lt;h2 id=&quot;如何把-vps-作为-ssh-代理&quot;&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/20751490&quot;&gt;如何把 VPS 作为 SSH 代理&lt;/a&gt;&lt;/h2&gt;
