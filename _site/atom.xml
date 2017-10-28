@@ -4,13 +4,46 @@
  <title>Zhao Hua Xi Shi</title>
  <link href="http://localhost:4000/life/atom.xml" rel="self"/>
  <link href="http://localhost:4000/life/"/>
- <updated>2017-10-24T23:19:12+08:00</updated>
+ <updated>2017-10-28T14:19:07+08:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Wo</name>
    <email>explorewo@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Linux Man</title>
+   <link href="http://localhost:4000/2017/01/07/Linux-Man/"/>
+   <updated>2017-01-07T00:00:00+08:00</updated>
+   <id>http://localhost:4000/life/2017/01/07/Linux-Man</id>
+   <content type="html">&lt;h2 id=&quot;linux-man&quot;&gt;Linux Man&lt;/h2&gt;
+
+&lt;h3 id=&quot;install-net-tools-command-in-centos-7--rhel-7&quot;&gt;&lt;a href=&quot;https://www.ostechnix.com/linux-troubleshooting-netstat-command-not-found-in-centos-7-rhel-7/&quot;&gt;Install net-tools command in CentOS 7 / RHEL 7&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;First, we should find out which package provides ‘netstat’ command.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;`# yum provides */netstat`
+`# yum whatprovides */netstat`
+
+`# yum install net-tools`
+
+`# netstat`
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;how-to-open-a-port-in-the-firewall-on-centos-or-rhel&quot;&gt;&lt;a href=&quot;http://ask.xmodulo.com/open-port-firewall-centos-rhel.html&quot;&gt;How to open a port in the firewall on CentOS or RHEL&lt;/a&gt;&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;`# iptables -L`
+`# firewall-cmd --zone=public --add-port=80/tcp --permanent`
+`# firewall-cmd --reload`
+`# firewall-cmd --list-all`
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;how-to-set-up-a-firewall-using-firewalld-on-centos-7&quot;&gt;&lt;a href=&quot;https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-using-firewalld-on-centos-7&quot;&gt;How To Set Up a Firewall Using FirewallD on CentOS 7&lt;/a&gt;&lt;/h2&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Virtual private network</title>
@@ -42,19 +75,78 @@
  </entry>
  
  <entry>
-   <title>VPS SSH</title>
-   <link href="http://localhost:4000/2017/01/01/VPS-SSH/"/>
+   <title>SSH VPS</title>
+   <link href="http://localhost:4000/2017/01/01/SSH-VPS/"/>
    <updated>2017-01-01T00:00:00+08:00</updated>
-   <id>http://localhost:4000/life/2017/01/01/VPS-SSH</id>
-   <content type="html">&lt;h2 id=&quot;ssh-基本用法-secure-shell&quot;&gt;&lt;a href=&quot;https://abcdabcd987.com/ssh/&quot;&gt;SSH 基本用法 Secure Shell&lt;/a&gt;&lt;/h2&gt;
+   <id>http://localhost:4000/life/2017/01/01/SSH-VPS</id>
+   <content type="html">&lt;h2 id=&quot;ssh&quot;&gt;SSH&lt;/h2&gt;
 
-&lt;h2 id=&quot;如何把-vps-作为-ssh-代理&quot;&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/20751490&quot;&gt;如何把 VPS 作为 SSH 代理&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id=&quot;generate-ssh-key&quot;&gt;&lt;a href=&quot;https://www.vultr.com/docs/how-do-i-generate-ssh-keys&quot;&gt;Generate SSH Key&lt;/a&gt;&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;`ssh-keygen -t rsa -b 4096`
+`cat ~/.ssh/id_rsa.pub` backup
+`ssh-copy-id user@&amp;lt;host&amp;gt;`
+`ssh -i /path/to/id_rsa user@x.x.x.x`
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;ssh-basic-usage-secure-shell&quot;&gt;&lt;a href=&quot;https://abcdabcd987.com/ssh/&quot;&gt;SSH Basic Usage Secure Shell&lt;/a&gt;&lt;/h3&gt;
+
+&lt;h2 id=&quot;vps&quot;&gt;VPS&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Test downloads speed.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;bbr&quot;&gt;BBR&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh
+# chmod +x bbr.sh
+# ./bbr.sh
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;`uname -r`
+`sysctl net.ipv4.tcp_available_congestion_control`
+`sysctl net.ipv4.tcp_congestion_control`
+`sysctl net.core.default_qdisc`
+`lsmod | grep bbr`
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;shadowsocksr&quot;&gt;ShadowsocksR&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/shadowsocks/ShadowsocksX-NG/releases&quot;&gt;ShadowsocksX-NG&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/shadowsocks/shadowsocks-android/releases&quot;&gt;Android&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocksR.sh
+# chmod +x shadowsocksR.sh
+# ./shadowsocksR.sh 2&amp;gt;&amp;amp;1 | tee shadowsocksR.log
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;`/etc/init.d/shadowsocks start`
+`/etc/init.d/shadowsocks stop`
+`/etc/init.d/shadowsocks restart`
+`/etc/init.d/shadowsocks status`
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;配置文件路径：/etc/shadowsocks.json
+日志文件路径：/var/log/shadowsocks.log
+代码安装目录：/usr/local/shadowsocks
+Uninstall: ./shadowsocksR.sh uninstall
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/9485-b0d99d196d019ec3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;&quot; /&gt;
+&lt;a href=&quot;http://vc2tea.com/whats-shadowsocks/&quot;&gt;Why&lt;/a&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;连接-vps&quot;&gt;连接 VPS&lt;/h3&gt;
 &lt;ul&gt;
-  &lt;li&gt;Windows: SSH 客户端（Tunnelier）,  Mac: SSH 客户端（Issh）.&lt;/li&gt;
-  &lt;li&gt;直接在终端通过以下命令连接：&lt;code class=&quot;highlighter-rouge&quot;&gt;ssh -N -D 7070 root@94.249.184.93&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;“94.249.184.93” is VPS 的 IP 地址，按下 “Return” 键，输入 VPS 登录密码，如果正确，回车后你将看不到任何新的内容。&lt;/li&gt;
+  &lt;li&gt;Windows: SSH 客户端（Tunnelier）; Mac: SSH 客户端(Issh): &lt;code class=&quot;highlighter-rouge&quot;&gt;ssh root@&amp;lt;host&amp;gt;&lt;/code&gt;.&lt;/li&gt;
   &lt;li&gt;白热喂，不管 VPS 事先是否已经安装了 VPN，都可以把 VPS 作为 SSH 代理，不影响 VPN 的使用。&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -67,12 +159,12 @@
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;创建一个用户组
-输入以下命令：&lt;code class=&quot;highlighter-rouge&quot;&gt;groupadd internetfreedom&lt;/code&gt;  //“internetfreedom”可替换成任意名字。&lt;/p&gt;
+输入以下命令：&lt;code class=&quot;highlighter-rouge&quot;&gt;groupadd hahaha&lt;/code&gt;  //“hahaha”可替换成任意名字。&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;创建受限用户
-输入以下命令：&lt;code class=&quot;highlighter-rouge&quot;&gt;useradd -d /home/freenutsdotcom -m -g internetfreedom -s /bin/false freenutsdotcom&lt;/code&gt;
-以上命令将会在 “internetfreedom” 创建一个新的 SSH 用户 “freenutsdotcom”，该用户只能使用 SSH 代理，不能登录你的 VPS 帐户。&lt;/p&gt;
+输入以下命令：&lt;code class=&quot;highlighter-rouge&quot;&gt;useradd -d /home/freenutsdotcom -m -g hahaha -s /bin/false freenutsdotcom&lt;/code&gt;
+以上命令将会在 “hahaha” 创建一个新的 SSH 用户 “freenutsdotcom”，该用户只能使用 SSH 代理，不能登录你的 VPS 帐户。&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;为新用户设置密码
@@ -90,6 +182,7 @@ II、配置浏览器代理
 &lt;p&gt;设置界面你可以在 Firefox 浏览器上通过以下路径找到：
 Preference –&amp;gt; Advanced –&amp;gt; Network –&amp;gt; Settings
 顺便一提，HTTP、SSL、FTP 以及其他代理服务器的 IP 地址一律留空或者不要打勾。&lt;/p&gt;
+
 </content>
  </entry>
  
