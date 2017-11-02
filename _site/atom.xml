@@ -4,13 +4,112 @@
  <title>Zhao Hua Xi Shi</title>
  <link href="http://localhost:4000/life/atom.xml" rel="self"/>
  <link href="http://localhost:4000/life/"/>
- <updated>2017-10-28T14:19:07+08:00</updated>
+ <updated>2017-11-02T21:15:45+08:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Wo</name>
    <email>explorewo@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Regular Expressions</title>
+   <link href="http://localhost:4000/2017/01/09/Regular-Expressions/"/>
+   <updated>2017-01-09T00:00:00+08:00</updated>
+   <id>http://localhost:4000/life/2017/01/09/Regular-Expressions</id>
+   <content type="html">&lt;h2 id=&quot;phps-regular-expressions-support&quot;&gt;PHP’s Regular Expressions Support&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/ambuilding/LevelUp/blob/master/regex.php&quot;&gt;PHP’s Regular Expressions Support(github-regex.php)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;character-sets&quot;&gt;Character Sets&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;/[w]{3}/&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;/[w]{3,5}/&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;/[w]*/&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;/[w]+/&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;/[w]?/&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;/www\.([^\.]+)/&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;greediness&quot;&gt;Greediness&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;/@(\w+)/&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;a href=&quot;https://www.dniya.com/$1&quot;&amp;gt;$1&amp;lt;/a&amp;gt;&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;[a-zA-Z0-9_]&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;lookaheads-and-lookbehinds&quot;&gt;Lookaheads and Lookbehinds&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;/google(?=&amp;lt;)/i&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;/google(?!&amp;lt;)/i&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;(?=string) (?!string) (?&amp;lt;=string) (?&amp;lt;!string)&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$string = '$name = &quot;Dniya&quot;; My name is Dniya.';
+
+$result = preg_replace('/(?&amp;lt;=\$)name/', 'VARIABLE', $string);
+
+var_dump($result);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;link&quot;&gt;Link&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://regexr.com/&quot;&gt;RegExr is an online tool to learn, build, &amp;amp; test Regular Expressions (RegEx / RegExp):&lt;/a&gt; https://regexr.com/&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://www.phpliveregex.com&quot;&gt;A live regular expression tester for PHP:&lt;/a&gt; http://www.phpliveregex.com&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;https://regexper.com&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>RESTful APIs</title>
+   <link href="http://localhost:4000/2017/01/08/RESTful-APIs/"/>
+   <updated>2017-01-08T00:00:00+08:00</updated>
+   <id>http://localhost:4000/life/2017/01/08/RESTful-APIs</id>
+   <content type="html">&lt;h2 id=&quot;restful-api&quot;&gt;RESTful API&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://uploads.toptal.io/blog/image/123414/toptal-blog-image-1498567452740-6773f3fd56484fa794cbf1dbfb9ebb38.png&quot; alt=&quot;HTTP Verbs Represent Actions&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Register&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;curl -X POST http://localhost:8000/api/register
+-H &quot;Accept: application/json&quot;
+-H &quot;Content-Type: application/json&quot;
+-d '{&quot;name&quot;: &quot;Andy&quot;, &quot;email&quot;: &quot;andy@example.com&quot;, &quot;password&quot;: &quot;andydufresne&quot;, &quot;password_confirmation&quot;: &quot;andydufresne&quot;}' | python -mjson.tool
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Login&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ curl -X POST localhost:8000/api/login
+-H &quot;Accept: appliation/json&quot;
+-H &quot;Content-type: application/json&quot;
+-d &quot;{\&quot;email\&quot;: \&quot;andy@example.com\&quot;, \&quot;password\&quot;: \&quot;andydufresne\&quot; }&quot; | python -mjson.tool
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Tips&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ curl http://127.0.0.1:8000/api // api postman -i
+$ curl http://… | python -mjson.tool // api
+$ alias prettify=“python -mjson.tool”
+$ curl -I www.google.com
+$ curl &quot;https://www.google.com/search?q=mice&quot;
+$ curl -I https://www.facebook.com/
+$ curl -I https://31.13.95.36/
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Linux Man</title>
@@ -147,42 +246,22 @@ Uninstall: ./shadowsocksR.sh uninstall
 &lt;h3 id=&quot;连接-vps&quot;&gt;连接 VPS&lt;/h3&gt;
 &lt;ul&gt;
   &lt;li&gt;Windows: SSH 客户端（Tunnelier）; Mac: SSH 客户端(Issh): &lt;code class=&quot;highlighter-rouge&quot;&gt;ssh root@&amp;lt;host&amp;gt;&lt;/code&gt;.&lt;/li&gt;
-  &lt;li&gt;白热喂，不管 VPS 事先是否已经安装了 VPN，都可以把 VPS 作为 SSH 代理，不影响 VPN 的使用。&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3 id=&quot;技巧&quot;&gt;技巧：&lt;/h3&gt;
 &lt;p&gt;分享同一个 SSH 代理， 四步新建一受限 VPS 用户:&lt;/p&gt;
 &lt;ol&gt;
   &lt;li&gt;
-    &lt;p&gt;登录 VPS
-在终端应用程序上输入以下命令：&lt;code class=&quot;highlighter-rouge&quot;&gt;SSH root@94.249.184.93&lt;/code&gt;&lt;/p&gt;
+    &lt;p&gt;登录 VPS: &lt;code class=&quot;highlighter-rouge&quot;&gt;SSH root@&amp;lt;host&amp;gt;&lt;/code&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;创建一个用户组
-输入以下命令：&lt;code class=&quot;highlighter-rouge&quot;&gt;groupadd hahaha&lt;/code&gt;  //“hahaha”可替换成任意名字。&lt;/p&gt;
+    &lt;p&gt;创建一个用户组：&lt;code class=&quot;highlighter-rouge&quot;&gt;groupadd hahaha&lt;/code&gt;  //“hahaha”可替换成任意名字。&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;创建受限用户
-输入以下命令：&lt;code class=&quot;highlighter-rouge&quot;&gt;useradd -d /home/freenutsdotcom -m -g hahaha -s /bin/false freenutsdotcom&lt;/code&gt;
-以上命令将会在 “hahaha” 创建一个新的 SSH 用户 “freenutsdotcom”，该用户只能使用 SSH 代理，不能登录你的 VPS 帐户。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;为新用户设置密码
-输入以下命令：
-&lt;code class=&quot;highlighter-rouge&quot;&gt;passwd freenutsdotcom&lt;/code&gt;
-然后，为该用户设置任意密码 (例如 “123456”)。
-完了之后，你就可以把该用户名和密码分享给朋友，他们也就可以通过以下命令使用你的 SSH 代理：
-&lt;code class=&quot;highlighter-rouge&quot;&gt;ssh -N -D 7070 freenutsdotcom@94.249.184.93&lt;/code&gt;
-记得把 “freenutsdotcom” 替换成你新建的用户名，把 “94.249.184.93” 替换成你 VPS 的 IP 地址。
-II、配置浏览器代理
-连接上 VPS 之后，你需要在浏览器的网络设置里面将 Socks 代理的服务器 IP 地址设为 127.0.0.1，并且端口为 7070。&lt;/p&gt;
+    &lt;p&gt;创建受限用户：&lt;code class=&quot;highlighter-rouge&quot;&gt;useradd -d /home/dotcom -m -g hahaha -s /bin/false dotcom&lt;/code&gt;
+以上命令将会在 “hahaha” 创建一个新的 SSH 用户 “dotcom”，该用户只能使用 SSH 代理，不能登录你的 VPS 帐户。&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
-
-&lt;p&gt;设置界面你可以在 Firefox 浏览器上通过以下路径找到：
-Preference –&amp;gt; Advanced –&amp;gt; Network –&amp;gt; Settings
-顺便一提，HTTP、SSL、FTP 以及其他代理服务器的 IP 地址一律留空或者不要打勾。&lt;/p&gt;
-
 </content>
  </entry>
  

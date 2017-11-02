@@ -100,6 +100,113 @@
   
   <div class="post">
     <h1 class="post-title">
+      <a href="/life/2017/01/09/Regular-Expressions/">
+        Regular Expressions
+      </a>
+    </h1>
+
+    <span class="post-date">09 Jan 2017</span>
+
+    <h2 id="phps-regular-expressions-support">PHP’s Regular Expressions Support</h2>
+
+<ul>
+  <li><a href="https://github.com/ambuilding/LevelUp/blob/master/regex.php">PHP’s Regular Expressions Support(github-regex.php)</a></li>
+</ul>
+
+<h2 id="character-sets">Character Sets</h2>
+
+<ul>
+  <li><code class="highlighter-rouge">/[w]{3}/</code> <code class="highlighter-rouge">/[w]{3,5}/</code> <code class="highlighter-rouge">/[w]*/</code> <code class="highlighter-rouge">/[w]+/</code> <code class="highlighter-rouge">/[w]?/</code> <code class="highlighter-rouge">/www\.([^\.]+)/</code></li>
+</ul>
+
+<h2 id="greediness">Greediness</h2>
+
+<ul>
+  <li><code class="highlighter-rouge">/@(\w+)/</code> <code class="highlighter-rouge">&lt;a href="https://www.dniya.com/$1"&gt;$1&lt;/a&gt;</code> <code class="highlighter-rouge">[a-zA-Z0-9_]</code></li>
+</ul>
+
+<h2 id="lookaheads-and-lookbehinds">Lookaheads and Lookbehinds</h2>
+
+<ul>
+  <li><code class="highlighter-rouge">/google(?=&lt;)/i</code> <code class="highlighter-rouge">/google(?!&lt;)/i</code> <code class="highlighter-rouge">(?=string) (?!string) (?&lt;=string) (?&lt;!string)</code></li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$string = '$name = "Dniya"; My name is Dniya.';
+
+$result = preg_replace('/(?&lt;=\$)name/', 'VARIABLE', $string);
+
+var_dump($result);
+</code></pre>
+</div>
+
+<h2 id="link">Link</h2>
+<ul>
+  <li>
+    <p><a href="https://regexr.com/">RegExr is an online tool to learn, build, &amp; test Regular Expressions (RegEx / RegExp):</a> https://regexr.com/</p>
+  </li>
+  <li>
+    <p><a href="http://www.phpliveregex.com">A live regular expression tester for PHP:</a> http://www.phpliveregex.com</p>
+  </li>
+  <li>
+    <p>https://regexper.com</p>
+  </li>
+</ul>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/life/2017/01/08/RESTful-APIs/">
+        RESTful APIs
+      </a>
+    </h1>
+
+    <span class="post-date">08 Jan 2017</span>
+
+    <h2 id="restful-api">RESTful API</h2>
+
+<p><img src="https://uploads.toptal.io/blog/image/123414/toptal-blog-image-1498567452740-6773f3fd56484fa794cbf1dbfb9ebb38.png" alt="HTTP Verbs Represent Actions" /></p>
+
+<ul>
+  <li>Register</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>curl -X POST http://localhost:8000/api/register
+-H "Accept: application/json"
+-H "Content-Type: application/json"
+-d '{"name": "Andy", "email": "andy@example.com", "password": "andydufresne", "password_confirmation": "andydufresne"}' | python -mjson.tool
+</code></pre>
+</div>
+
+<ul>
+  <li>Login</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ curl -X POST localhost:8000/api/login
+-H "Accept: appliation/json"
+-H "Content-type: application/json"
+-d "{\"email\": \"andy@example.com\", \"password\": \"andydufresne\" }" | python -mjson.tool
+</code></pre>
+</div>
+
+<ul>
+  <li>Tips</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ curl http://127.0.0.1:8000/api // api postman -i
+$ curl http://… | python -mjson.tool // api
+$ alias prettify=“python -mjson.tool”
+$ curl -I www.google.com
+$ curl "https://www.google.com/search?q=mice"
+$ curl -I https://www.facebook.com/
+$ curl -I https://31.13.95.36/
+</code></pre>
+</div>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
       <a href="/life/2017/01/07/Linux-Man/">
         Linux Man
       </a>
@@ -245,42 +352,22 @@ Uninstall: ./shadowsocksR.sh uninstall
 <h3 id="连接-vps">连接 VPS</h3>
 <ul>
   <li>Windows: SSH 客户端（Tunnelier）; Mac: SSH 客户端(Issh): <code class="highlighter-rouge">ssh root@&lt;host&gt;</code>.</li>
-  <li>白热喂，不管 VPS 事先是否已经安装了 VPN，都可以把 VPS 作为 SSH 代理，不影响 VPN 的使用。</li>
 </ul>
 
 <h3 id="技巧">技巧：</h3>
 <p>分享同一个 SSH 代理， 四步新建一受限 VPS 用户:</p>
 <ol>
   <li>
-    <p>登录 VPS
-在终端应用程序上输入以下命令：<code class="highlighter-rouge">SSH root@94.249.184.93</code></p>
+    <p>登录 VPS: <code class="highlighter-rouge">SSH root@&lt;host&gt;</code></p>
   </li>
   <li>
-    <p>创建一个用户组
-输入以下命令：<code class="highlighter-rouge">groupadd hahaha</code>  //“hahaha”可替换成任意名字。</p>
+    <p>创建一个用户组：<code class="highlighter-rouge">groupadd hahaha</code>  //“hahaha”可替换成任意名字。</p>
   </li>
   <li>
-    <p>创建受限用户
-输入以下命令：<code class="highlighter-rouge">useradd -d /home/freenutsdotcom -m -g hahaha -s /bin/false freenutsdotcom</code>
-以上命令将会在 “hahaha” 创建一个新的 SSH 用户 “freenutsdotcom”，该用户只能使用 SSH 代理，不能登录你的 VPS 帐户。</p>
-  </li>
-  <li>
-    <p>为新用户设置密码
-输入以下命令：
-<code class="highlighter-rouge">passwd freenutsdotcom</code>
-然后，为该用户设置任意密码 (例如 “123456”)。
-完了之后，你就可以把该用户名和密码分享给朋友，他们也就可以通过以下命令使用你的 SSH 代理：
-<code class="highlighter-rouge">ssh -N -D 7070 freenutsdotcom@94.249.184.93</code>
-记得把 “freenutsdotcom” 替换成你新建的用户名，把 “94.249.184.93” 替换成你 VPS 的 IP 地址。
-II、配置浏览器代理
-连接上 VPS 之后，你需要在浏览器的网络设置里面将 Socks 代理的服务器 IP 地址设为 127.0.0.1，并且端口为 7070。</p>
+    <p>创建受限用户：<code class="highlighter-rouge">useradd -d /home/dotcom -m -g hahaha -s /bin/false dotcom</code>
+以上命令将会在 “hahaha” 创建一个新的 SSH 用户 “dotcom”，该用户只能使用 SSH 代理，不能登录你的 VPS 帐户。</p>
   </li>
 </ol>
-
-<p>设置界面你可以在 Firefox 浏览器上通过以下路径找到：
-Preference –&gt; Advanced –&gt; Network –&gt; Settings
-顺便一提，HTTP、SSL、FTP 以及其他代理服务器的 IP 地址一律留空或者不要打勾。</p>
-
 
   </div>
   
