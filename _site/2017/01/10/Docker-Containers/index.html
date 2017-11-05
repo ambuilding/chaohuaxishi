@@ -13,7 +13,7 @@
 
   <title>
     
-      Regular Expressions &middot; Zhao Hua Xi Shi
+      Docker-Containers &middot; Zhao Hua Xi Shi
     
   </title>
 
@@ -101,50 +101,52 @@
 
       <div class="container content">
         <div class="post">
-  <h1 class="post-title">Regular Expressions</h1>
-  <span class="post-date">09 Jan 2017</span>
-  <h2 id="phps-regular-expressions-support">PHP’s Regular Expressions Support</h2>
-
-<ul>
-  <li><a href="https://github.com/ambuilding/LevelUp/blob/master/regex.php">PHP’s Regular Expressions Support(github-regex.php)</a></li>
-</ul>
-
-<h2 id="character-sets">Character Sets</h2>
-
-<ul>
-  <li><code class="highlighter-rouge">/[w]{3}/</code> <code class="highlighter-rouge">/[w]{3,5}/</code> <code class="highlighter-rouge">/[w]*/</code> <code class="highlighter-rouge">/[w]+/</code> <code class="highlighter-rouge">/[w]?/</code> <code class="highlighter-rouge">/www\.([^\.]+)/</code></li>
-</ul>
-
-<h2 id="greediness">Greediness</h2>
-
-<ul>
-  <li><code class="highlighter-rouge">/@(\w+)/</code> <code class="highlighter-rouge">&lt;a href="https://www.dniya.com/$1"&gt;$1&lt;/a&gt;</code> <code class="highlighter-rouge">[a-zA-Z0-9_]</code></li>
-</ul>
-
-<h2 id="lookaheads-and-lookbehinds">Lookaheads and Lookbehinds</h2>
-
-<ul>
-  <li><code class="highlighter-rouge">/google(?=&lt;)/i</code> <code class="highlighter-rouge">/google(?!&lt;)/i</code> <code class="highlighter-rouge">(?=string) (?!string) (?&lt;=string) (?&lt;!string)</code></li>
-</ul>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>$string = '$name = "Dniya"; My name is Dniya.';
-
-$result = preg_replace('/(?&lt;=\$)name/', 'VARIABLE', $string);
-
-var_dump($result);
-</code></pre>
-</div>
-
-<h2 id="link">Link</h2>
-<ul>
+  <h1 class="post-title">Docker-Containers</h1>
+  <span class="post-date">10 Jan 2017</span>
+  <ul>
   <li>
-    <p><a href="https://regexr.com/">RegExr is an online tool to learn, build, &amp; test Regular Expressions (RegEx / RegExp):</a> https://regexr.com/</p>
+    <p>Docker-new development environment: No installation / Dockerfile / Build</p>
   </li>
   <li>
-    <p><a href="http://www.phpliveregex.com">A live regular expression tester for PHP:</a> http://www.phpliveregex.com</p>
+    <p>Define a container with a Dockerfile. Dockerfile will define what goes on in the environment inside your container.</p>
+  </li>
+</ul>
+
+<h3 id="setup--docker-run-hello-world">Setup <code class="highlighter-rouge">$ docker run hello-world</code></h3>
+
+<h3 id="get-started">Get Started</h3>
+
+<ul>
+  <li><code class="highlighter-rouge">$ docker build -t name .</code> <code class="highlighter-rouge">$ docker images</code> <code class="highlighter-rouge">$ docker run -p 4000:80 name</code></li>
+  <li><code class="highlighter-rouge">$ docker run -p 4000:80 name</code> <code class="highlighter-rouge">http://localhost:4000 / $ curl http://localhost:4000</code></li>
+  <li>
+    <p><code class="highlighter-rouge">docker run -p 80:80 username/repo:tag</code> <code class="highlighter-rouge">http://localhost/</code></p>
+  </li>
+  <li>Run the app in the background, in detached mode: <code class="highlighter-rouge">docker run -d -p 4000:80 friendlyhello</code> See abbreviated container ID: <code class="highlighter-rouge">docker container ls</code> End th eprocess: <code class="highlighter-rouge">docker container stop &lt;Container ID&gt;</code></li>
+</ul>
+
+<h3 id="tag--publish-the-image">Tag / Publish the image</h3>
+<ul>
+  <li><code class="highlighter-rouge">docker tag image username/repository:tag</code> <code class="highlighter-rouge">$ docker images</code></li>
+  <li><code class="highlighter-rouge">docker push username/repository:tag</code></li>
+  <li>From now on, you can use docker run and run your app on any machine with this command: <code class="highlighter-rouge">docker run -p 4000:80 username/repository:tag </code></li>
+</ul>
+
+<h3 id="git-database">Git database</h3>
+
+<ul>
+  <li>
+    <p>Git tree <code class="highlighter-rouge">~/Library/Containers/com.docker.docker/Data</code> <code class="highlighter-rouge">com.docker.driver.amd64-linux</code></p>
   </li>
   <li>
-    <p>https://regexper.com</p>
+    <p><code class="highlighter-rouge">$ docker info</code> <code class="highlighter-rouge">$ docker info | grep Proxy</code></p>
+  </li>
+  <li>
+    <p>Fuck</p>
+
+    <p># Set proxy server, replace host:port with values for your servers
+  <code class="highlighter-rouge">ENV http_proxy socks5://127.0.0.1:1080</code>
+  <code class="highlighter-rouge">ENV https_proxy socks5://127.0.0.1:1080</code></p>
   </li>
 </ul>
 

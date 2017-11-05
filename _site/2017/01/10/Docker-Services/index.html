@@ -13,7 +13,7 @@
 
   <title>
     
-      Regular Expressions &middot; Zhao Hua Xi Shi
+      Docker-Services &middot; Zhao Hua Xi Shi
     
   </title>
 
@@ -101,51 +101,42 @@
 
       <div class="container content">
         <div class="post">
-  <h1 class="post-title">Regular Expressions</h1>
-  <span class="post-date">09 Jan 2017</span>
-  <h2 id="phps-regular-expressions-support">PHP’s Regular Expressions Support</h2>
-
-<ul>
-  <li><a href="https://github.com/ambuilding/LevelUp/blob/master/regex.php">PHP’s Regular Expressions Support(github-regex.php)</a></li>
-</ul>
-
-<h2 id="character-sets">Character Sets</h2>
-
-<ul>
-  <li><code class="highlighter-rouge">/[w]{3}/</code> <code class="highlighter-rouge">/[w]{3,5}/</code> <code class="highlighter-rouge">/[w]*/</code> <code class="highlighter-rouge">/[w]+/</code> <code class="highlighter-rouge">/[w]?/</code> <code class="highlighter-rouge">/www\.([^\.]+)/</code></li>
-</ul>
-
-<h2 id="greediness">Greediness</h2>
-
-<ul>
-  <li><code class="highlighter-rouge">/@(\w+)/</code> <code class="highlighter-rouge">&lt;a href="https://www.dniya.com/$1"&gt;$1&lt;/a&gt;</code> <code class="highlighter-rouge">[a-zA-Z0-9_]</code></li>
-</ul>
-
-<h2 id="lookaheads-and-lookbehinds">Lookaheads and Lookbehinds</h2>
-
-<ul>
-  <li><code class="highlighter-rouge">/google(?=&lt;)/i</code> <code class="highlighter-rouge">/google(?!&lt;)/i</code> <code class="highlighter-rouge">(?=string) (?!string) (?&lt;=string) (?&lt;!string)</code></li>
-</ul>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>$string = '$name = "Dniya"; My name is Dniya.';
-
-$result = preg_replace('/(?&lt;=\$)name/', 'VARIABLE', $string);
-
-var_dump($result);
-</code></pre>
-</div>
-
-<h2 id="link">Link</h2>
-<ul>
+  <h1 class="post-title">Docker-Services</h1>
+  <span class="post-date">10 Jan 2017</span>
+  <ul>
   <li>
-    <p><a href="https://regexr.com/">RegExr is an online tool to learn, build, &amp; test Regular Expressions (RegEx / RegExp):</a> https://regexr.com/</p>
+    <p>In a distributed application, different pieces of the app are called “services.” Services are really just “containers in production.”</p>
   </li>
   <li>
-    <p><a href="http://www.phpliveregex.com">A live regular expression tester for PHP:</a> http://www.phpliveregex.com</p>
+    <p>Scaling a service changes the number of container instances running that piece of software, assigning more computing resources to the service in the process.</p>
   </li>
   <li>
-    <p>https://regexper.com</p>
+    <p>Define, run, and scale services with the Docker platform – just write a <code class="highlighter-rouge">docker-compose.yml</code></p>
   </li>
+  <li>
+    <p>Run the new load-balanced app: <code class="highlighter-rouge">docker swarm init</code></p>
+
+    <p>Swarm initialized: current node (su2np68tvril4xcjp20odfbyt) is now a manager.</p>
+
+    <p>To add a worker to this swarm, run the following command:</p>
+
+    <p>docker swarm join –token SWMTKN-1-3tp2gkfp3a4yxp93tf0ozz62isazfbvoldtsusdo06dk725wgq-4eleytibu50vbcnlx8v61b9nq 192.168.65.2:2377</p>
+
+    <p>To add a manager to this swarm, run ‘docker swarm join-token manager’ and follow the instructions.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">docker stack deploy -c docker-compose.yml appname</code> <code class="highlighter-rouge">docker service ls</code> List the tasks for the service: <code class="highlighter-rouge">docker service ps getstartedlab_web</code> <code class="highlighter-rouge">docker container ls -q</code></p>
+  </li>
+  <li>
+    <p>Run <code class="highlighter-rouge">curl -4 http://localhost</code> or visit that URL in the browser. Either way, the  container ID wil change, demonstrating the load-balancing; with each request, one of the 5 tasks is chosen, in a round-robin fashion, to respond. The container IDs will match your output from the previous command (docker container ls -q).</p>
+  </li>
+</ul>
+
+<h3 id="take-down-the-app-and-the-swarm">Take down the app and the swarm</h3>
+
+<ul>
+  <li>Take the app down with <code class="highlighter-rouge">docker stack rm &lt;appName&gt;</code></li>
+  <li>Take down the swarm <code class="highlighter-rouge">docker swarm leave --force</code></li>
 </ul>
 
 </div>
@@ -174,8 +165,8 @@ var_dump($result);
     
       <li>
         <h3>
-          <a href="/life/2017/01/10/Docker-Services/">
-            Docker-Services
+          <a href="/life/2017/01/10/Docker-Containers/">
+            Docker-Containers
             <small>10 Jan 2017</small>
           </a>
         </h3>

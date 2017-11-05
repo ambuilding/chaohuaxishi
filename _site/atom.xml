@@ -4,13 +4,37 @@
  <title>Zhao Hua Xi Shi</title>
  <link href="http://localhost:4000/life/atom.xml" rel="self"/>
  <link href="http://localhost:4000/life/"/>
- <updated>2017-11-05T17:18:27+08:00</updated>
+ <updated>2017-11-05T20:53:20+08:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Wo</name>
    <email>explorewo@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Docker-Stacks</title>
+   <link href="http://localhost:4000/2017/01/15/Dcoker-Stacks/"/>
+   <updated>2017-01-15T00:00:00+08:00</updated>
+   <id>http://localhost:4000/life/2017/01/15/Dcoker-Stacks</id>
+   <content type="html">&lt;h2 id=&quot;stacks&quot;&gt;Stacks&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;A stack is a group of interrelated services that share dependencies, and can be orchestrated and scaled together.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Add a free visualizer service that lets us look at how the swarm is scheduling containers.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Persist the data, add a Redis database for storing app data.
+    &lt;ul&gt;
+      &lt;li&gt;Add a Redis service.&lt;/li&gt;
+      &lt;li&gt;Store data. Create a &lt;code class=&quot;highlighter-rouge&quot;&gt;./data&lt;/code&gt; directory on the manager: &lt;code class=&quot;highlighter-rouge&quot;&gt;docker-machine ssh myvm1 &quot;mkdir ./data&quot;&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Deploy and verify that the three services are running as expected.&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Docker-Swarms</title>
@@ -116,6 +140,103 @@
   &lt;li&gt;Tear down the stack &lt;code class=&quot;highlighter-rouge&quot;&gt;docker stack rm getstartedlab&lt;/code&gt;&lt;/li&gt;
   &lt;li&gt;Remove swarm &lt;code class=&quot;highlighter-rouge&quot;&gt;docker-machine ssh myvm2 &quot;docker swarm leave&quot;&lt;/code&gt; on the worker and &lt;code class=&quot;highlighter-rouge&quot;&gt;docker-machine ssh myvm1 &quot;docker swarm leave --force&quot;&lt;/code&gt; on the manager.&lt;/li&gt;
   &lt;li&gt;Unsetting docker-machine shell variable settings &lt;code class=&quot;highlighter-rouge&quot;&gt;eval $(docker-machine env -u)&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Docker-Services</title>
+   <link href="http://localhost:4000/2017/01/10/Docker-Services/"/>
+   <updated>2017-01-10T00:00:00+08:00</updated>
+   <id>http://localhost:4000/life/2017/01/10/Docker-Services</id>
+   <content type="html">&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;In a distributed application, different pieces of the app are called “services.” Services are really just “containers in production.”&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Scaling a service changes the number of container instances running that piece of software, assigning more computing resources to the service in the process.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Define, run, and scale services with the Docker platform – just write a &lt;code class=&quot;highlighter-rouge&quot;&gt;docker-compose.yml&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Run the new load-balanced app: &lt;code class=&quot;highlighter-rouge&quot;&gt;docker swarm init&lt;/code&gt;&lt;/p&gt;
+
+    &lt;p&gt;Swarm initialized: current node (su2np68tvril4xcjp20odfbyt) is now a manager.&lt;/p&gt;
+
+    &lt;p&gt;To add a worker to this swarm, run the following command:&lt;/p&gt;
+
+    &lt;p&gt;docker swarm join –token SWMTKN-1-3tp2gkfp3a4yxp93tf0ozz62isazfbvoldtsusdo06dk725wgq-4eleytibu50vbcnlx8v61b9nq 192.168.65.2:2377&lt;/p&gt;
+
+    &lt;p&gt;To add a manager to this swarm, run ‘docker swarm join-token manager’ and follow the instructions.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;docker stack deploy -c docker-compose.yml appname&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;docker service ls&lt;/code&gt; List the tasks for the service: &lt;code class=&quot;highlighter-rouge&quot;&gt;docker service ps getstartedlab_web&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;docker container ls -q&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Run &lt;code class=&quot;highlighter-rouge&quot;&gt;curl -4 http://localhost&lt;/code&gt; or visit that URL in the browser. Either way, the  container ID wil change, demonstrating the load-balancing; with each request, one of the 5 tasks is chosen, in a round-robin fashion, to respond. The container IDs will match your output from the previous command (docker container ls -q).&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;take-down-the-app-and-the-swarm&quot;&gt;Take down the app and the swarm&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Take the app down with &lt;code class=&quot;highlighter-rouge&quot;&gt;docker stack rm &amp;lt;appName&amp;gt;&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Take down the swarm &lt;code class=&quot;highlighter-rouge&quot;&gt;docker swarm leave --force&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Docker-Containers</title>
+   <link href="http://localhost:4000/2017/01/10/Docker-Containers/"/>
+   <updated>2017-01-10T00:00:00+08:00</updated>
+   <id>http://localhost:4000/life/2017/01/10/Docker-Containers</id>
+   <content type="html">&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Docker-new development environment: No installation / Dockerfile / Build&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Define a container with a Dockerfile. Dockerfile will define what goes on in the environment inside your container.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;setup--docker-run-hello-world&quot;&gt;Setup &lt;code class=&quot;highlighter-rouge&quot;&gt;$ docker run hello-world&lt;/code&gt;&lt;/h3&gt;
+
+&lt;h3 id=&quot;get-started&quot;&gt;Get Started&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$ docker build -t name .&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;$ docker images&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;$ docker run -p 4000:80 name&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$ docker run -p 4000:80 name&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;http://localhost:4000 / $ curl http://localhost:4000&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;docker run -p 80:80 username/repo:tag&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;http://localhost/&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Run the app in the background, in detached mode: &lt;code class=&quot;highlighter-rouge&quot;&gt;docker run -d -p 4000:80 friendlyhello&lt;/code&gt; See abbreviated container ID: &lt;code class=&quot;highlighter-rouge&quot;&gt;docker container ls&lt;/code&gt; End th eprocess: &lt;code class=&quot;highlighter-rouge&quot;&gt;docker container stop &amp;lt;Container ID&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;tag--publish-the-image&quot;&gt;Tag / Publish the image&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;docker tag image username/repository:tag&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;$ docker images&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;docker push username/repository:tag&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;From now on, you can use docker run and run your app on any machine with this command: &lt;code class=&quot;highlighter-rouge&quot;&gt;docker run -p 4000:80 username/repository:tag &lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;git-database&quot;&gt;Git database&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Git tree &lt;code class=&quot;highlighter-rouge&quot;&gt;~/Library/Containers/com.docker.docker/Data&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;com.docker.driver.amd64-linux&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$ docker info&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;$ docker info | grep Proxy&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Fuck&lt;/p&gt;
+
+    &lt;p&gt;# Set proxy server, replace host:port with values for your servers
+  &lt;code class=&quot;highlighter-rouge&quot;&gt;ENV http_proxy socks5://127.0.0.1:1080&lt;/code&gt;
+  &lt;code class=&quot;highlighter-rouge&quot;&gt;ENV https_proxy socks5://127.0.0.1:1080&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 </content>
  </entry>

@@ -104,6 +104,127 @@
   
   <div class="post">
     <h1 class="post-title">
+      <a href="/life/2017/01/08/RESTful-APIs/">
+        RESTful APIs
+      </a>
+    </h1>
+
+    <span class="post-date">08 Jan 2017</span>
+
+    <h2 id="restful-api">RESTful API</h2>
+
+<p><img src="https://uploads.toptal.io/blog/image/123414/toptal-blog-image-1498567452740-6773f3fd56484fa794cbf1dbfb9ebb38.png" alt="HTTP Verbs Represent Actions" /></p>
+
+<ul>
+  <li>Register</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>curl -X POST http://localhost:8000/api/register
+-H "Accept: application/json"
+-H "Content-Type: application/json"
+-d '{"name": "Andy", "email": "andy@example.com", "password": "andydufresne", "password_confirmation": "andydufresne"}' | python -mjson.tool
+</code></pre>
+</div>
+
+<ul>
+  <li>Login</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ curl -X POST localhost:8000/api/login
+-H "Accept: appliation/json"
+-H "Content-type: application/json"
+-d "{\"email\": \"andy@example.com\", \"password\": \"andydufresne\" }" | python -mjson.tool
+</code></pre>
+</div>
+
+<ul>
+  <li>Tips</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ curl http://127.0.0.1:8000/api // api postman -i
+$ curl http://… | python -mjson.tool // api
+$ alias prettify=“python -mjson.tool”
+$ curl -I www.google.com
+$ curl "https://www.google.com/search?q=mice"
+$ curl -I https://www.facebook.com/
+$ curl -I https://31.13.95.36/
+</code></pre>
+</div>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/life/2017/01/07/Linux-Man/">
+        Linux Man
+      </a>
+    </h1>
+
+    <span class="post-date">07 Jan 2017</span>
+
+    <h2 id="linux-man">Linux Man</h2>
+
+<h3 id="install-net-tools-command-in-centos-7--rhel-7"><a href="https://www.ostechnix.com/linux-troubleshooting-netstat-command-not-found-in-centos-7-rhel-7/">Install net-tools command in CentOS 7 / RHEL 7</a></h3>
+
+<p>First, we should find out which package provides ‘netstat’ command.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>`# yum provides */netstat`
+`# yum whatprovides */netstat`
+
+`# yum install net-tools`
+
+`# netstat`
+</code></pre>
+</div>
+
+<h2 id="how-to-open-a-port-in-the-firewall-on-centos-or-rhel"><a href="http://ask.xmodulo.com/open-port-firewall-centos-rhel.html">How to open a port in the firewall on CentOS or RHEL</a></h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>`# iptables -L`
+`# firewall-cmd --zone=public --add-port=80/tcp --permanent`
+`# firewall-cmd --reload`
+`# firewall-cmd --list-all`
+</code></pre>
+</div>
+
+<h2 id="how-to-set-up-a-firewall-using-firewalld-on-centos-7"><a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-using-firewalld-on-centos-7">How To Set Up a Firewall Using FirewallD on CentOS 7</a></h2>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/life/2017/01/02/Virtual-Private-Network/">
+        Virtual private network
+      </a>
+    </h1>
+
+    <span class="post-date">02 Jan 2017</span>
+
+    <h2 id="virtual-private-network">Virtual private network</h2>
+
+<p>It redirects your connection to the Internet via a remote server run by a VPN provider. The VPN server becomes secure launching pad for you before you access various websites.</p>
+
+<p><img src="https://s1.nordcdn.com/nordvpn/3.15.0/images/global/illustrations/schemes/vpn-scheme.svg" alt="vpn-scheme" />
+<small>1. Your device; 2. Encrypted VPN tunnel; 3. The Internet</small></p>
+
+<p>All the network traffic between your device and the VPN server is directed through a secure virtual tunnel. All of the data sent and received is encrypted. Your device appears to have the IP address of the VPN server, protecting your true identity. You’re browsing from the server’s geographical location, not your computer’s location.</p>
+
+<h2 id="how-does-it-work">How does it work?</h2>
+
+<p>Usually, when you connect to the Internet, you start by connecting to your ISP, which then redirects you to any websites or applications that you wish to visit. All your Internet traffic can be viewed by your ISP as it passes through their servers.</p>
+
+<p>If you have VPN enabled, you first connect to a server run by your VPN provider through an encrypted connection, which is also called a VPN tunnel. All data traveling between your device and the VPN server is encrypted so that only you and the server can see it.</p>
+
+<h2 id="what-happens-when-you-connect-to-it">What happens when you connect to it?</h2>
+<ul>
+  <li>Your ISP no longer knows what you do on the Internet.</li>
+  <li>Your IP address is replaced with the IP of the VPN server.</li>
+  <li>Your Internet traffic is safe on public Wi-Fi hotspots</li>
+</ul>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
       <a href="/life/2017/01/01/SSH-VPS/">
         SSH VPS
       </a>

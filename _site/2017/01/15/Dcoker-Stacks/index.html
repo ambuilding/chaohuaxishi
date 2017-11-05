@@ -13,7 +13,7 @@
 
   <title>
     
-      Regular Expressions &middot; Zhao Hua Xi Shi
+      Docker-Stacks &middot; Zhao Hua Xi Shi
     
   </title>
 
@@ -101,51 +101,23 @@
 
       <div class="container content">
         <div class="post">
-  <h1 class="post-title">Regular Expressions</h1>
-  <span class="post-date">09 Jan 2017</span>
-  <h2 id="phps-regular-expressions-support">PHP’s Regular Expressions Support</h2>
-
-<ul>
-  <li><a href="https://github.com/ambuilding/LevelUp/blob/master/regex.php">PHP’s Regular Expressions Support(github-regex.php)</a></li>
-</ul>
-
-<h2 id="character-sets">Character Sets</h2>
-
-<ul>
-  <li><code class="highlighter-rouge">/[w]{3}/</code> <code class="highlighter-rouge">/[w]{3,5}/</code> <code class="highlighter-rouge">/[w]*/</code> <code class="highlighter-rouge">/[w]+/</code> <code class="highlighter-rouge">/[w]?/</code> <code class="highlighter-rouge">/www\.([^\.]+)/</code></li>
-</ul>
-
-<h2 id="greediness">Greediness</h2>
-
-<ul>
-  <li><code class="highlighter-rouge">/@(\w+)/</code> <code class="highlighter-rouge">&lt;a href="https://www.dniya.com/$1"&gt;$1&lt;/a&gt;</code> <code class="highlighter-rouge">[a-zA-Z0-9_]</code></li>
-</ul>
-
-<h2 id="lookaheads-and-lookbehinds">Lookaheads and Lookbehinds</h2>
-
-<ul>
-  <li><code class="highlighter-rouge">/google(?=&lt;)/i</code> <code class="highlighter-rouge">/google(?!&lt;)/i</code> <code class="highlighter-rouge">(?=string) (?!string) (?&lt;=string) (?&lt;!string)</code></li>
-</ul>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>$string = '$name = "Dniya"; My name is Dniya.';
-
-$result = preg_replace('/(?&lt;=\$)name/', 'VARIABLE', $string);
-
-var_dump($result);
-</code></pre>
-</div>
-
-<h2 id="link">Link</h2>
+  <h1 class="post-title">Docker-Stacks</h1>
+  <span class="post-date">15 Jan 2017</span>
+  <h2 id="stacks">Stacks</h2>
 <ul>
   <li>
-    <p><a href="https://regexr.com/">RegExr is an online tool to learn, build, &amp; test Regular Expressions (RegEx / RegExp):</a> https://regexr.com/</p>
+    <p>A stack is a group of interrelated services that share dependencies, and can be orchestrated and scaled together.</p>
   </li>
   <li>
-    <p><a href="http://www.phpliveregex.com">A live regular expression tester for PHP:</a> http://www.phpliveregex.com</p>
+    <p>Add a free visualizer service that lets us look at how the swarm is scheduling containers.</p>
   </li>
-  <li>
-    <p>https://regexper.com</p>
+  <li>Persist the data, add a Redis database for storing app data.
+    <ul>
+      <li>Add a Redis service.</li>
+      <li>Store data. Create a <code class="highlighter-rouge">./data</code> directory on the manager: <code class="highlighter-rouge">docker-machine ssh myvm1 "mkdir ./data"</code></li>
+    </ul>
   </li>
+  <li>Deploy and verify that the three services are running as expected.</li>
 </ul>
 
 </div>
@@ -153,15 +125,6 @@ var_dump($result);
 <div class="related">
   <h2>Related Posts</h2>
   <ul class="related-posts">
-    
-      <li>
-        <h3>
-          <a href="/life/2017/01/15/Dcoker-Stacks/">
-            Docker-Stacks
-            <small>15 Jan 2017</small>
-          </a>
-        </h3>
-      </li>
     
       <li>
         <h3>
@@ -176,6 +139,15 @@ var_dump($result);
         <h3>
           <a href="/life/2017/01/10/Docker-Services/">
             Docker-Services
+            <small>10 Jan 2017</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/life/2017/01/10/Docker-Containers/">
+            Docker-Containers
             <small>10 Jan 2017</small>
           </a>
         </h3>
