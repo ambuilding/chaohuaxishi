@@ -4,13 +4,121 @@
  <title>Zhao Hua Xi Shi</title>
  <link href="http://localhost:4000/life/atom.xml" rel="self"/>
  <link href="http://localhost:4000/life/"/>
- <updated>2017-11-02T21:15:45+08:00</updated>
+ <updated>2017-11-05T17:18:27+08:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Wo</name>
    <email>explorewo@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Docker-Swarms</title>
+   <link href="http://localhost:4000/2017/01/11/Dcoker-Swarms/"/>
+   <updated>2017-01-11T00:00:00+08:00</updated>
+   <id>http://localhost:4000/life/2017/01/11/Dcoker-Swarms</id>
+   <content type="html">&lt;h2 id=&quot;swarms&quot;&gt;Swarms&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;A swarm is a group of machines that are running Docker and joined into a cluster. Join multiple machines into a “Dockerized” cluster called a swarm.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Deploy this app onto a cluster, running it on multiple machines.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;set-up-the-swarm&quot;&gt;Set up the swarm&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Create a cluster / two VMs&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; $ docker-machine create --driver virtualbox myvm1
+ Running pre-create checks...
+ (myvm1) No default Boot2Docker ISO found locally, downloading the latest release...
+ (myvm1) Latest release for github.com/boot2docker/boot2docker is v17.10.0-ce
+ (myvm1) Downloading /Users/william/.docker/machine/cache/boot2docker.iso from https://github.com/boot2docker/boot2docker/releases/download/v17.10.0-ce/boot2docker.iso...
+ (myvm1) 0%....10%....20%....30%....40%....50%....60%....70%....80%....90%....100%
+ Creating machine...
+ (myvm1) Copying /Users/william/.docker/machine/cache/boot2docker.iso to /Users/william/.docker/machine/machines/myvm1/boot2docker.iso...
+ (myvm1) Creating VirtualBox VM...
+ (myvm1) Creating SSH key...
+ (myvm1) Starting the VM...
+ (myvm1) Check network to re-create if needed...
+ (myvm1) Found a new host-only adapter: &quot;vboxnet0&quot;
+ (myvm1) Waiting for an IP...
+ Waiting for machine to be running, this may take a few minutes...
+ Detecting operating system of created instance...
+ Waiting for SSH to be available...
+ Detecting the provisioner...
+ Provisioning with boot2docker...
+ Copying certs to the local machine directory...
+ Copying certs to the remote machine...
+ Setting Docker configuration on the remote daemon...
+ Checking connection to Docker...
+ Docker is up and running!
+ To see how to connect your Docker Client to the Docker Engine running on this virtual machine, run: docker-machine env myvm1
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;List the VMS and get their IP: &lt;code class=&quot;highlighter-rouge&quot;&gt;docker-machine ls&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Initialize the swarm and add nodes:&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; $ docker-machine ssh myvm1 &quot;docker swarm init --advertise-addr 192.168.99.100&quot;
+ Swarm initialized: current node (m5ddcbmwk63e2ao182szg8vfq) is now a manager.
+
+ To add a worker to this swarm, run the following command:
+
+ docker swarm join --token SWMTKN-1-4qgigh1juhts0mqfn2kgpxxm1cmt4a5ymow4zah4vrhhlb4tot-82oa8jfmzf6v130ow1dsief73 192.168.99.100:2377
+
+ To add a manager to this swarm, run 'docker swarm join-token manager' and follow the instructions.
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; $ docker-machine ssh myvm2 &quot;docker swarm join --token SWMTKN-1-4qgigh1juhts0mqfn2kgpxxm1cmt4a5ymow4zah4vrhhlb4tot-82oa8jfmzf6v130ow1dsief73 192.168.99.100:2377&quot;
+ This node joined a swarm as a worker.
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;View the nodes in the first swarm &lt;code class=&quot;highlighter-rouge&quot;&gt;docker-machine ssh myvm1 &quot;docker node ls&quot;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;deploy-the-app-on-the-swarm-cluster&quot;&gt;Deploy the app on the swarm cluster&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Configure a &lt;code class=&quot;highlighter-rouge&quot;&gt;docker-machine&lt;/code&gt; shell to the swarm manager. Run &lt;code class=&quot;highlighter-rouge&quot;&gt;docker-machine env myvm1&lt;/code&gt; to get the command to configure the shell to talk to myvm1.&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  $ docker-machine env myvm1
+  export DOCKER_TLS_VERIFY=&quot;1&quot;
+  export DOCKER_HOST=&quot;tcp://192.168.99.100:2376&quot;
+  export DOCKER_CERT_PATH=&quot;/Users/william/.docker/machine/machines/myvm1&quot;
+  export DOCKER_MACHINE_NAME=&quot;myvm1&quot;
+  # Run this command to configure your shell:
+  # eval $(docker-machine env myvm1)
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;deploy-the-app-on-the-swarm-manager&quot;&gt;Deploy the app on the swarm manager:&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;docker stack deploy -c docker-compose.yml getstartedlab&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$ docker stack ps getstartedlab&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;accessing-the-cluster&quot;&gt;Accessing the cluster:&lt;/h2&gt;
+&lt;p&gt;-The network we created is shared between them and load-balancing. We can access the app from the IP address of either myvm1 or myvm2.&lt;/p&gt;
+
+&lt;h2 id=&quot;cleanup-and-reboot&quot;&gt;Cleanup and reboot&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Tear down the stack &lt;code class=&quot;highlighter-rouge&quot;&gt;docker stack rm getstartedlab&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Remove swarm &lt;code class=&quot;highlighter-rouge&quot;&gt;docker-machine ssh myvm2 &quot;docker swarm leave&quot;&lt;/code&gt; on the worker and &lt;code class=&quot;highlighter-rouge&quot;&gt;docker-machine ssh myvm1 &quot;docker swarm leave --force&quot;&lt;/code&gt; on the manager.&lt;/li&gt;
+  &lt;li&gt;Unsetting docker-machine shell variable settings &lt;code class=&quot;highlighter-rouge&quot;&gt;eval $(docker-machine env -u)&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Regular Expressions</title>
