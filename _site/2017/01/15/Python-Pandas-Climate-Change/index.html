@@ -13,7 +13,7 @@
 
   <title>
     
-      Docker-Containers &middot; Zhao Hua Xi Shi
+      Data-Science-with-Python-Pandas-Climate-Change &middot; Zhao Hua Xi Shi
     
   </title>
 
@@ -101,53 +101,75 @@
 
       <div class="container content">
         <div class="post">
-  <h1 class="post-title">Docker-Containers</h1>
-  <span class="post-date">10 Jan 2017</span>
-  <ul>
-  <li>
-    <p>Docker-new development environment: No installation / Dockerfile / Build</p>
+  <h1 class="post-title">Data-Science-with-Python-Pandas-Climate-Change</h1>
+  <span class="post-date">15 Jan 2017</span>
+  <h3 id="dataset-earth-surface-temperatures-since-1750">Dataset: Earth surface temperatures since 1750</h3>
+<ul>
+  <li>How have Earth surface temperatures changed over time?</li>
+</ul>
+
+<h3 id="data-science">Data Science</h3>
+<ol>
+  <li>Ask a question - experience, Kaggle, experts</li>
+  <li>Get the data - scraping, databases, Excel/CSVs</li>
+  <li>Explore - pandas, matplotlib, numpy</li>
+  <li>Model - pandas, sk-learn</li>
+  <li>Communicate - matplotlib, d3.js</li>
+</ol>
+
+<ul>
+  <li>Python 3.6
+    <ul>
+      <li>pandas</li>
+      <li>numpy</li>
+      <li>matplotlib.pyplot: For visualizations, graphs…</li>
+      <li>sklearn.linear_model\LinearRegression</li>
+    </ul>
   </li>
+  <li>Anaconda</li>
+  <li>Jupyter Notebook</li>
+</ul>
+
+<h4 id="panass">Panass</h4>
+<ul>
+  <li>Python library</li>
+  <li>For data cleaning, analysis, visualization, and other analysis</li>
+  <li>Well-suited for many kinds of data</li>
   <li>
-    <p>Define a container with a Dockerfile. Dockerfile will define what goes on in the environment inside your container.</p>
+    <p>Built upon numpy and integrates well with other libraries</p>
+  </li>
+  <li>Two different data types in Python pandas:
+    <ul>
+      <li>Series
+        <ul>
+          <li>One dimension array-like object</li>
+          <li>Capable of holding any data type</li>
+          <li>Has an index</li>
+        </ul>
+      </li>
+      <li>DataFrame
+        <ul>
+          <li>Two dimensional tabular data structure</li>
+          <li>Capable of holding any/many data types</li>
+          <li>Index and columns</li>
+        </ul>
+      </li>
+    </ul>
   </li>
 </ul>
 
-<h3 id="setup--docker-run-hello-world">Setup <code class="highlighter-rouge">$ docker run hello-world</code></h3>
-
-<h3 id="get-started">Get Started</h3>
-
+<h4 id="jupyter-notebook">Jupyter Notebook</h4>
 <ul>
-  <li><code class="highlighter-rouge">$ docker build -t name .</code> <code class="highlighter-rouge">$ docker images</code> <code class="highlighter-rouge">$ docker run -p 4000:80 name</code></li>
-  <li><code class="highlighter-rouge">$ docker run -p 4000:80 name</code> <code class="highlighter-rouge">http://localhost:4000 / $ curl http://localhost:4000</code></li>
-  <li>
-    <p><code class="highlighter-rouge">docker run -p 80:80 username/repo:tag</code> <code class="highlighter-rouge">http://localhost/</code></p>
-  </li>
-  <li>Run the app in the background, in detached mode: <code class="highlighter-rouge">docker run -d -p 4000:80 friendlyhello</code> See abbreviated container ID: <code class="highlighter-rouge">docker container ls</code> End th eprocess: <code class="highlighter-rouge">docker container stop &lt;Container ID&gt;</code></li>
+  <li>Web application</li>
+  <li>Allows live code, visualizations, text</li>
+  <li>Supports over 40 languages, interactive widgets, and big data</li>
+  <li>Can share notebooks</li>
 </ul>
 
-<h3 id="tag--publish-the-image">Tag / Publish the image</h3>
+<h3 id="link">Link</h3>
 <ul>
-  <li><code class="highlighter-rouge">docker tag image username/repository:tag</code> <code class="highlighter-rouge">$ docker images</code></li>
-  <li><code class="highlighter-rouge">docker push username/repository:tag</code></li>
-  <li>From now on, you can use docker run and run your app on any machine with this command: <code class="highlighter-rouge">docker run -p 4000:80 username/repository:tag </code></li>
-</ul>
-
-<h3 id="git-database">Git database</h3>
-
-<ul>
-  <li>
-    <p>Git tree <code class="highlighter-rouge">~/Library/Containers/com.docker.docker/Data</code> <code class="highlighter-rouge">com.docker.driver.amd64-linux</code></p>
-  </li>
-  <li>
-    <p><code class="highlighter-rouge">$ docker info</code> <code class="highlighter-rouge">$ docker info | grep Proxy</code></p>
-  </li>
-  <li>
-    <p>Fuck</p>
-
-    <p># Set proxy server, replace host:port with values for your servers
-  <code class="highlighter-rouge">ENV http_proxy socks5://127.0.0.1:1080</code>
-  <code class="highlighter-rouge">ENV https_proxy socks5://127.0.0.1:1080</code></p>
-  </li>
+  <li><a href="https://www.youtube.com/watch?v=POe1cufDWFs&amp;t=2494s">Data Science with Python Pandas by Athena Kan</a></li>
+  <li><a href="https://www.youtube.com/watch?v=5XGycFIe8qE&amp;t=3508s">Introduction to data analytics with Pandas</a></li>
 </ul>
 
 </div>
@@ -155,15 +177,6 @@
 <div class="related">
   <h2>Related Posts</h2>
   <ul class="related-posts">
-    
-      <li>
-        <h3>
-          <a href="/life/2017/01/15/Python-Pandas-Climate-Change/">
-            Data-Science-with-Python-Pandas-Climate-Change
-            <small>15 Jan 2017</small>
-          </a>
-        </h3>
-      </li>
     
       <li>
         <h3>
@@ -179,6 +192,15 @@
           <a href="/life/2017/01/11/Dcoker-Swarms/">
             Docker-Swarms
             <small>11 Jan 2017</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/life/2017/01/10/Docker-Services/">
+            Docker-Services
+            <small>10 Jan 2017</small>
           </a>
         </h3>
       </li>

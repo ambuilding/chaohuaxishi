@@ -4,13 +4,89 @@
  <title>Zhao Hua Xi Shi</title>
  <link href="http://localhost:4000/life/atom.xml" rel="self"/>
  <link href="http://localhost:4000/life/"/>
- <updated>2017-11-05T20:53:20+08:00</updated>
+ <updated>2017-11-07T21:55:23+08:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Wo</name>
    <email>explorewo@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Data-Science-with-Python-Pandas-Climate-Change</title>
+   <link href="http://localhost:4000/2017/01/15/Python-Pandas-Climate-Change/"/>
+   <updated>2017-01-15T00:00:00+08:00</updated>
+   <id>http://localhost:4000/life/2017/01/15/Python-Pandas-Climate-Change</id>
+   <content type="html">&lt;h3 id=&quot;dataset-earth-surface-temperatures-since-1750&quot;&gt;Dataset: Earth surface temperatures since 1750&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;How have Earth surface temperatures changed over time?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;data-science&quot;&gt;Data Science&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;Ask a question - experience, Kaggle, experts&lt;/li&gt;
+  &lt;li&gt;Get the data - scraping, databases, Excel/CSVs&lt;/li&gt;
+  &lt;li&gt;Explore - pandas, matplotlib, numpy&lt;/li&gt;
+  &lt;li&gt;Model - pandas, sk-learn&lt;/li&gt;
+  &lt;li&gt;Communicate - matplotlib, d3.js&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Python 3.6
+    &lt;ul&gt;
+      &lt;li&gt;pandas&lt;/li&gt;
+      &lt;li&gt;numpy&lt;/li&gt;
+      &lt;li&gt;matplotlib.pyplot: For visualizations, graphs…&lt;/li&gt;
+      &lt;li&gt;sklearn.linear_model\LinearRegression&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Anaconda&lt;/li&gt;
+  &lt;li&gt;Jupyter Notebook&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;panass&quot;&gt;Panass&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Python library&lt;/li&gt;
+  &lt;li&gt;For data cleaning, analysis, visualization, and other analysis&lt;/li&gt;
+  &lt;li&gt;Well-suited for many kinds of data&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Built upon numpy and integrates well with other libraries&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Two different data types in Python pandas:
+    &lt;ul&gt;
+      &lt;li&gt;Series
+        &lt;ul&gt;
+          &lt;li&gt;One dimension array-like object&lt;/li&gt;
+          &lt;li&gt;Capable of holding any data type&lt;/li&gt;
+          &lt;li&gt;Has an index&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;DataFrame
+        &lt;ul&gt;
+          &lt;li&gt;Two dimensional tabular data structure&lt;/li&gt;
+          &lt;li&gt;Capable of holding any/many data types&lt;/li&gt;
+          &lt;li&gt;Index and columns&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;jupyter-notebook&quot;&gt;Jupyter Notebook&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Web application&lt;/li&gt;
+  &lt;li&gt;Allows live code, visualizations, text&lt;/li&gt;
+  &lt;li&gt;Supports over 40 languages, interactive widgets, and big data&lt;/li&gt;
+  &lt;li&gt;Can share notebooks&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;link&quot;&gt;Link&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=POe1cufDWFs&amp;amp;t=2494s&quot;&gt;Data Science with Python Pandas by Athena Kan&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=5XGycFIe8qE&amp;amp;t=3508s&quot;&gt;Introduction to data analytics with Pandas&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Docker-Stacks</title>

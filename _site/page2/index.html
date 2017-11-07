@@ -104,6 +104,62 @@
   
   <div class="post">
     <h1 class="post-title">
+      <a href="/life/2017/01/09/Regular-Expressions/">
+        Regular Expressions
+      </a>
+    </h1>
+
+    <span class="post-date">09 Jan 2017</span>
+
+    <h2 id="phps-regular-expressions-support">PHP’s Regular Expressions Support</h2>
+
+<ul>
+  <li><a href="https://github.com/ambuilding/LevelUp/blob/master/regex.php">PHP’s Regular Expressions Support(github-regex.php)</a></li>
+</ul>
+
+<h2 id="character-sets">Character Sets</h2>
+
+<ul>
+  <li><code class="highlighter-rouge">/[w]{3}/</code> <code class="highlighter-rouge">/[w]{3,5}/</code> <code class="highlighter-rouge">/[w]*/</code> <code class="highlighter-rouge">/[w]+/</code> <code class="highlighter-rouge">/[w]?/</code> <code class="highlighter-rouge">/www\.([^\.]+)/</code></li>
+</ul>
+
+<h2 id="greediness">Greediness</h2>
+
+<ul>
+  <li><code class="highlighter-rouge">/@(\w+)/</code> <code class="highlighter-rouge">&lt;a href="https://www.dniya.com/$1"&gt;$1&lt;/a&gt;</code> <code class="highlighter-rouge">[a-zA-Z0-9_]</code></li>
+</ul>
+
+<h2 id="lookaheads-and-lookbehinds">Lookaheads and Lookbehinds</h2>
+
+<ul>
+  <li><code class="highlighter-rouge">/google(?=&lt;)/i</code> <code class="highlighter-rouge">/google(?!&lt;)/i</code> <code class="highlighter-rouge">(?=string) (?!string) (?&lt;=string) (?&lt;!string)</code></li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$string = '$name = "Dniya"; My name is Dniya.';
+
+$result = preg_replace('/(?&lt;=\$)name/', 'VARIABLE', $string);
+
+var_dump($result);
+</code></pre>
+</div>
+
+<h2 id="link">Link</h2>
+<ul>
+  <li>
+    <p><a href="https://regexr.com/">RegExr is an online tool to learn, build, &amp; test Regular Expressions (RegEx / RegExp):</a> https://regexr.com/</p>
+  </li>
+  <li>
+    <p><a href="http://www.phpliveregex.com">A live regular expression tester for PHP:</a> http://www.phpliveregex.com</p>
+  </li>
+  <li>
+    <p>https://regexper.com</p>
+  </li>
+</ul>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
       <a href="/life/2017/01/08/RESTful-APIs/">
         RESTful APIs
       </a>
