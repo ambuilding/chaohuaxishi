@@ -69,6 +69,10 @@
     
       
         
+      
+    
+      
+        
           <a class="sidebar-nav-item" href="/life/resume/">Resume</a>
         
       
@@ -104,12 +108,12 @@
   
   <div class="post">
     <h1 class="post-title">
-      <a href="/life/2017/01/15/Python-Pandas-Climate-Change/">
+      <a href="/life/2017/02/01/Python-Pandas-Climate-Change/">
         Data-Science-with-Python-Pandas-Climate-Change
       </a>
     </h1>
 
-    <span class="post-date">15 Jan 2017</span>
+    <span class="post-date">01 Feb 2017</span>
 
     <h3 id="dataset-earth-surface-temperatures-since-1750">Dataset: Earth surface temperatures since 1750</h3>
 <ul>
@@ -178,6 +182,76 @@
 <ul>
   <li><a href="https://www.youtube.com/watch?v=POe1cufDWFs&amp;t=2494s">Data Science with Python Pandas by Athena Kan</a></li>
   <li><a href="https://www.youtube.com/watch?v=5XGycFIe8qE&amp;t=3508s">Introduction to data analytics with Pandas</a></li>
+</ul>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/life/2017/01/31/Machine-Learning/">
+        Machine-Learning
+      </a>
+    </h1>
+
+    <span class="post-date">31 Jan 2017</span>
+
+    <h2 id="machine-learning">Machine Learning</h2>
+
+<ul>
+  <li>It deals with developing automatic algorithms
+    <ul>
+      <li>for identifying patterns in complex data and</li>
+      <li>for making prediction based on previous observations.</li>
+      <li>An algorithm takes some inputs and produces some outputs.</li>
+    </ul>
+  </li>
+  <li>Applications include
+    <ul>
+      <li>search engines</li>
+      <li>image recognition: Take in some images, and output text descriptions of what the image contains.</li>
+      <li>speech recognition</li>
+      <li>natural language processing: Process an entire novel and output its themes or topics.</li>
+      <li>Machine Learning algorithms typically fit in either the supervised or unsupervised paradigm.
+        <ul>
+          <li>The process of training our algorithm earlier was called supervised learning. In supervised learning, we label some training data, some inputs, with expected outputs.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Training data. For example, we can provide many examples of images of horses to an algorithm, to increase its ability to recognize new images of horses, by comparing them.</p>
+  </li>
+  <li>Algorithm:
+    <ul>
+      <li>Nearest Neighbors Classfier</li>
+      <li>Image Classification with Python</li>
+      <li>Test the performance of the algorithm.
+        <ul>
+          <li>Not access to the entire database, rather than split the original data set into multiple subsets.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Much like the way humans learn, also machine learning algorithm gets better with the amount of training sets they have access to.</p>
+  </li>
+  <li>Dimensional
+    <ul>
+      <li>Lineland</li>
+      <li>Flatland</li>
+      <li>Spaceland:Three-dimensional</li>
+      <li>N dimensional space</li>
+      <li>In our case, we live in a three-dimensional space, but we can similarly map points to spaces with even more dimensions. Convert everything into some points in space.</li>
+    </ul>
+  </li>
+  <li>Distance
+    <ul>
+      <li>There was a notion of point and distance in a higher-dimensional space.</li>
+      <li>Once we figured that out and we code it up in Python. The same distance function that works with two-dimensional points equally works with 64-dimensional points and higher.</li>
+      <li>Python doesn’t care about the dimension. It computes the distance, finds the minimum distance and the label for that point.</li>
+    </ul>
+  </li>
+  <li>97% of correct - five lines of code. It’s rather surprising, isn’t it?</li>
 </ul>
 
   </div>
@@ -365,64 +439,6 @@
 <ul>
   <li>Take the app down with <code class="highlighter-rouge">docker stack rm &lt;appName&gt;</code></li>
   <li>Take down the swarm <code class="highlighter-rouge">docker swarm leave --force</code></li>
-</ul>
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="/life/2017/01/10/Docker-Containers/">
-        Docker-Containers
-      </a>
-    </h1>
-
-    <span class="post-date">10 Jan 2017</span>
-
-    <ul>
-  <li>
-    <p>Docker-new development environment: No installation / Dockerfile / Build</p>
-  </li>
-  <li>
-    <p>Define a container with a Dockerfile. Dockerfile will define what goes on in the environment inside your container.</p>
-  </li>
-</ul>
-
-<h3 id="setup--docker-run-hello-world">Setup <code class="highlighter-rouge">$ docker run hello-world</code></h3>
-
-<h3 id="get-started">Get Started</h3>
-
-<ul>
-  <li><code class="highlighter-rouge">$ docker build -t name .</code> <code class="highlighter-rouge">$ docker images</code> <code class="highlighter-rouge">$ docker run -p 4000:80 name</code></li>
-  <li><code class="highlighter-rouge">$ docker run -p 4000:80 name</code> <code class="highlighter-rouge">http://localhost:4000 / $ curl http://localhost:4000</code></li>
-  <li>
-    <p><code class="highlighter-rouge">docker run -p 80:80 username/repo:tag</code> <code class="highlighter-rouge">http://localhost/</code></p>
-  </li>
-  <li>Run the app in the background, in detached mode: <code class="highlighter-rouge">docker run -d -p 4000:80 friendlyhello</code> See abbreviated container ID: <code class="highlighter-rouge">docker container ls</code> End th eprocess: <code class="highlighter-rouge">docker container stop &lt;Container ID&gt;</code></li>
-</ul>
-
-<h3 id="tag--publish-the-image">Tag / Publish the image</h3>
-<ul>
-  <li><code class="highlighter-rouge">docker tag image username/repository:tag</code> <code class="highlighter-rouge">$ docker images</code></li>
-  <li><code class="highlighter-rouge">docker push username/repository:tag</code></li>
-  <li>From now on, you can use docker run and run your app on any machine with this command: <code class="highlighter-rouge">docker run -p 4000:80 username/repository:tag </code></li>
-</ul>
-
-<h3 id="git-database">Git database</h3>
-
-<ul>
-  <li>
-    <p>Git tree <code class="highlighter-rouge">~/Library/Containers/com.docker.docker/Data</code> <code class="highlighter-rouge">com.docker.driver.amd64-linux</code></p>
-  </li>
-  <li>
-    <p><code class="highlighter-rouge">$ docker info</code> <code class="highlighter-rouge">$ docker info | grep Proxy</code></p>
-  </li>
-  <li>
-    <p>Fuck</p>
-
-    <p># Set proxy server, replace host:port with values for your servers
-  <code class="highlighter-rouge">ENV http_proxy socks5://127.0.0.1:1080</code>
-  <code class="highlighter-rouge">ENV https_proxy socks5://127.0.0.1:1080</code></p>
-  </li>
 </ul>
 
   </div>

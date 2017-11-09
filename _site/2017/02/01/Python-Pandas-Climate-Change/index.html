@@ -13,7 +13,7 @@
 
   <title>
     
-      Docker-Services &middot; Zhao Hua Xi Shi
+      Data-Science-with-Python-Pandas-Climate-Change &middot; Zhao Hua Xi Shi
     
   </title>
 
@@ -105,42 +105,75 @@
 
       <div class="container content">
         <div class="post">
-  <h1 class="post-title">Docker-Services</h1>
-  <span class="post-date">10 Jan 2017</span>
-  <ul>
-  <li>
-    <p>In a distributed application, different pieces of the app are called “services.” Services are really just “containers in production.”</p>
-  </li>
-  <li>
-    <p>Scaling a service changes the number of container instances running that piece of software, assigning more computing resources to the service in the process.</p>
-  </li>
-  <li>
-    <p>Define, run, and scale services with the Docker platform – just write a <code class="highlighter-rouge">docker-compose.yml</code></p>
-  </li>
-  <li>
-    <p>Run the new load-balanced app: <code class="highlighter-rouge">docker swarm init</code></p>
+  <h1 class="post-title">Data-Science-with-Python-Pandas-Climate-Change</h1>
+  <span class="post-date">01 Feb 2017</span>
+  <h3 id="dataset-earth-surface-temperatures-since-1750">Dataset: Earth surface temperatures since 1750</h3>
+<ul>
+  <li>How have Earth surface temperatures changed over time?</li>
+</ul>
 
-    <p>Swarm initialized: current node (su2np68tvril4xcjp20odfbyt) is now a manager.</p>
+<h3 id="data-science">Data Science</h3>
+<ol>
+  <li>Ask a question - experience, Kaggle, experts</li>
+  <li>Get the data - scraping, databases, Excel/CSVs</li>
+  <li>Explore - pandas, matplotlib, numpy</li>
+  <li>Model - pandas, sk-learn</li>
+  <li>Communicate - matplotlib, d3.js</li>
+</ol>
 
-    <p>To add a worker to this swarm, run the following command:</p>
-
-    <p>docker swarm join –token SWMTKN-1-3tp2gkfp3a4yxp93tf0ozz62isazfbvoldtsusdo06dk725wgq-4eleytibu50vbcnlx8v61b9nq 192.168.65.2:2377</p>
-
-    <p>To add a manager to this swarm, run ‘docker swarm join-token manager’ and follow the instructions.</p>
+<ul>
+  <li>Python 3.6
+    <ul>
+      <li>pandas</li>
+      <li>numpy</li>
+      <li>matplotlib.pyplot: For visualizations, graphs…</li>
+      <li>sklearn.linear_model\LinearRegression</li>
+    </ul>
   </li>
+  <li>Anaconda</li>
+  <li>Jupyter Notebook</li>
+</ul>
+
+<h4 id="panass">Panass</h4>
+<ul>
+  <li>Python library</li>
+  <li>For data cleaning, analysis, visualization, and other analysis</li>
+  <li>Well-suited for many kinds of data</li>
   <li>
-    <p><code class="highlighter-rouge">docker stack deploy -c docker-compose.yml appname</code> <code class="highlighter-rouge">docker service ls</code> List the tasks for the service: <code class="highlighter-rouge">docker service ps getstartedlab_web</code> <code class="highlighter-rouge">docker container ls -q</code></p>
+    <p>Built upon numpy and integrates well with other libraries</p>
   </li>
-  <li>
-    <p>Run <code class="highlighter-rouge">curl -4 http://localhost</code> or visit that URL in the browser. Either way, the  container ID wil change, demonstrating the load-balancing; with each request, one of the 5 tasks is chosen, in a round-robin fashion, to respond. The container IDs will match your output from the previous command (docker container ls -q).</p>
+  <li>Two different data types in Python pandas:
+    <ul>
+      <li>Series
+        <ul>
+          <li>One dimension array-like object</li>
+          <li>Capable of holding any data type</li>
+          <li>Has an index</li>
+        </ul>
+      </li>
+      <li>DataFrame
+        <ul>
+          <li>Two dimensional tabular data structure</li>
+          <li>Capable of holding any/many data types</li>
+          <li>Index and columns</li>
+        </ul>
+      </li>
+    </ul>
   </li>
 </ul>
 
-<h3 id="take-down-the-app-and-the-swarm">Take down the app and the swarm</h3>
-
+<h4 id="jupyter-notebook">Jupyter Notebook</h4>
 <ul>
-  <li>Take the app down with <code class="highlighter-rouge">docker stack rm &lt;appName&gt;</code></li>
-  <li>Take down the swarm <code class="highlighter-rouge">docker swarm leave --force</code></li>
+  <li>Web application</li>
+  <li>Allows live code, visualizations, text</li>
+  <li>Supports over 40 languages, interactive widgets, and big data</li>
+  <li>Can share notebooks</li>
+</ul>
+
+<h3 id="link">Link</h3>
+<ul>
+  <li><a href="https://www.youtube.com/watch?v=POe1cufDWFs&amp;t=2494s">Data Science with Python Pandas by Athena Kan</a></li>
+  <li><a href="https://www.youtube.com/watch?v=5XGycFIe8qE&amp;t=3508s">Introduction to data analytics with Pandas</a></li>
 </ul>
 
 </div>
@@ -148,15 +181,6 @@
 <div class="related">
   <h2>Related Posts</h2>
   <ul class="related-posts">
-    
-      <li>
-        <h3>
-          <a href="/life/2017/02/01/Python-Pandas-Climate-Change/">
-            Data-Science-with-Python-Pandas-Climate-Change
-            <small>01 Feb 2017</small>
-          </a>
-        </h3>
-      </li>
     
       <li>
         <h3>
@@ -172,6 +196,15 @@
           <a href="/life/2017/01/15/Dcoker-Stacks/">
             Docker-Stacks
             <small>15 Jan 2017</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/life/2017/01/11/Dcoker-Swarms/">
+            Docker-Swarms
+            <small>11 Jan 2017</small>
           </a>
         </h3>
       </li>

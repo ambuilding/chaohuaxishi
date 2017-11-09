@@ -4,7 +4,7 @@
  <title>Zhao Hua Xi Shi</title>
  <link href="http://localhost:4000/life/atom.xml" rel="self"/>
  <link href="http://localhost:4000/life/"/>
- <updated>2017-11-07T21:55:23+08:00</updated>
+ <updated>2017-11-09T16:40:22+08:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Wo</name>
@@ -14,9 +14,9 @@
  
  <entry>
    <title>Data-Science-with-Python-Pandas-Climate-Change</title>
-   <link href="http://localhost:4000/2017/01/15/Python-Pandas-Climate-Change/"/>
-   <updated>2017-01-15T00:00:00+08:00</updated>
-   <id>http://localhost:4000/life/2017/01/15/Python-Pandas-Climate-Change</id>
+   <link href="http://localhost:4000/2017/02/01/Python-Pandas-Climate-Change/"/>
+   <updated>2017-02-01T00:00:00+08:00</updated>
+   <id>http://localhost:4000/life/2017/02/01/Python-Pandas-Climate-Change</id>
    <content type="html">&lt;h3 id=&quot;dataset-earth-surface-temperatures-since-1750&quot;&gt;Dataset: Earth surface temperatures since 1750&lt;/h3&gt;
 &lt;ul&gt;
   &lt;li&gt;How have Earth surface temperatures changed over time?&lt;/li&gt;
@@ -84,6 +84,72 @@
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=POe1cufDWFs&amp;amp;t=2494s&quot;&gt;Data Science with Python Pandas by Athena Kan&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=5XGycFIe8qE&amp;amp;t=3508s&quot;&gt;Introduction to data analytics with Pandas&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Machine-Learning</title>
+   <link href="http://localhost:4000/2017/01/31/Machine-Learning/"/>
+   <updated>2017-01-31T00:00:00+08:00</updated>
+   <id>http://localhost:4000/life/2017/01/31/Machine-Learning</id>
+   <content type="html">&lt;h2 id=&quot;machine-learning&quot;&gt;Machine Learning&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;It deals with developing automatic algorithms
+    &lt;ul&gt;
+      &lt;li&gt;for identifying patterns in complex data and&lt;/li&gt;
+      &lt;li&gt;for making prediction based on previous observations.&lt;/li&gt;
+      &lt;li&gt;An algorithm takes some inputs and produces some outputs.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Applications include
+    &lt;ul&gt;
+      &lt;li&gt;search engines&lt;/li&gt;
+      &lt;li&gt;image recognition: Take in some images, and output text descriptions of what the image contains.&lt;/li&gt;
+      &lt;li&gt;speech recognition&lt;/li&gt;
+      &lt;li&gt;natural language processing: Process an entire novel and output its themes or topics.&lt;/li&gt;
+      &lt;li&gt;Machine Learning algorithms typically fit in either the supervised or unsupervised paradigm.
+        &lt;ul&gt;
+          &lt;li&gt;The process of training our algorithm earlier was called supervised learning. In supervised learning, we label some training data, some inputs, with expected outputs.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Training data. For example, we can provide many examples of images of horses to an algorithm, to increase its ability to recognize new images of horses, by comparing them.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Algorithm:
+    &lt;ul&gt;
+      &lt;li&gt;Nearest Neighbors Classfier&lt;/li&gt;
+      &lt;li&gt;Image Classification with Python&lt;/li&gt;
+      &lt;li&gt;Test the performance of the algorithm.
+        &lt;ul&gt;
+          &lt;li&gt;Not access to the entire database, rather than split the original data set into multiple subsets.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Much like the way humans learn, also machine learning algorithm gets better with the amount of training sets they have access to.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Dimensional
+    &lt;ul&gt;
+      &lt;li&gt;Lineland&lt;/li&gt;
+      &lt;li&gt;Flatland&lt;/li&gt;
+      &lt;li&gt;Spaceland:Three-dimensional&lt;/li&gt;
+      &lt;li&gt;N dimensional space&lt;/li&gt;
+      &lt;li&gt;In our case, we live in a three-dimensional space, but we can similarly map points to spaces with even more dimensions. Convert everything into some points in space.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Distance
+    &lt;ul&gt;
+      &lt;li&gt;There was a notion of point and distance in a higher-dimensional space.&lt;/li&gt;
+      &lt;li&gt;Once we figured that out and we code it up in Python. The same distance function that works with two-dimensional points equally works with 64-dimensional points and higher.&lt;/li&gt;
+      &lt;li&gt;Python doesn’t care about the dimension. It computes the distance, finds the minimum distance and the label for that point.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;97% of correct - five lines of code. It’s rather surprising, isn’t it?&lt;/li&gt;
 &lt;/ul&gt;
 </content>
  </entry>
