@@ -40,3 +40,5 @@ title: Machine-Learning
   - Python doesn’t care about the dimension. It computes the distance, finds the minimum distance and the label for that point.
 
 - 97% of correct - five lines of code. It’s rather surprising, isn’t it?
+
+[Stanford CS class CS231n: Convolutional Neural Networks for Visual Recognition. ](http://cs231n.github.io/)
