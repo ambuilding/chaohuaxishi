@@ -69,10 +69,6 @@
     
       
         
-      
-    
-      
-        
           <a class="sidebar-nav-item" href="/life/resume/">Resume</a>
         
       
@@ -105,6 +101,295 @@
 
       <div class="container content">
         <div class="posts">
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/life/2017/02/15/Elasticsearch/">
+        Elasticsearch
+      </a>
+    </h1>
+
+    <span class="post-date">15 Feb 2017</span>
+
+    <h2 id="getting-started">Getting started</h2>
+
+<h3 id="foundation">Foundation</h3>
+<ul>
+  <li>It is important to understand that once you get your search results back, Elasticsearch is completely done with the request and does not maintain any kind of server-side resources or open cursors into your results.</li>
+  <li>This is in stark contrast to many other platforms such as SQL wherein you may initially get a partial subset of your query results up-front and then you have to continuously go back to the server if you want to fetch (or page through) the rest of the results using some kind of stateful server-side cursor.</li>
+</ul>
+
+<h3 id="installation-java-and-elasticsearch-running-node">Installation: Java and Elasticsearch; Running node.</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>curl -L -O https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.0.0.tar.gz
+tar -xvf elasticsearch-6.0.0.tar.gz
+bin/elasticsearch
+curl http://localhost:9200/
+</code></pre>
+</div>
+
+<h3 id="exploring-the-cluster">Exploring the Cluster</h3>
+<ul>
+  <li>Health <code class="highlighter-rouge">curl -XGET 'localhost:9200/_cat/health?v&amp;pretty'</code></li>
+  <li>Get a list of nodes in our cluster <code class="highlighter-rouge">curl -XGET 'localhost:9200/_cat/nodes?v&amp;pretty'</code></li>
+  <li>List all indices <code class="highlighter-rouge">curl -XGET 'localhost:9200/_cat/indices?v&amp;pretty'</code></li>
+  <li>Create an index <code class="highlighter-rouge">curl -XPUT 'localhost:9200/customer?pretty&amp;pretty'</code></li>
+  <li>Index and query a document</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>curl -XPUT 'localhost:9200/customer/doc/1?pretty&amp;pretty' -H 'Content-Type: application/json' -d'
+{
+	"name": "John Doe"
+}
+'
+</code></pre>
+</div>
+
+<ul>
+  <li>
+    <p>Retrieve the document that we just indexed <code class="highlighter-rouge">curl -XGET 'localhost:9200/customer/doc/1?pretty&amp;pretty'</code></p>
+  </li>
+  <li>Delete an index <code class="highlighter-rouge">curl -XDELETE 'localhost:9200/customer?pretty&amp;pretty'</code></li>
+  <li>A pattern of how we access data in Elasticsearch <code class="highlighter-rouge">&lt;REST Verb&gt; /&lt;Index&gt;/&lt;Type&gt;/&lt;ID&gt;</code></li>
+</ul>
+
+<h3 id="modifying-the-data">Modifying the Data</h3>
+<ul>
+  <li>(Index and query a document). Using the POST verb instead of PUT since we didn’t specify an ID.</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>curl -XPOST 'localhost:9200/customer/doc?pretty&amp;pretty' -H 'Content-Type: application/json' -d'
+{
+  "name": "Jane Doe"
+}
+'
+</code></pre>
+</div>
+
+<ul>
+  <li>Updating documents</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>curl -XPOST 'localhost:9200/customer/doc/1/_update?pretty&amp;pretty' -H 'Content-Type: application/json' -d'
+{
+  "doc": { "name": "Jane Doe", "age": 20 }
+}
+'
+
+{
+  "script" : "ctx._source.age += 5"
+}
+
+</code></pre>
+</div>
+<ul>
+  <li>Deleting documents <code class="highlighter-rouge">curl -XDELETE 'localhost:9200/customer/doc/2?pretty&amp;pretty'</code></li>
+  <li>Batch Processing</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>curl -XPOST 'localhost:9200/customer/doc/_bulk?pretty&amp;pretty' -H 'Content-Type: application/json' -d'
+{"index":{"_id":"1"}}
+{"name": "John Doe" }
+{"index":{"_id":"2"}}
+{"name": "Jane Doe" }
+'
+
+curl -XPOST 'localhost:9200/customer/doc/_bulk?pretty&amp;pretty' -H 'Content-Type: application/json' -d'
+{"update":{"_id":"1"}}
+{"doc": { "name": "John Doe becomes Jane Doe" } }
+{"delete":{"_id":"2"}}
+'
+</code></pre>
+</div>
+
+<h3 id="exploring-the-data">Exploring the Data</h3>
+
+<ul>
+  <li>Loading the sample dataset</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>curl -H "Content-Type: application/json" -XPOST 'localhost:9200/bank/account/_bulk?pretty&amp;refresh' --data-binary "@accounts.json"
+curl 'localhost:9200/_cat/indices?v'
+</code></pre>
+</div>
+
+<ul>
+  <li>The search API</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code># REST request URI
+curl -XGET 'localhost:9200/bank/_search?q=*&amp;sort=account_number:asc&amp;pretty&amp;pretty'
+
+#  REST request body
+curl -XGET 'localhost:9200/bank/_search?pretty' -H 'Content-Type: application/json' -d'
+{
+  "query": { "match_all": {} },
+  "sort": [
+    { "account_number": "asc" }
+  ]
+}
+'
+</code></pre>
+</div>
+
+<ul>
+  <li>Introducing the query language - a JSON-style domain-specific language</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code># query
+{
+  "query": { "match_all": {} }
+  "size": 1
+
+  "from": 10,
+  "size": 10
+
+  "sort": { "balance": { "order": "desc" } }
+}
+'
+</code></pre>
+</div>
+
+<ul>
+  <li>Executing searches</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code># Fields
+"_source": ["account_number", "balance"]
+
+# search a specific field
+"query": { "match": { "account_number": 20 } }
+"query": { "match": { "address": "mill" } }
+"query": { "match": { "address": "mill lane" } }
+
+# The bool must clause specifies all the queries that must be true for a document to be considered a match.
+"query": {
+    "bool": {
+      "must": [
+        { "match": { "address": "mill" } },
+        { "match": { "address": "lane" } }
+      ]
+    }
+  }
+
+# The bool should clause specifies a list of queries either of which must be true for a document to be considered a match.
+	"bool": { "should": [] }
+
+# The bool must_not clause specifies a list of queries none of which must be true for a document to be considered a match.
+	"bool": { "must_not": [] }
+
+# Combine must, should, and must_not clauses simultaneously inside a bool query.
+    "bool": {
+      "must": [
+        { "match": { "age": "40" } }
+      ],
+      "must_not": [
+        { "match": { "state": "ID" } }
+      ]
+    }
+</code></pre>
+</div>
+
+<ul>
+  <li>Executing filters</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code># range query, numeric / date filtering
+{
+  "query": {
+    "bool": {
+      "must": { "match_all": {} },
+      "filter": {
+        "range": {
+          "balance": {
+            "gte": 20000,
+            "lte": 30000
+          }
+        }
+      }
+    }
+  }
+}
+</code></pre>
+</div>
+
+<ul>
+  <li>Executing aggregations</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code># Groups all the accounts by state, and then returns the top 10 (default) states sorted by count descending (also default)
+{
+  "size": 0,
+  "aggs": {
+    "group_by_state": {
+      "terms": {
+        "field": "state.keyword"
+      }
+    }
+  }
+}
+
+# In SQL, similar in concept to
+SELECT state, COUNT(*) FROM bank GROUP BY state ORDER BY COUNT(*) DESC
+
+# Calculate the average account balance by state.
+      "aggs": {
+        "average_balance": {
+          "avg": {
+            "field": "balance"
+          }
+        }
+       }
+
+# Sort on the average balance in descending order
+		"field": "state.keyword",
+		"order": {
+          "average_balance": "desc"
+        }
+
+# Group by age brackets (ages 20-29, 30-39, and 40-49), then by gender, and then finally get the average account balance, per age bracket, per gender
+{
+  "size": 0,
+  "aggs": {
+    "group_by_age": {
+      "range": {
+        "field": "age",
+        "ranges": [
+          {
+            "from": 20,
+            "to": 30
+          },
+          {
+            "from": 30,
+            "to": 40
+          },
+          {
+            "from": 40,
+            "to": 50
+          }
+        ]
+      },
+      "aggs": {
+        "group_by_gender": {
+          "terms": {
+            "field": "gender.keyword"
+          },
+          "aggs": {
+            "average_balance": {
+              "avg": {
+                "field": "balance"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+</code></pre>
+</div>
+
+  </div>
   
   <div class="post">
     <h1 class="post-title">
@@ -254,46 +539,107 @@
   <li>97% of correct - five lines of code. It’s rather surprising, isn’t it?</li>
 </ul>
 
+<p><a href="http://cs231n.github.io/">Stanford CS class CS231n: Convolutional Neural Networks for Visual Recognition. </a></p>
+
   </div>
   
   <div class="post">
     <h1 class="post-title">
-      <a href="/life/2017/01/15/Dcoker-Stacks/">
-        Docker-Stacks
+      <a href="/life/2017/01/10/Docker/">
+        Docker
       </a>
     </h1>
 
-    <span class="post-date">15 Jan 2017</span>
+    <span class="post-date">10 Jan 2017</span>
 
-    <h2 id="stacks">Stacks</h2>
+    <h2 id="containers">Containers</h2>
+
 <ul>
   <li>
-    <p>A stack is a group of interrelated services that share dependencies, and can be orchestrated and scaled together.</p>
+    <p>Docker-new development environment: No installation / Dockerfile / Build</p>
   </li>
   <li>
-    <p>Add a free visualizer service that lets us look at how the swarm is scheduling containers.</p>
+    <p>Define a container with a Dockerfile. Dockerfile will define what goes on in the environment inside your container.</p>
   </li>
-  <li>Persist the data, add a Redis database for storing app data.
-    <ul>
-      <li>Add a Redis service.</li>
-      <li>Store data. Create a <code class="highlighter-rouge">./data</code> directory on the manager: <code class="highlighter-rouge">docker-machine ssh myvm1 "mkdir ./data"</code></li>
-    </ul>
-  </li>
-  <li>Deploy and verify that the three services are running as expected.</li>
 </ul>
 
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="/life/2017/01/11/Dcoker-Swarms/">
-        Docker-Swarms
-      </a>
-    </h1>
+<h3 id="setup--docker-run-hello-world">Setup <code class="highlighter-rouge">$ docker run hello-world</code></h3>
 
-    <span class="post-date">11 Jan 2017</span>
+<h3 id="get-started">Get Started</h3>
 
-    <h2 id="swarms">Swarms</h2>
+<ul>
+  <li><code class="highlighter-rouge">$ docker build -t name .</code> <code class="highlighter-rouge">$ docker images</code> <code class="highlighter-rouge">$ docker run -p 4000:80 name</code></li>
+  <li><code class="highlighter-rouge">$ docker run -p 4000:80 name</code> <code class="highlighter-rouge">http://localhost:4000 / $ curl http://localhost:4000</code></li>
+  <li>
+    <p><code class="highlighter-rouge">docker run -p 80:80 username/repo:tag</code> <code class="highlighter-rouge">http://localhost/</code></p>
+  </li>
+  <li>Run the app in the background, in detached mode: <code class="highlighter-rouge">docker run -d -p 4000:80 friendlyhello</code> See abbreviated container ID: <code class="highlighter-rouge">docker container ls</code> End th eprocess: <code class="highlighter-rouge">docker container stop &lt;Container ID&gt;</code></li>
+</ul>
+
+<h3 id="tag--publish-the-image">Tag / Publish the image</h3>
+<ul>
+  <li><code class="highlighter-rouge">docker tag image username/repository:tag</code> <code class="highlighter-rouge">$ docker images</code></li>
+  <li><code class="highlighter-rouge">docker push username/repository:tag</code></li>
+  <li>From now on, you can use docker run and run your app on any machine with this command: <code class="highlighter-rouge">docker run -p 4000:80 username/repository:tag </code></li>
+</ul>
+
+<h3 id="git-database">Git database</h3>
+
+<ul>
+  <li>
+    <p>Git tree <code class="highlighter-rouge">~/Library/Containers/com.docker.docker/Data</code> <code class="highlighter-rouge">com.docker.driver.amd64-linux</code></p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">$ docker info</code> <code class="highlighter-rouge">$ docker info | grep Proxy</code></p>
+  </li>
+  <li>
+    <p>Fuck</p>
+
+    <p># Set proxy server, replace host:port with values for your servers
+  <code class="highlighter-rouge">ENV http_proxy socks5://127.0.0.1:1080</code>
+  <code class="highlighter-rouge">ENV https_proxy socks5://127.0.0.1:1080</code></p>
+  </li>
+</ul>
+
+<h2 id="docker-services">Docker-Services</h2>
+
+<ul>
+  <li>
+    <p>In a distributed application, different pieces of the app are called “services.” Services are really just “containers in production.”</p>
+  </li>
+  <li>
+    <p>Scaling a service changes the number of container instances running that piece of software, assigning more computing resources to the service in the process.</p>
+  </li>
+  <li>
+    <p>Define, run, and scale services with the Docker platform – just write a <code class="highlighter-rouge">docker-compose.yml</code></p>
+  </li>
+  <li>
+    <p>Run the new load-balanced app: <code class="highlighter-rouge">docker swarm init</code></p>
+
+    <p>Swarm initialized: current node (su2np68tvril4xcjp20odfbyt) is now a manager.</p>
+
+    <p>To add a worker to this swarm, run the following command:</p>
+
+    <p>docker swarm join –token SWMTKN-1-3tp2gkfp3a4yxp93tf0ozz62isazfbvoldtsusdo06dk725wgq-4eleytibu50vbcnlx8v61b9nq 192.168.65.2:2377</p>
+
+    <p>To add a manager to this swarm, run ‘docker swarm join-token manager’ and follow the instructions.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">docker stack deploy -c docker-compose.yml appname</code> <code class="highlighter-rouge">docker service ls</code> List the tasks for the service: <code class="highlighter-rouge">docker service ps getstartedlab_web</code> <code class="highlighter-rouge">docker container ls -q</code></p>
+  </li>
+  <li>
+    <p>Run <code class="highlighter-rouge">curl -4 http://localhost</code> or visit that URL in the browser. Either way, the  container ID wil change, demonstrating the load-balancing; with each request, one of the 5 tasks is chosen, in a round-robin fashion, to respond. The container IDs will match your output from the previous command (docker container ls -q).</p>
+  </li>
+</ul>
+
+<h3 id="take-down-the-app-and-the-swarm">Take down the app and the swarm</h3>
+
+<ul>
+  <li>Take the app down with <code class="highlighter-rouge">docker stack rm &lt;appName&gt;</code></li>
+  <li>Take down the swarm <code class="highlighter-rouge">docker swarm leave --force</code></li>
+</ul>
+
+<h2 id="swarms">Swarms</h2>
 <ul>
   <li>
     <p>A swarm is a group of machines that are running Docker and joined into a cluster. Join multiple machines into a “Dockerized” cluster called a swarm.</p>
@@ -394,51 +740,83 @@
   <li>Unsetting docker-machine shell variable settings <code class="highlighter-rouge">eval $(docker-machine env -u)</code></li>
 </ul>
 
+<h2 id="stacks">Stacks</h2>
+<ul>
+  <li>
+    <p>A stack is a group of interrelated services that share dependencies, and can be orchestrated and scaled together.</p>
+  </li>
+  <li>
+    <p>Add a free visualizer service that lets us look at how the swarm is scheduling containers.</p>
+  </li>
+  <li>Persist the data, add a Redis database for storing app data.
+    <ul>
+      <li>Add a Redis service.</li>
+      <li>Store data. Create a <code class="highlighter-rouge">./data</code> directory on the manager: <code class="highlighter-rouge">docker-machine ssh myvm1 "mkdir ./data"</code></li>
+    </ul>
+  </li>
+  <li>Deploy and verify that the three services are running as expected.</li>
+</ul>
+
+<h2 id="link">Link</h2>
+
+<ul>
+  <li><a href="https://www.vultr.com/docs/installing-docker-ce-on-centos-7">Installing Docker CE on CentOS 7</a></li>
+</ul>
+
   </div>
   
   <div class="post">
     <h1 class="post-title">
-      <a href="/life/2017/01/10/Docker-Services/">
-        Docker-Services
+      <a href="/life/2017/01/09/Regular-Expressions/">
+        Regular Expressions
       </a>
     </h1>
 
-    <span class="post-date">10 Jan 2017</span>
+    <span class="post-date">09 Jan 2017</span>
 
-    <ul>
-  <li>
-    <p>In a distributed application, different pieces of the app are called “services.” Services are really just “containers in production.”</p>
-  </li>
-  <li>
-    <p>Scaling a service changes the number of container instances running that piece of software, assigning more computing resources to the service in the process.</p>
-  </li>
-  <li>
-    <p>Define, run, and scale services with the Docker platform – just write a <code class="highlighter-rouge">docker-compose.yml</code></p>
-  </li>
-  <li>
-    <p>Run the new load-balanced app: <code class="highlighter-rouge">docker swarm init</code></p>
-
-    <p>Swarm initialized: current node (su2np68tvril4xcjp20odfbyt) is now a manager.</p>
-
-    <p>To add a worker to this swarm, run the following command:</p>
-
-    <p>docker swarm join –token SWMTKN-1-3tp2gkfp3a4yxp93tf0ozz62isazfbvoldtsusdo06dk725wgq-4eleytibu50vbcnlx8v61b9nq 192.168.65.2:2377</p>
-
-    <p>To add a manager to this swarm, run ‘docker swarm join-token manager’ and follow the instructions.</p>
-  </li>
-  <li>
-    <p><code class="highlighter-rouge">docker stack deploy -c docker-compose.yml appname</code> <code class="highlighter-rouge">docker service ls</code> List the tasks for the service: <code class="highlighter-rouge">docker service ps getstartedlab_web</code> <code class="highlighter-rouge">docker container ls -q</code></p>
-  </li>
-  <li>
-    <p>Run <code class="highlighter-rouge">curl -4 http://localhost</code> or visit that URL in the browser. Either way, the  container ID wil change, demonstrating the load-balancing; with each request, one of the 5 tasks is chosen, in a round-robin fashion, to respond. The container IDs will match your output from the previous command (docker container ls -q).</p>
-  </li>
-</ul>
-
-<h3 id="take-down-the-app-and-the-swarm">Take down the app and the swarm</h3>
+    <h2 id="phps-regular-expressions-support">PHP’s Regular Expressions Support</h2>
 
 <ul>
-  <li>Take the app down with <code class="highlighter-rouge">docker stack rm &lt;appName&gt;</code></li>
-  <li>Take down the swarm <code class="highlighter-rouge">docker swarm leave --force</code></li>
+  <li><a href="https://github.com/ambuilding/LevelUp/blob/master/regex.php">PHP’s Regular Expressions Support(github-regex.php)</a></li>
+</ul>
+
+<h2 id="character-sets">Character Sets</h2>
+
+<ul>
+  <li><code class="highlighter-rouge">/[w]{3}/</code> <code class="highlighter-rouge">/[w]{3,5}/</code> <code class="highlighter-rouge">/[w]*/</code> <code class="highlighter-rouge">/[w]+/</code> <code class="highlighter-rouge">/[w]?/</code> <code class="highlighter-rouge">/www\.([^\.]+)/</code></li>
+</ul>
+
+<h2 id="greediness">Greediness</h2>
+
+<ul>
+  <li><code class="highlighter-rouge">/@(\w+)/</code> <code class="highlighter-rouge">&lt;a href="https://www.dniya.com/$1"&gt;$1&lt;/a&gt;</code> <code class="highlighter-rouge">[a-zA-Z0-9_]</code></li>
+</ul>
+
+<h2 id="lookaheads-and-lookbehinds">Lookaheads and Lookbehinds</h2>
+
+<ul>
+  <li><code class="highlighter-rouge">/google(?=&lt;)/i</code> <code class="highlighter-rouge">/google(?!&lt;)/i</code> <code class="highlighter-rouge">(?=string) (?!string) (?&lt;=string) (?&lt;!string)</code></li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$string = '$name = "Dniya"; My name is Dniya.';
+
+$result = preg_replace('/(?&lt;=\$)name/', 'VARIABLE', $string);
+
+var_dump($result);
+</code></pre>
+</div>
+
+<h2 id="link">Link</h2>
+<ul>
+  <li>
+    <p><a href="https://regexr.com/">RegExr is an online tool to learn, build, &amp; test Regular Expressions (RegEx / RegExp):</a> https://regexr.com/</p>
+  </li>
+  <li>
+    <p><a href="http://www.phpliveregex.com">A live regular expression tester for PHP:</a> http://www.phpliveregex.com</p>
+  </li>
+  <li>
+    <p>https://regexper.com</p>
+  </li>
 </ul>
 
   </div>

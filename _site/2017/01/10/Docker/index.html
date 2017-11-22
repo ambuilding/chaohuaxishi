@@ -13,7 +13,7 @@
 
   <title>
     
-      Docker-Swarms &middot; Zhao Hua Xi Shi
+      Docker &middot; Zhao Hua Xi Shi
     
   </title>
 
@@ -69,10 +69,6 @@
     
       
         
-      
-    
-      
-        
           <a class="sidebar-nav-item" href="/life/resume/">Resume</a>
         
       
@@ -105,9 +101,96 @@
 
       <div class="container content">
         <div class="post">
-  <h1 class="post-title">Docker-Swarms</h1>
-  <span class="post-date">11 Jan 2017</span>
-  <h2 id="swarms">Swarms</h2>
+  <h1 class="post-title">Docker</h1>
+  <span class="post-date">10 Jan 2017</span>
+  <h2 id="containers">Containers</h2>
+
+<ul>
+  <li>
+    <p>Docker-new development environment: No installation / Dockerfile / Build</p>
+  </li>
+  <li>
+    <p>Define a container with a Dockerfile. Dockerfile will define what goes on in the environment inside your container.</p>
+  </li>
+</ul>
+
+<h3 id="setup--docker-run-hello-world">Setup <code class="highlighter-rouge">$ docker run hello-world</code></h3>
+
+<h3 id="get-started">Get Started</h3>
+
+<ul>
+  <li><code class="highlighter-rouge">$ docker build -t name .</code> <code class="highlighter-rouge">$ docker images</code> <code class="highlighter-rouge">$ docker run -p 4000:80 name</code></li>
+  <li><code class="highlighter-rouge">$ docker run -p 4000:80 name</code> <code class="highlighter-rouge">http://localhost:4000 / $ curl http://localhost:4000</code></li>
+  <li>
+    <p><code class="highlighter-rouge">docker run -p 80:80 username/repo:tag</code> <code class="highlighter-rouge">http://localhost/</code></p>
+  </li>
+  <li>Run the app in the background, in detached mode: <code class="highlighter-rouge">docker run -d -p 4000:80 friendlyhello</code> See abbreviated container ID: <code class="highlighter-rouge">docker container ls</code> End th eprocess: <code class="highlighter-rouge">docker container stop &lt;Container ID&gt;</code></li>
+</ul>
+
+<h3 id="tag--publish-the-image">Tag / Publish the image</h3>
+<ul>
+  <li><code class="highlighter-rouge">docker tag image username/repository:tag</code> <code class="highlighter-rouge">$ docker images</code></li>
+  <li><code class="highlighter-rouge">docker push username/repository:tag</code></li>
+  <li>From now on, you can use docker run and run your app on any machine with this command: <code class="highlighter-rouge">docker run -p 4000:80 username/repository:tag </code></li>
+</ul>
+
+<h3 id="git-database">Git database</h3>
+
+<ul>
+  <li>
+    <p>Git tree <code class="highlighter-rouge">~/Library/Containers/com.docker.docker/Data</code> <code class="highlighter-rouge">com.docker.driver.amd64-linux</code></p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">$ docker info</code> <code class="highlighter-rouge">$ docker info | grep Proxy</code></p>
+  </li>
+  <li>
+    <p>Fuck</p>
+
+    <p># Set proxy server, replace host:port with values for your servers
+  <code class="highlighter-rouge">ENV http_proxy socks5://127.0.0.1:1080</code>
+  <code class="highlighter-rouge">ENV https_proxy socks5://127.0.0.1:1080</code></p>
+  </li>
+</ul>
+
+<h2 id="docker-services">Docker-Services</h2>
+
+<ul>
+  <li>
+    <p>In a distributed application, different pieces of the app are called “services.” Services are really just “containers in production.”</p>
+  </li>
+  <li>
+    <p>Scaling a service changes the number of container instances running that piece of software, assigning more computing resources to the service in the process.</p>
+  </li>
+  <li>
+    <p>Define, run, and scale services with the Docker platform – just write a <code class="highlighter-rouge">docker-compose.yml</code></p>
+  </li>
+  <li>
+    <p>Run the new load-balanced app: <code class="highlighter-rouge">docker swarm init</code></p>
+
+    <p>Swarm initialized: current node (su2np68tvril4xcjp20odfbyt) is now a manager.</p>
+
+    <p>To add a worker to this swarm, run the following command:</p>
+
+    <p>docker swarm join –token SWMTKN-1-3tp2gkfp3a4yxp93tf0ozz62isazfbvoldtsusdo06dk725wgq-4eleytibu50vbcnlx8v61b9nq 192.168.65.2:2377</p>
+
+    <p>To add a manager to this swarm, run ‘docker swarm join-token manager’ and follow the instructions.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">docker stack deploy -c docker-compose.yml appname</code> <code class="highlighter-rouge">docker service ls</code> List the tasks for the service: <code class="highlighter-rouge">docker service ps getstartedlab_web</code> <code class="highlighter-rouge">docker container ls -q</code></p>
+  </li>
+  <li>
+    <p>Run <code class="highlighter-rouge">curl -4 http://localhost</code> or visit that URL in the browser. Either way, the  container ID wil change, demonstrating the load-balancing; with each request, one of the 5 tasks is chosen, in a round-robin fashion, to respond. The container IDs will match your output from the previous command (docker container ls -q).</p>
+  </li>
+</ul>
+
+<h3 id="take-down-the-app-and-the-swarm">Take down the app and the swarm</h3>
+
+<ul>
+  <li>Take the app down with <code class="highlighter-rouge">docker stack rm &lt;appName&gt;</code></li>
+  <li>Take down the swarm <code class="highlighter-rouge">docker swarm leave --force</code></li>
+</ul>
+
+<h2 id="swarms">Swarms</h2>
 <ul>
   <li>
     <p>A swarm is a group of machines that are running Docker and joined into a cluster. Join multiple machines into a “Dockerized” cluster called a swarm.</p>
@@ -208,11 +291,43 @@
   <li>Unsetting docker-machine shell variable settings <code class="highlighter-rouge">eval $(docker-machine env -u)</code></li>
 </ul>
 
+<h2 id="stacks">Stacks</h2>
+<ul>
+  <li>
+    <p>A stack is a group of interrelated services that share dependencies, and can be orchestrated and scaled together.</p>
+  </li>
+  <li>
+    <p>Add a free visualizer service that lets us look at how the swarm is scheduling containers.</p>
+  </li>
+  <li>Persist the data, add a Redis database for storing app data.
+    <ul>
+      <li>Add a Redis service.</li>
+      <li>Store data. Create a <code class="highlighter-rouge">./data</code> directory on the manager: <code class="highlighter-rouge">docker-machine ssh myvm1 "mkdir ./data"</code></li>
+    </ul>
+  </li>
+  <li>Deploy and verify that the three services are running as expected.</li>
+</ul>
+
+<h2 id="link">Link</h2>
+
+<ul>
+  <li><a href="https://www.vultr.com/docs/installing-docker-ce-on-centos-7">Installing Docker CE on CentOS 7</a></li>
+</ul>
+
 </div>
 
 <div class="related">
   <h2>Related Posts</h2>
   <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/life/2017/02/15/Elasticsearch/">
+            Elasticsearch
+            <small>15 Feb 2017</small>
+          </a>
+        </h3>
+      </li>
     
       <li>
         <h3>
@@ -228,15 +343,6 @@
           <a href="/life/2017/01/31/Machine-Learning/">
             Machine-Learning
             <small>31 Jan 2017</small>
-          </a>
-        </h3>
-      </li>
-    
-      <li>
-        <h3>
-          <a href="/life/2017/01/15/Dcoker-Stacks/">
-            Docker-Stacks
-            <small>15 Jan 2017</small>
           </a>
         </h3>
       </li>

@@ -69,10 +69,6 @@
     
       
         
-      
-    
-      
-        
           <a class="sidebar-nav-item" href="/life/resume/">Resume</a>
         
       
@@ -105,120 +101,6 @@
 
       <div class="container content">
         <div class="posts">
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="/life/2017/01/10/Docker-Containers/">
-        Docker-Containers
-      </a>
-    </h1>
-
-    <span class="post-date">10 Jan 2017</span>
-
-    <ul>
-  <li>
-    <p>Docker-new development environment: No installation / Dockerfile / Build</p>
-  </li>
-  <li>
-    <p>Define a container with a Dockerfile. Dockerfile will define what goes on in the environment inside your container.</p>
-  </li>
-</ul>
-
-<h3 id="setup--docker-run-hello-world">Setup <code class="highlighter-rouge">$ docker run hello-world</code></h3>
-
-<h3 id="get-started">Get Started</h3>
-
-<ul>
-  <li><code class="highlighter-rouge">$ docker build -t name .</code> <code class="highlighter-rouge">$ docker images</code> <code class="highlighter-rouge">$ docker run -p 4000:80 name</code></li>
-  <li><code class="highlighter-rouge">$ docker run -p 4000:80 name</code> <code class="highlighter-rouge">http://localhost:4000 / $ curl http://localhost:4000</code></li>
-  <li>
-    <p><code class="highlighter-rouge">docker run -p 80:80 username/repo:tag</code> <code class="highlighter-rouge">http://localhost/</code></p>
-  </li>
-  <li>Run the app in the background, in detached mode: <code class="highlighter-rouge">docker run -d -p 4000:80 friendlyhello</code> See abbreviated container ID: <code class="highlighter-rouge">docker container ls</code> End th eprocess: <code class="highlighter-rouge">docker container stop &lt;Container ID&gt;</code></li>
-</ul>
-
-<h3 id="tag--publish-the-image">Tag / Publish the image</h3>
-<ul>
-  <li><code class="highlighter-rouge">docker tag image username/repository:tag</code> <code class="highlighter-rouge">$ docker images</code></li>
-  <li><code class="highlighter-rouge">docker push username/repository:tag</code></li>
-  <li>From now on, you can use docker run and run your app on any machine with this command: <code class="highlighter-rouge">docker run -p 4000:80 username/repository:tag </code></li>
-</ul>
-
-<h3 id="git-database">Git database</h3>
-
-<ul>
-  <li>
-    <p>Git tree <code class="highlighter-rouge">~/Library/Containers/com.docker.docker/Data</code> <code class="highlighter-rouge">com.docker.driver.amd64-linux</code></p>
-  </li>
-  <li>
-    <p><code class="highlighter-rouge">$ docker info</code> <code class="highlighter-rouge">$ docker info | grep Proxy</code></p>
-  </li>
-  <li>
-    <p>Fuck</p>
-
-    <p># Set proxy server, replace host:port with values for your servers
-  <code class="highlighter-rouge">ENV http_proxy socks5://127.0.0.1:1080</code>
-  <code class="highlighter-rouge">ENV https_proxy socks5://127.0.0.1:1080</code></p>
-  </li>
-</ul>
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="/life/2017/01/09/Regular-Expressions/">
-        Regular Expressions
-      </a>
-    </h1>
-
-    <span class="post-date">09 Jan 2017</span>
-
-    <h2 id="phps-regular-expressions-support">PHP’s Regular Expressions Support</h2>
-
-<ul>
-  <li><a href="https://github.com/ambuilding/LevelUp/blob/master/regex.php">PHP’s Regular Expressions Support(github-regex.php)</a></li>
-</ul>
-
-<h2 id="character-sets">Character Sets</h2>
-
-<ul>
-  <li><code class="highlighter-rouge">/[w]{3}/</code> <code class="highlighter-rouge">/[w]{3,5}/</code> <code class="highlighter-rouge">/[w]*/</code> <code class="highlighter-rouge">/[w]+/</code> <code class="highlighter-rouge">/[w]?/</code> <code class="highlighter-rouge">/www\.([^\.]+)/</code></li>
-</ul>
-
-<h2 id="greediness">Greediness</h2>
-
-<ul>
-  <li><code class="highlighter-rouge">/@(\w+)/</code> <code class="highlighter-rouge">&lt;a href="https://www.dniya.com/$1"&gt;$1&lt;/a&gt;</code> <code class="highlighter-rouge">[a-zA-Z0-9_]</code></li>
-</ul>
-
-<h2 id="lookaheads-and-lookbehinds">Lookaheads and Lookbehinds</h2>
-
-<ul>
-  <li><code class="highlighter-rouge">/google(?=&lt;)/i</code> <code class="highlighter-rouge">/google(?!&lt;)/i</code> <code class="highlighter-rouge">(?=string) (?!string) (?&lt;=string) (?&lt;!string)</code></li>
-</ul>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>$string = '$name = "Dniya"; My name is Dniya.';
-
-$result = preg_replace('/(?&lt;=\$)name/', 'VARIABLE', $string);
-
-var_dump($result);
-</code></pre>
-</div>
-
-<h2 id="link">Link</h2>
-<ul>
-  <li>
-    <p><a href="https://regexr.com/">RegExr is an online tool to learn, build, &amp; test Regular Expressions (RegEx / RegExp):</a> https://regexr.com/</p>
-  </li>
-  <li>
-    <p><a href="http://www.phpliveregex.com">A live regular expression tester for PHP:</a> http://www.phpliveregex.com</p>
-  </li>
-  <li>
-    <p>https://regexper.com</p>
-  </li>
-</ul>
-
-  </div>
   
   <div class="post">
     <h1 class="post-title">
@@ -341,11 +223,107 @@ $ curl -I https://31.13.95.36/
 
   </div>
   
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/life/2017/01/01/SSH-VPS/">
+        SSH VPS
+      </a>
+    </h1>
+
+    <span class="post-date">01 Jan 2017</span>
+
+    <h2 id="ssh">SSH</h2>
+
+<h3 id="generate-ssh-key"><a href="https://www.vultr.com/docs/how-do-i-generate-ssh-keys">Generate SSH Key</a></h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>`ssh-keygen -t rsa -b 4096`
+`cat ~/.ssh/id_rsa.pub` backup
+`ssh-copy-id user@&lt;host&gt;`
+`ssh -i /path/to/id_rsa user@x.x.x.x`
+</code></pre>
+</div>
+
+<h3 id="ssh-basic-usage-secure-shell"><a href="https://abcdabcd987.com/ssh/">SSH Basic Usage Secure Shell</a></h3>
+
+<h2 id="vps">VPS</h2>
+
+<ul>
+  <li>Test downloads speed.</li>
+</ul>
+
+<h2 id="bbr">BBR</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code># wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh
+# chmod +x bbr.sh
+# ./bbr.sh
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>`uname -r`
+`sysctl net.ipv4.tcp_available_congestion_control`
+`sysctl net.ipv4.tcp_congestion_control`
+`sysctl net.core.default_qdisc`
+`lsmod | grep bbr`
+</code></pre>
+</div>
+
+<h2 id="shadowsocksr">ShadowsocksR</h2>
+
+<ul>
+  <li><a href="https://github.com/shadowsocks/ShadowsocksX-NG/releases">ShadowsocksX-NG</a></li>
+  <li><a href="https://github.com/shadowsocks/shadowsocks-android/releases">Android</a></li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code># wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocksR.sh
+# chmod +x shadowsocksR.sh
+# ./shadowsocksR.sh 2&gt;&amp;1 | tee shadowsocksR.log
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>`/etc/init.d/shadowsocks start`
+`/etc/init.d/shadowsocks stop`
+`/etc/init.d/shadowsocks restart`
+`/etc/init.d/shadowsocks status`
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>配置文件路径：/etc/shadowsocks.json
+日志文件路径：/var/log/shadowsocks.log
+代码安装目录：/usr/local/shadowsocks
+Uninstall: ./shadowsocksR.sh uninstall
+</code></pre>
+</div>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/9485-b0d99d196d019ec3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" />
+<a href="http://vc2tea.com/whats-shadowsocks/">Why</a></p>
+
+<h3 id="连接-vps">连接 VPS</h3>
+<ul>
+  <li>Windows: SSH 客户端（Tunnelier）; Mac: SSH 客户端(Issh): <code class="highlighter-rouge">ssh root@&lt;host&gt;</code>.</li>
+</ul>
+
+<h3 id="技巧">技巧：</h3>
+<p>分享同一个 SSH 代理， 四步新建一受限 VPS 用户:</p>
+<ol>
+  <li>
+    <p>登录 VPS: <code class="highlighter-rouge">SSH root@&lt;host&gt;</code></p>
+  </li>
+  <li>
+    <p>创建一个用户组：<code class="highlighter-rouge">groupadd hahaha</code>  //“hahaha”可替换成任意名字。</p>
+  </li>
+  <li>
+    <p>创建受限用户：<code class="highlighter-rouge">useradd -d /home/dotcom -m -g hahaha -s /bin/false dotcom</code>
+以上命令将会在 “hahaha” 创建一个新的 SSH 用户 “dotcom”，该用户只能使用 SSH 代理，不能登录你的 VPS 帐户。</p>
+  </li>
+</ol>
+
+  </div>
+  
 </div>
 
 <div class="pagination">
   
-    <a class="pagination-item older" href="/life/page3">Older</a>
+    <span class="pagination-item older">Older</span>
   
   
     

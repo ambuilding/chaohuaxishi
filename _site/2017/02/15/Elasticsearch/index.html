@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  
+
+  <title>
+    
+      Elasticsearch &middot; Zhao Hua Xi Shi
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/life/public/css/poole.css">
+  <link rel="stylesheet" href="/life/public/css/syntax.css">
+  <link rel="stylesheet" href="/life/public/css/lanyon.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/life/public/apple-touch-icon-precomposed.png">
+  <link rel="shortcut icon" href="/life/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>A reserved <a href="http://jekyllrb.com" target="_blank">Jekyll</a> theme that places the utmost gravity on content with a hidden drawer. Made by <a href="https://twitter.com/" target="_blank">@Hi</a>.</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/life/">Home</a>
+
+    
+
+    
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+    
+      
+    
+      
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/life/resume/">Resume</a>
+        
+      
+    
+
+    <a class="sidebar-nav-item" href="/archive/v1.0.0.zip">Download</a>
+    <a class="sidebar-nav-item" href="">GitHub project</a>
+    <span class="sidebar-nav-item">Currently v1.0.0</span>
+  </nav>
+
+  <div class="sidebar-item">
+    <p>
+      &copy; 2017. All rights reserved.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/life/" title="Home">Zhao Hua Xi Shi</a>
+            <small>0111</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+        <div class="post">
+  <h1 class="post-title">Elasticsearch</h1>
+  <span class="post-date">15 Feb 2017</span>
+  <h2 id="getting-started">Getting started</h2>
+
+<h3 id="foundation">Foundation</h3>
+<ul>
+  <li>It is important to understand that once you get your search results back, Elasticsearch is completely done with the request and does not maintain any kind of server-side resources or open cursors into your results.</li>
+  <li>This is in stark contrast to many other platforms such as SQL wherein you may initially get a partial subset of your query results up-front and then you have to continuously go back to the server if you want to fetch (or page through) the rest of the results using some kind of stateful server-side cursor.</li>
+</ul>
+
+<h3 id="installation-java-and-elasticsearch-running-node">Installation: Java and Elasticsearch; Running node.</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>curl -L -O https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.0.0.tar.gz
+tar -xvf elasticsearch-6.0.0.tar.gz
+bin/elasticsearch
+curl http://localhost:9200/
+</code></pre>
+</div>
+
+<h3 id="exploring-the-cluster">Exploring the Cluster</h3>
+<ul>
+  <li>Health <code class="highlighter-rouge">curl -XGET 'localhost:9200/_cat/health?v&amp;pretty'</code></li>
+  <li>Get a list of nodes in our cluster <code class="highlighter-rouge">curl -XGET 'localhost:9200/_cat/nodes?v&amp;pretty'</code></li>
+  <li>List all indices <code class="highlighter-rouge">curl -XGET 'localhost:9200/_cat/indices?v&amp;pretty'</code></li>
+  <li>Create an index <code class="highlighter-rouge">curl -XPUT 'localhost:9200/customer?pretty&amp;pretty'</code></li>
+  <li>Index and query a document</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>curl -XPUT 'localhost:9200/customer/doc/1?pretty&amp;pretty' -H 'Content-Type: application/json' -d'
+{
+	"name": "John Doe"
+}
+'
+</code></pre>
+</div>
+
+<ul>
+  <li>
+    <p>Retrieve the document that we just indexed <code class="highlighter-rouge">curl -XGET 'localhost:9200/customer/doc/1?pretty&amp;pretty'</code></p>
+  </li>
+  <li>Delete an index <code class="highlighter-rouge">curl -XDELETE 'localhost:9200/customer?pretty&amp;pretty'</code></li>
+  <li>A pattern of how we access data in Elasticsearch <code class="highlighter-rouge">&lt;REST Verb&gt; /&lt;Index&gt;/&lt;Type&gt;/&lt;ID&gt;</code></li>
+</ul>
+
+<h3 id="modifying-the-data">Modifying the Data</h3>
+<ul>
+  <li>(Index and query a document). Using the POST verb instead of PUT since we didn’t specify an ID.</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>curl -XPOST 'localhost:9200/customer/doc?pretty&amp;pretty' -H 'Content-Type: application/json' -d'
+{
+  "name": "Jane Doe"
+}
+'
+</code></pre>
+</div>
+
+<ul>
+  <li>Updating documents</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>curl -XPOST 'localhost:9200/customer/doc/1/_update?pretty&amp;pretty' -H 'Content-Type: application/json' -d'
+{
+  "doc": { "name": "Jane Doe", "age": 20 }
+}
+'
+
+{
+  "script" : "ctx._source.age += 5"
+}
+
+</code></pre>
+</div>
+<ul>
+  <li>Deleting documents <code class="highlighter-rouge">curl -XDELETE 'localhost:9200/customer/doc/2?pretty&amp;pretty'</code></li>
+  <li>Batch Processing</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>curl -XPOST 'localhost:9200/customer/doc/_bulk?pretty&amp;pretty' -H 'Content-Type: application/json' -d'
+{"index":{"_id":"1"}}
+{"name": "John Doe" }
+{"index":{"_id":"2"}}
+{"name": "Jane Doe" }
+'
+
+curl -XPOST 'localhost:9200/customer/doc/_bulk?pretty&amp;pretty' -H 'Content-Type: application/json' -d'
+{"update":{"_id":"1"}}
+{"doc": { "name": "John Doe becomes Jane Doe" } }
+{"delete":{"_id":"2"}}
+'
+</code></pre>
+</div>
+
+<h3 id="exploring-the-data">Exploring the Data</h3>
+
+<ul>
+  <li>Loading the sample dataset</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>curl -H "Content-Type: application/json" -XPOST 'localhost:9200/bank/account/_bulk?pretty&amp;refresh' --data-binary "@accounts.json"
+curl 'localhost:9200/_cat/indices?v'
+</code></pre>
+</div>
+
+<ul>
+  <li>The search API</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code># REST request URI
+curl -XGET 'localhost:9200/bank/_search?q=*&amp;sort=account_number:asc&amp;pretty&amp;pretty'
+
+#  REST request body
+curl -XGET 'localhost:9200/bank/_search?pretty' -H 'Content-Type: application/json' -d'
+{
+  "query": { "match_all": {} },
+  "sort": [
+    { "account_number": "asc" }
+  ]
+}
+'
+</code></pre>
+</div>
+
+<ul>
+  <li>Introducing the query language - a JSON-style domain-specific language</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code># query
+{
+  "query": { "match_all": {} }
+  "size": 1
+
+  "from": 10,
+  "size": 10
+
+  "sort": { "balance": { "order": "desc" } }
+}
+'
+</code></pre>
+</div>
+
+<ul>
+  <li>Executing searches</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code># Fields
+"_source": ["account_number", "balance"]
+
+# search a specific field
+"query": { "match": { "account_number": 20 } }
+"query": { "match": { "address": "mill" } }
+"query": { "match": { "address": "mill lane" } }
+
+# The bool must clause specifies all the queries that must be true for a document to be considered a match.
+"query": {
+    "bool": {
+      "must": [
+        { "match": { "address": "mill" } },
+        { "match": { "address": "lane" } }
+      ]
+    }
+  }
+
+# The bool should clause specifies a list of queries either of which must be true for a document to be considered a match.
+	"bool": { "should": [] }
+
+# The bool must_not clause specifies a list of queries none of which must be true for a document to be considered a match.
+	"bool": { "must_not": [] }
+
+# Combine must, should, and must_not clauses simultaneously inside a bool query.
+    "bool": {
+      "must": [
+        { "match": { "age": "40" } }
+      ],
+      "must_not": [
+        { "match": { "state": "ID" } }
+      ]
+    }
+</code></pre>
+</div>
+
+<ul>
+  <li>Executing filters</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code># range query, numeric / date filtering
+{
+  "query": {
+    "bool": {
+      "must": { "match_all": {} },
+      "filter": {
+        "range": {
+          "balance": {
+            "gte": 20000,
+            "lte": 30000
+          }
+        }
+      }
+    }
+  }
+}
+</code></pre>
+</div>
+
+<ul>
+  <li>Executing aggregations</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code># Groups all the accounts by state, and then returns the top 10 (default) states sorted by count descending (also default)
+{
+  "size": 0,
+  "aggs": {
+    "group_by_state": {
+      "terms": {
+        "field": "state.keyword"
+      }
+    }
+  }
+}
+
+# In SQL, similar in concept to
+SELECT state, COUNT(*) FROM bank GROUP BY state ORDER BY COUNT(*) DESC
+
+# Calculate the average account balance by state.
+      "aggs": {
+        "average_balance": {
+          "avg": {
+            "field": "balance"
+          }
+        }
+       }
+
+# Sort on the average balance in descending order
+		"field": "state.keyword",
+		"order": {
+          "average_balance": "desc"
+        }
+
+# Group by age brackets (ages 20-29, 30-39, and 40-49), then by gender, and then finally get the average account balance, per age bracket, per gender
+{
+  "size": 0,
+  "aggs": {
+    "group_by_age": {
+      "range": {
+        "field": "age",
+        "ranges": [
+          {
+            "from": 20,
+            "to": 30
+          },
+          {
+            "from": 30,
+            "to": 40
+          },
+          {
+            "from": 40,
+            "to": 50
+          }
+        ]
+      },
+      "aggs": {
+        "group_by_gender": {
+          "terms": {
+            "field": "gender.keyword"
+          },
+          "aggs": {
+            "average_balance": {
+              "avg": {
+                "field": "balance"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+</code></pre>
+</div>
+
+</div>
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/life/2017/02/01/Python-Pandas-Climate-Change/">
+            Data-Science-with-Python-Pandas-Climate-Change
+            <small>01 Feb 2017</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/life/2017/01/31/Machine-Learning/">
+            Machine-Learning
+            <small>31 Jan 2017</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/life/2017/01/10/Docker/">
+            Docker
+            <small>10 Jan 2017</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script>
+      (function(document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
+
+        document.addEventListener('click', function(e) {
+          var target = e.target;
+
+          if(!checkbox.checked ||
+             sidebar.contains(target) ||
+             (target === checkbox || target === toggle)) return;
+
+          checkbox.checked = false;
+        }, false);
+      })(document);
+    </script>
+  </body>
+</html>
