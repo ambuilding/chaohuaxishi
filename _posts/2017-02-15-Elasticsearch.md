@@ -4,12 +4,13 @@ title: Elasticsearch
 ---
 
 ## Getting started
+- Elasticsearch is a highly scalable open-source full-text search and analytics engine. It allows us to store, search, and analyze big volumes of data quickly and in near real time. (Log and search)
 
 ### Foundation
 - It is important to understand that once you get your search results back, Elasticsearch is completely done with the request and does not maintain any kind of server-side resources or open cursors into your results.
 - This is in stark contrast to many other platforms such as SQL wherein you may initially get a partial subset of your query results up-front and then you have to continuously go back to the server if you want to fetch (or page through) the rest of the results using some kind of stateful server-side cursor.
 
-### Installation: Java and Elasticsearch; Running node.
+### Installation: Java and Elasticsearch; Running node. (or Docker)
 
 ```
 curl -L -O https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.0.0.tar.gz
@@ -255,3 +256,18 @@ SELECT state, COUNT(*) FROM bank GROUP BY state ORDER BY COUNT(*) DESC
   }
 }
 ```
+
+### Link
+
+- [Elasticsearch Reference [6.0]](https://www.elastic.co/guide/en/elasticsearch/reference/current/getting-started.html)
+- [Starting Elasticsearch / Kibana / X-Pack](https://www.elastic.co/start)
+- [ruanyifeng](http://www.ruanyifeng.com/blog/2017/08/elasticsearch.html)
+- [http://www.jianshu.com/p/05cff717563c](http://www.jianshu.com/p/05cff717563c)
+
+
+### Text search
+
+- Analyzers
+  - split the string into chunks (tokenizing)
+  - apply some formatting on each of those tokens (lowercasing, convert special chars, …)
+  - the default behavior is described by the standard analyzer. It will split the texts by word and those words will be lowercased.

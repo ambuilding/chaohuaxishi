@@ -13,7 +13,7 @@
 
   <title>
     
-      Linux Man &middot; Zhao Hua Xi Shi
+      Elasticsearch-PHP &middot; Zhao Hua Xi Shi
     
   </title>
 
@@ -117,48 +117,27 @@
 
       <div class="container content">
         <div class="post">
-  <h1 class="post-title">Linux Man</h1>
-  <span class="post-date">07 Jan 2017</span>
-  <h2 id="linux-man">Linux Man</h2>
+  <h1 class="post-title">Elasticsearch-PHP</h1>
+  <span class="post-date">06 Mar 2017</span>
+  <h3 id="hi">Hi</h3>
 
-<h3 id="install-net-tools-command-in-centos-7--rhel-7"><a href="https://www.ostechnix.com/linux-troubleshooting-netstat-command-not-found-in-centos-7-rhel-7/">Install net-tools command in CentOS 7 / RHEL 7</a></h3>
+<ul>
+  <li>Index a document: index, type, id and a document body.</li>
+  <li>Configuration</li>
+  <li>Elasticsearch-PHP uses an interchangeable HTTP transport layer called RingPHP.</li>
+  <li>“future” or “async” mode. <code class="highlighter-rouge">'future' =&gt; 'lazy'</code> PHP is fundamentally single-threaded, however libcurl provides functionality called the “multi interface”.  With the multi interface, the time to execute n requests is the latency of the slowest request. Furthermore, the multi-interface allows requests to different hosts simultaneously, which means the Elasticsearch-PHP client can more effectively utilize your full cluster.</li>
+</ul>
 
-<p>First, we should find out which package provides ‘netstat’ command.</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>`# yum provides */netstat`
-`# yum whatprovides */netstat`
-
-`# yum install net-tools`
-
-`# netstat`
-</code></pre>
-</div>
-
-<h2 id="how-to-open-a-port-in-the-firewall-on-centos-or-rhel"><a href="http://ask.xmodulo.com/open-port-firewall-centos-rhel.html">How to open a port in the firewall on CentOS or RHEL</a></h2>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>`# iptables -L`
-`# firewall-cmd --zone=public --add-port=80/tcp --permanent`
-`# firewall-cmd --reload`
-`# firewall-cmd --list-all`
-</code></pre>
-</div>
-
-<h2 id="how-to-set-up-a-firewall-using-firewalld-on-centos-7"><a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-using-firewalld-on-centos-7">How To Set Up a Firewall Using FirewallD on CentOS 7</a></h2>
+<h3 id="link">Link</h3>
+<ul>
+  <li><a href="https://www.elastic.co/guide/en/elasticsearch/client/php-api/current/index.html">Elasticsearch-PHP</a></li>
+</ul>
 
 </div>
 
 <div class="related">
   <h2>Related Posts</h2>
   <ul class="related-posts">
-    
-      <li>
-        <h3>
-          <a href="/life/2017/03/06/Elasticsearch-PHP/">
-            Elasticsearch-PHP
-            <small>06 Mar 2017</small>
-          </a>
-        </h3>
-      </li>
     
       <li>
         <h3>
@@ -174,6 +153,15 @@
           <a href="/life/2017/02/17/Kibana/">
             Kibana
             <small>17 Feb 2017</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/life/2017/02/15/Elasticsearch/">
+            Elasticsearch
+            <small>15 Feb 2017</small>
           </a>
         </h3>
       </li>

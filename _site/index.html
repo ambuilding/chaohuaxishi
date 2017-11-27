@@ -60,7 +60,17 @@
       
     
       
+        
+          <a class="sidebar-nav-item" href="/life/archive/">Archive</a>
+        
+      
     
+      
+    
+      
+    
+      
+        
       
     
       
@@ -70,6 +80,12 @@
       
         
           <a class="sidebar-nav-item" href="/life/resume/">Resume</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/life/tags/">Tags</a>
         
       
     
@@ -104,6 +120,53 @@
   
   <div class="post">
     <h1 class="post-title">
+      <a href="/life/2017/03/06/Elasticsearch-PHP/">
+        Elasticsearch-PHP
+      </a>
+    </h1>
+
+    <span class="post-date">06 Mar 2017</span>
+
+    <h3 id="hi">Hi</h3>
+
+
+
+    <a href="/life/2017/03/06/Elasticsearch-PHP/">Continue reading...</a>
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/life/2017/03/01/AWS-Amazon-web-service/">
+        AWS Amazon web service
+      </a>
+    </h1>
+
+    <span class="post-date">01 Mar 2017</span>
+
+    <h2 id="hello">Hello</h2>
+
+
+
+    <a href="/life/2017/03/01/AWS-Amazon-web-service/">Continue reading...</a>
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/life/2017/02/17/Kibana/">
+        Kibana
+      </a>
+    </h1>
+
+    <span class="post-date">17 Feb 2017</span>
+
+    
+
+
+    <a href="/life/2017/02/17/Kibana/">Continue reading...</a>
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
       <a href="/life/2017/02/15/Elasticsearch/">
         Elasticsearch
       </a>
@@ -113,282 +176,9 @@
 
     <h2 id="getting-started">Getting started</h2>
 
-<h3 id="foundation">Foundation</h3>
-<ul>
-  <li>It is important to understand that once you get your search results back, Elasticsearch is completely done with the request and does not maintain any kind of server-side resources or open cursors into your results.</li>
-  <li>This is in stark contrast to many other platforms such as SQL wherein you may initially get a partial subset of your query results up-front and then you have to continuously go back to the server if you want to fetch (or page through) the rest of the results using some kind of stateful server-side cursor.</li>
-</ul>
 
-<h3 id="installation-java-and-elasticsearch-running-node">Installation: Java and Elasticsearch; Running node.</h3>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>curl -L -O https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.0.0.tar.gz
-tar -xvf elasticsearch-6.0.0.tar.gz
-bin/elasticsearch
-curl http://localhost:9200/
-</code></pre>
-</div>
-
-<h3 id="exploring-the-cluster">Exploring the Cluster</h3>
-<ul>
-  <li>Health <code class="highlighter-rouge">curl -XGET 'localhost:9200/_cat/health?v&amp;pretty'</code></li>
-  <li>Get a list of nodes in our cluster <code class="highlighter-rouge">curl -XGET 'localhost:9200/_cat/nodes?v&amp;pretty'</code></li>
-  <li>List all indices <code class="highlighter-rouge">curl -XGET 'localhost:9200/_cat/indices?v&amp;pretty'</code></li>
-  <li>Create an index <code class="highlighter-rouge">curl -XPUT 'localhost:9200/customer?pretty&amp;pretty'</code></li>
-  <li>Index and query a document</li>
-</ul>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>curl -XPUT 'localhost:9200/customer/doc/1?pretty&amp;pretty' -H 'Content-Type: application/json' -d'
-{
-	"name": "John Doe"
-}
-'
-</code></pre>
-</div>
-
-<ul>
-  <li>
-    <p>Retrieve the document that we just indexed <code class="highlighter-rouge">curl -XGET 'localhost:9200/customer/doc/1?pretty&amp;pretty'</code></p>
-  </li>
-  <li>Delete an index <code class="highlighter-rouge">curl -XDELETE 'localhost:9200/customer?pretty&amp;pretty'</code></li>
-  <li>A pattern of how we access data in Elasticsearch <code class="highlighter-rouge">&lt;REST Verb&gt; /&lt;Index&gt;/&lt;Type&gt;/&lt;ID&gt;</code></li>
-</ul>
-
-<h3 id="modifying-the-data">Modifying the Data</h3>
-<ul>
-  <li>(Index and query a document). Using the POST verb instead of PUT since we didn’t specify an ID.</li>
-</ul>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>curl -XPOST 'localhost:9200/customer/doc?pretty&amp;pretty' -H 'Content-Type: application/json' -d'
-{
-  "name": "Jane Doe"
-}
-'
-</code></pre>
-</div>
-
-<ul>
-  <li>Updating documents</li>
-</ul>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>curl -XPOST 'localhost:9200/customer/doc/1/_update?pretty&amp;pretty' -H 'Content-Type: application/json' -d'
-{
-  "doc": { "name": "Jane Doe", "age": 20 }
-}
-'
-
-{
-  "script" : "ctx._source.age += 5"
-}
-
-</code></pre>
-</div>
-<ul>
-  <li>Deleting documents <code class="highlighter-rouge">curl -XDELETE 'localhost:9200/customer/doc/2?pretty&amp;pretty'</code></li>
-  <li>Batch Processing</li>
-</ul>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>curl -XPOST 'localhost:9200/customer/doc/_bulk?pretty&amp;pretty' -H 'Content-Type: application/json' -d'
-{"index":{"_id":"1"}}
-{"name": "John Doe" }
-{"index":{"_id":"2"}}
-{"name": "Jane Doe" }
-'
-
-curl -XPOST 'localhost:9200/customer/doc/_bulk?pretty&amp;pretty' -H 'Content-Type: application/json' -d'
-{"update":{"_id":"1"}}
-{"doc": { "name": "John Doe becomes Jane Doe" } }
-{"delete":{"_id":"2"}}
-'
-</code></pre>
-</div>
-
-<h3 id="exploring-the-data">Exploring the Data</h3>
-
-<ul>
-  <li>Loading the sample dataset</li>
-</ul>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>curl -H "Content-Type: application/json" -XPOST 'localhost:9200/bank/account/_bulk?pretty&amp;refresh' --data-binary "@accounts.json"
-curl 'localhost:9200/_cat/indices?v'
-</code></pre>
-</div>
-
-<ul>
-  <li>The search API</li>
-</ul>
-
-<div class="highlighter-rouge"><pre class="highlight"><code># REST request URI
-curl -XGET 'localhost:9200/bank/_search?q=*&amp;sort=account_number:asc&amp;pretty&amp;pretty'
-
-#  REST request body
-curl -XGET 'localhost:9200/bank/_search?pretty' -H 'Content-Type: application/json' -d'
-{
-  "query": { "match_all": {} },
-  "sort": [
-    { "account_number": "asc" }
-  ]
-}
-'
-</code></pre>
-</div>
-
-<ul>
-  <li>Introducing the query language - a JSON-style domain-specific language</li>
-</ul>
-
-<div class="highlighter-rouge"><pre class="highlight"><code># query
-{
-  "query": { "match_all": {} }
-  "size": 1
-
-  "from": 10,
-  "size": 10
-
-  "sort": { "balance": { "order": "desc" } }
-}
-'
-</code></pre>
-</div>
-
-<ul>
-  <li>Executing searches</li>
-</ul>
-
-<div class="highlighter-rouge"><pre class="highlight"><code># Fields
-"_source": ["account_number", "balance"]
-
-# search a specific field
-"query": { "match": { "account_number": 20 } }
-"query": { "match": { "address": "mill" } }
-"query": { "match": { "address": "mill lane" } }
-
-# The bool must clause specifies all the queries that must be true for a document to be considered a match.
-"query": {
-    "bool": {
-      "must": [
-        { "match": { "address": "mill" } },
-        { "match": { "address": "lane" } }
-      ]
-    }
-  }
-
-# The bool should clause specifies a list of queries either of which must be true for a document to be considered a match.
-	"bool": { "should": [] }
-
-# The bool must_not clause specifies a list of queries none of which must be true for a document to be considered a match.
-	"bool": { "must_not": [] }
-
-# Combine must, should, and must_not clauses simultaneously inside a bool query.
-    "bool": {
-      "must": [
-        { "match": { "age": "40" } }
-      ],
-      "must_not": [
-        { "match": { "state": "ID" } }
-      ]
-    }
-</code></pre>
-</div>
-
-<ul>
-  <li>Executing filters</li>
-</ul>
-
-<div class="highlighter-rouge"><pre class="highlight"><code># range query, numeric / date filtering
-{
-  "query": {
-    "bool": {
-      "must": { "match_all": {} },
-      "filter": {
-        "range": {
-          "balance": {
-            "gte": 20000,
-            "lte": 30000
-          }
-        }
-      }
-    }
-  }
-}
-</code></pre>
-</div>
-
-<ul>
-  <li>Executing aggregations</li>
-</ul>
-
-<div class="highlighter-rouge"><pre class="highlight"><code># Groups all the accounts by state, and then returns the top 10 (default) states sorted by count descending (also default)
-{
-  "size": 0,
-  "aggs": {
-    "group_by_state": {
-      "terms": {
-        "field": "state.keyword"
-      }
-    }
-  }
-}
-
-# In SQL, similar in concept to
-SELECT state, COUNT(*) FROM bank GROUP BY state ORDER BY COUNT(*) DESC
-
-# Calculate the average account balance by state.
-      "aggs": {
-        "average_balance": {
-          "avg": {
-            "field": "balance"
-          }
-        }
-       }
-
-# Sort on the average balance in descending order
-		"field": "state.keyword",
-		"order": {
-          "average_balance": "desc"
-        }
-
-# Group by age brackets (ages 20-29, 30-39, and 40-49), then by gender, and then finally get the average account balance, per age bracket, per gender
-{
-  "size": 0,
-  "aggs": {
-    "group_by_age": {
-      "range": {
-        "field": "age",
-        "ranges": [
-          {
-            "from": 20,
-            "to": 30
-          },
-          {
-            "from": 30,
-            "to": 40
-          },
-          {
-            "from": 40,
-            "to": 50
-          }
-        ]
-      },
-      "aggs": {
-        "group_by_gender": {
-          "terms": {
-            "field": "gender.keyword"
-          },
-          "aggs": {
-            "average_balance": {
-              "avg": {
-                "field": "balance"
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}
-</code></pre>
-</div>
-
+    <a href="/life/2017/02/15/Elasticsearch/">Continue reading...</a>
   </div>
   
   <div class="post">
@@ -405,420 +195,9 @@ SELECT state, COUNT(*) FROM bank GROUP BY state ORDER BY COUNT(*) DESC
   <li>How have Earth surface temperatures changed over time?</li>
 </ul>
 
-<h3 id="data-science">Data Science</h3>
-<ol>
-  <li>Ask a question - experience, Kaggle, experts</li>
-  <li>Get the data - scraping, databases, Excel/CSVs</li>
-  <li>Explore - pandas, matplotlib, numpy</li>
-  <li>Model - pandas, sk-learn</li>
-  <li>Communicate - matplotlib, d3.js</li>
-</ol>
 
-<ul>
-  <li>Python 3.6
-    <ul>
-      <li>pandas</li>
-      <li>numpy</li>
-      <li>matplotlib.pyplot: For visualizations, graphs…</li>
-      <li>sklearn.linear_model\LinearRegression</li>
-    </ul>
-  </li>
-  <li>Anaconda</li>
-  <li>Jupyter Notebook</li>
-</ul>
 
-<h4 id="panass">Panass</h4>
-<ul>
-  <li>Python library</li>
-  <li>For data cleaning, analysis, visualization, and other analysis</li>
-  <li>Well-suited for many kinds of data</li>
-  <li>
-    <p>Built upon numpy and integrates well with other libraries</p>
-  </li>
-  <li>Two different data types in Python pandas:
-    <ul>
-      <li>Series
-        <ul>
-          <li>One dimension array-like object</li>
-          <li>Capable of holding any data type</li>
-          <li>Has an index</li>
-        </ul>
-      </li>
-      <li>DataFrame
-        <ul>
-          <li>Two dimensional tabular data structure</li>
-          <li>Capable of holding any/many data types</li>
-          <li>Index and columns</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-</ul>
-
-<h4 id="jupyter-notebook">Jupyter Notebook</h4>
-<ul>
-  <li>Web application</li>
-  <li>Allows live code, visualizations, text</li>
-  <li>Supports over 40 languages, interactive widgets, and big data</li>
-  <li>Can share notebooks</li>
-</ul>
-
-<h3 id="link">Link</h3>
-<ul>
-  <li><a href="https://www.youtube.com/watch?v=POe1cufDWFs&amp;t=2494s">Data Science with Python Pandas by Athena Kan</a></li>
-  <li><a href="https://www.youtube.com/watch?v=5XGycFIe8qE&amp;t=3508s">Introduction to data analytics with Pandas</a></li>
-</ul>
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="/life/2017/01/31/Machine-Learning/">
-        Machine-Learning
-      </a>
-    </h1>
-
-    <span class="post-date">31 Jan 2017</span>
-
-    <h2 id="machine-learning">Machine Learning</h2>
-
-<ul>
-  <li>It deals with developing automatic algorithms
-    <ul>
-      <li>for identifying patterns in complex data and</li>
-      <li>for making prediction based on previous observations.</li>
-      <li>An algorithm takes some inputs and produces some outputs.</li>
-    </ul>
-  </li>
-  <li>Applications include
-    <ul>
-      <li>search engines</li>
-      <li>image recognition: Take in some images, and output text descriptions of what the image contains.</li>
-      <li>speech recognition</li>
-      <li>natural language processing: Process an entire novel and output its themes or topics.</li>
-      <li>Machine Learning algorithms typically fit in either the supervised or unsupervised paradigm.
-        <ul>
-          <li>The process of training our algorithm earlier was called supervised learning. In supervised learning, we label some training data, some inputs, with expected outputs.</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <p>Training data. For example, we can provide many examples of images of horses to an algorithm, to increase its ability to recognize new images of horses, by comparing them.</p>
-  </li>
-  <li>Algorithm:
-    <ul>
-      <li>Nearest Neighbors Classfier</li>
-      <li>Image Classification with Python</li>
-      <li>Test the performance of the algorithm.
-        <ul>
-          <li>Not access to the entire database, rather than split the original data set into multiple subsets.</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <p>Much like the way humans learn, also machine learning algorithm gets better with the amount of training sets they have access to.</p>
-  </li>
-  <li>Dimensional
-    <ul>
-      <li>Lineland</li>
-      <li>Flatland</li>
-      <li>Spaceland:Three-dimensional</li>
-      <li>N dimensional space</li>
-      <li>In our case, we live in a three-dimensional space, but we can similarly map points to spaces with even more dimensions. Convert everything into some points in space.</li>
-    </ul>
-  </li>
-  <li>Distance
-    <ul>
-      <li>There was a notion of point and distance in a higher-dimensional space.</li>
-      <li>Once we figured that out and we code it up in Python. The same distance function that works with two-dimensional points equally works with 64-dimensional points and higher.</li>
-      <li>Python doesn’t care about the dimension. It computes the distance, finds the minimum distance and the label for that point.</li>
-    </ul>
-  </li>
-  <li>97% of correct - five lines of code. It’s rather surprising, isn’t it?</li>
-</ul>
-
-<p><a href="http://cs231n.github.io/">Stanford CS class CS231n: Convolutional Neural Networks for Visual Recognition. </a></p>
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="/life/2017/01/10/Docker/">
-        Docker
-      </a>
-    </h1>
-
-    <span class="post-date">10 Jan 2017</span>
-
-    <h2 id="containers">Containers</h2>
-
-<ul>
-  <li>
-    <p>Docker-new development environment: No installation / Dockerfile / Build</p>
-  </li>
-  <li>
-    <p>Define a container with a Dockerfile. Dockerfile will define what goes on in the environment inside your container.</p>
-  </li>
-</ul>
-
-<h3 id="setup--docker-run-hello-world">Setup <code class="highlighter-rouge">$ docker run hello-world</code></h3>
-
-<h3 id="get-started">Get Started</h3>
-
-<ul>
-  <li><code class="highlighter-rouge">$ docker build -t name .</code> <code class="highlighter-rouge">$ docker images</code> <code class="highlighter-rouge">$ docker run -p 4000:80 name</code></li>
-  <li><code class="highlighter-rouge">$ docker run -p 4000:80 name</code> <code class="highlighter-rouge">http://localhost:4000 / $ curl http://localhost:4000</code></li>
-  <li>
-    <p><code class="highlighter-rouge">docker run -p 80:80 username/repo:tag</code> <code class="highlighter-rouge">http://localhost/</code></p>
-  </li>
-  <li>Run the app in the background, in detached mode: <code class="highlighter-rouge">docker run -d -p 4000:80 friendlyhello</code> See abbreviated container ID: <code class="highlighter-rouge">docker container ls</code> End th eprocess: <code class="highlighter-rouge">docker container stop &lt;Container ID&gt;</code></li>
-</ul>
-
-<h3 id="tag--publish-the-image">Tag / Publish the image</h3>
-<ul>
-  <li><code class="highlighter-rouge">docker tag image username/repository:tag</code> <code class="highlighter-rouge">$ docker images</code></li>
-  <li><code class="highlighter-rouge">docker push username/repository:tag</code></li>
-  <li>From now on, you can use docker run and run your app on any machine with this command: <code class="highlighter-rouge">docker run -p 4000:80 username/repository:tag </code></li>
-</ul>
-
-<h3 id="git-database">Git database</h3>
-
-<ul>
-  <li>
-    <p>Git tree <code class="highlighter-rouge">~/Library/Containers/com.docker.docker/Data</code> <code class="highlighter-rouge">com.docker.driver.amd64-linux</code></p>
-  </li>
-  <li>
-    <p><code class="highlighter-rouge">$ docker info</code> <code class="highlighter-rouge">$ docker info | grep Proxy</code></p>
-  </li>
-  <li>
-    <p>Fuck</p>
-
-    <p># Set proxy server, replace host:port with values for your servers
-  <code class="highlighter-rouge">ENV http_proxy socks5://127.0.0.1:1080</code>
-  <code class="highlighter-rouge">ENV https_proxy socks5://127.0.0.1:1080</code></p>
-  </li>
-</ul>
-
-<h2 id="docker-services">Docker-Services</h2>
-
-<ul>
-  <li>
-    <p>In a distributed application, different pieces of the app are called “services.” Services are really just “containers in production.”</p>
-  </li>
-  <li>
-    <p>Scaling a service changes the number of container instances running that piece of software, assigning more computing resources to the service in the process.</p>
-  </li>
-  <li>
-    <p>Define, run, and scale services with the Docker platform – just write a <code class="highlighter-rouge">docker-compose.yml</code></p>
-  </li>
-  <li>
-    <p>Run the new load-balanced app: <code class="highlighter-rouge">docker swarm init</code></p>
-
-    <p>Swarm initialized: current node (su2np68tvril4xcjp20odfbyt) is now a manager.</p>
-
-    <p>To add a worker to this swarm, run the following command:</p>
-
-    <p>docker swarm join –token SWMTKN-1-3tp2gkfp3a4yxp93tf0ozz62isazfbvoldtsusdo06dk725wgq-4eleytibu50vbcnlx8v61b9nq 192.168.65.2:2377</p>
-
-    <p>To add a manager to this swarm, run ‘docker swarm join-token manager’ and follow the instructions.</p>
-  </li>
-  <li>
-    <p><code class="highlighter-rouge">docker stack deploy -c docker-compose.yml appname</code> <code class="highlighter-rouge">docker service ls</code> List the tasks for the service: <code class="highlighter-rouge">docker service ps getstartedlab_web</code> <code class="highlighter-rouge">docker container ls -q</code></p>
-  </li>
-  <li>
-    <p>Run <code class="highlighter-rouge">curl -4 http://localhost</code> or visit that URL in the browser. Either way, the  container ID wil change, demonstrating the load-balancing; with each request, one of the 5 tasks is chosen, in a round-robin fashion, to respond. The container IDs will match your output from the previous command (docker container ls -q).</p>
-  </li>
-</ul>
-
-<h3 id="take-down-the-app-and-the-swarm">Take down the app and the swarm</h3>
-
-<ul>
-  <li>Take the app down with <code class="highlighter-rouge">docker stack rm &lt;appName&gt;</code></li>
-  <li>Take down the swarm <code class="highlighter-rouge">docker swarm leave --force</code></li>
-</ul>
-
-<h2 id="swarms">Swarms</h2>
-<ul>
-  <li>
-    <p>A swarm is a group of machines that are running Docker and joined into a cluster. Join multiple machines into a “Dockerized” cluster called a swarm.</p>
-  </li>
-  <li>
-    <p>Deploy this app onto a cluster, running it on multiple machines.</p>
-  </li>
-</ul>
-
-<h2 id="set-up-the-swarm">Set up the swarm</h2>
-<ul>
-  <li>
-    <p>Create a cluster / two VMs</p>
-
-    <div class="highlighter-rouge"><pre class="highlight"><code> $ docker-machine create --driver virtualbox myvm1
- Running pre-create checks...
- (myvm1) No default Boot2Docker ISO found locally, downloading the latest release...
- (myvm1) Latest release for github.com/boot2docker/boot2docker is v17.10.0-ce
- (myvm1) Downloading /Users/william/.docker/machine/cache/boot2docker.iso from https://github.com/boot2docker/boot2docker/releases/download/v17.10.0-ce/boot2docker.iso...
- (myvm1) 0%....10%....20%....30%....40%....50%....60%....70%....80%....90%....100%
- Creating machine...
- (myvm1) Copying /Users/william/.docker/machine/cache/boot2docker.iso to /Users/william/.docker/machine/machines/myvm1/boot2docker.iso...
- (myvm1) Creating VirtualBox VM...
- (myvm1) Creating SSH key...
- (myvm1) Starting the VM...
- (myvm1) Check network to re-create if needed...
- (myvm1) Found a new host-only adapter: "vboxnet0"
- (myvm1) Waiting for an IP...
- Waiting for machine to be running, this may take a few minutes...
- Detecting operating system of created instance...
- Waiting for SSH to be available...
- Detecting the provisioner...
- Provisioning with boot2docker...
- Copying certs to the local machine directory...
- Copying certs to the remote machine...
- Setting Docker configuration on the remote daemon...
- Checking connection to Docker...
- Docker is up and running!
- To see how to connect your Docker Client to the Docker Engine running on this virtual machine, run: docker-machine env myvm1
-</code></pre>
-    </div>
-  </li>
-  <li>List the VMS and get their IP: <code class="highlighter-rouge">docker-machine ls</code></li>
-  <li>
-    <p>Initialize the swarm and add nodes:</p>
-
-    <div class="highlighter-rouge"><pre class="highlight"><code> $ docker-machine ssh myvm1 "docker swarm init --advertise-addr 192.168.99.100"
- Swarm initialized: current node (m5ddcbmwk63e2ao182szg8vfq) is now a manager.
-
- To add a worker to this swarm, run the following command:
-
- docker swarm join --token SWMTKN-1-4qgigh1juhts0mqfn2kgpxxm1cmt4a5ymow4zah4vrhhlb4tot-82oa8jfmzf6v130ow1dsief73 192.168.99.100:2377
-
- To add a manager to this swarm, run 'docker swarm join-token manager' and follow the instructions.
-</code></pre>
-    </div>
-
-    <div class="highlighter-rouge"><pre class="highlight"><code> $ docker-machine ssh myvm2 "docker swarm join --token SWMTKN-1-4qgigh1juhts0mqfn2kgpxxm1cmt4a5ymow4zah4vrhhlb4tot-82oa8jfmzf6v130ow1dsief73 192.168.99.100:2377"
- This node joined a swarm as a worker.
-</code></pre>
-    </div>
-  </li>
-  <li>View the nodes in the first swarm <code class="highlighter-rouge">docker-machine ssh myvm1 "docker node ls"</code></li>
-</ul>
-
-<h2 id="deploy-the-app-on-the-swarm-cluster">Deploy the app on the swarm cluster</h2>
-
-<ul>
-  <li>
-    <p>Configure a <code class="highlighter-rouge">docker-machine</code> shell to the swarm manager. Run <code class="highlighter-rouge">docker-machine env myvm1</code> to get the command to configure the shell to talk to myvm1.</p>
-
-    <div class="highlighter-rouge"><pre class="highlight"><code>  $ docker-machine env myvm1
-  export DOCKER_TLS_VERIFY="1"
-  export DOCKER_HOST="tcp://192.168.99.100:2376"
-  export DOCKER_CERT_PATH="/Users/william/.docker/machine/machines/myvm1"
-  export DOCKER_MACHINE_NAME="myvm1"
-  # Run this command to configure your shell:
-  # eval $(docker-machine env myvm1)
-</code></pre>
-    </div>
-  </li>
-</ul>
-
-<h2 id="deploy-the-app-on-the-swarm-manager">Deploy the app on the swarm manager:</h2>
-<ul>
-  <li><code class="highlighter-rouge">docker stack deploy -c docker-compose.yml getstartedlab</code></li>
-  <li><code class="highlighter-rouge">$ docker stack ps getstartedlab</code></li>
-</ul>
-
-<h2 id="accessing-the-cluster">Accessing the cluster:</h2>
-<p>-The network we created is shared between them and load-balancing. We can access the app from the IP address of either myvm1 or myvm2.</p>
-
-<h2 id="cleanup-and-reboot">Cleanup and reboot</h2>
-
-<ul>
-  <li>Tear down the stack <code class="highlighter-rouge">docker stack rm getstartedlab</code></li>
-  <li>Remove swarm <code class="highlighter-rouge">docker-machine ssh myvm2 "docker swarm leave"</code> on the worker and <code class="highlighter-rouge">docker-machine ssh myvm1 "docker swarm leave --force"</code> on the manager.</li>
-  <li>Unsetting docker-machine shell variable settings <code class="highlighter-rouge">eval $(docker-machine env -u)</code></li>
-</ul>
-
-<h2 id="stacks">Stacks</h2>
-<ul>
-  <li>
-    <p>A stack is a group of interrelated services that share dependencies, and can be orchestrated and scaled together.</p>
-  </li>
-  <li>
-    <p>Add a free visualizer service that lets us look at how the swarm is scheduling containers.</p>
-  </li>
-  <li>Persist the data, add a Redis database for storing app data.
-    <ul>
-      <li>Add a Redis service.</li>
-      <li>Store data. Create a <code class="highlighter-rouge">./data</code> directory on the manager: <code class="highlighter-rouge">docker-machine ssh myvm1 "mkdir ./data"</code></li>
-    </ul>
-  </li>
-  <li>Deploy and verify that the three services are running as expected.</li>
-</ul>
-
-<h2 id="link">Link</h2>
-
-<ul>
-  <li><a href="https://www.vultr.com/docs/installing-docker-ce-on-centos-7">Installing Docker CE on CentOS 7</a></li>
-</ul>
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="/life/2017/01/09/Regular-Expressions/">
-        Regular Expressions
-      </a>
-    </h1>
-
-    <span class="post-date">09 Jan 2017</span>
-
-    <h2 id="phps-regular-expressions-support">PHP’s Regular Expressions Support</h2>
-
-<ul>
-  <li><a href="https://github.com/ambuilding/LevelUp/blob/master/regex.php">PHP’s Regular Expressions Support(github-regex.php)</a></li>
-</ul>
-
-<h2 id="character-sets">Character Sets</h2>
-
-<ul>
-  <li><code class="highlighter-rouge">/[w]{3}/</code> <code class="highlighter-rouge">/[w]{3,5}/</code> <code class="highlighter-rouge">/[w]*/</code> <code class="highlighter-rouge">/[w]+/</code> <code class="highlighter-rouge">/[w]?/</code> <code class="highlighter-rouge">/www\.([^\.]+)/</code></li>
-</ul>
-
-<h2 id="greediness">Greediness</h2>
-
-<ul>
-  <li><code class="highlighter-rouge">/@(\w+)/</code> <code class="highlighter-rouge">&lt;a href="https://www.dniya.com/$1"&gt;$1&lt;/a&gt;</code> <code class="highlighter-rouge">[a-zA-Z0-9_]</code></li>
-</ul>
-
-<h2 id="lookaheads-and-lookbehinds">Lookaheads and Lookbehinds</h2>
-
-<ul>
-  <li><code class="highlighter-rouge">/google(?=&lt;)/i</code> <code class="highlighter-rouge">/google(?!&lt;)/i</code> <code class="highlighter-rouge">(?=string) (?!string) (?&lt;=string) (?&lt;!string)</code></li>
-</ul>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>$string = '$name = "Dniya"; My name is Dniya.';
-
-$result = preg_replace('/(?&lt;=\$)name/', 'VARIABLE', $string);
-
-var_dump($result);
-</code></pre>
-</div>
-
-<h2 id="link">Link</h2>
-<ul>
-  <li>
-    <p><a href="https://regexr.com/">RegExr is an online tool to learn, build, &amp; test Regular Expressions (RegEx / RegExp):</a> https://regexr.com/</p>
-  </li>
-  <li>
-    <p><a href="http://www.phpliveregex.com">A live regular expression tester for PHP:</a> http://www.phpliveregex.com</p>
-  </li>
-  <li>
-    <p>https://regexper.com</p>
-  </li>
-</ul>
-
+    <a href="/life/2017/02/01/Python-Pandas-Climate-Change/">Continue reading...</a>
   </div>
   
 </div>

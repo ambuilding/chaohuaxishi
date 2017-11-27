@@ -5,6 +5,9 @@ title: AWS Amazon web service
 
 ## Hello
 
+### RDS
+- Connect to the database / Sequel Pro / Security group add rule
+
 - Elastic beanstalk
 - AWS Security Credentials
   - Root vs. IAM User Credentials
@@ -38,3 +41,4 @@ title: AWS Amazon web service
 - A cache cluster in ElasiCache
 
 - Best practices and Usage patterns
+- [Getting Started with Amazon ElastiCache](https://aws.amazon.com/elasticache/getting-started/)

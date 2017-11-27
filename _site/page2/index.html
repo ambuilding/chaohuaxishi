@@ -60,7 +60,17 @@
       
     
       
+        
+          <a class="sidebar-nav-item" href="/life/archive/">Archive</a>
+        
+      
     
+      
+    
+      
+    
+      
+        
       
     
       
@@ -70,6 +80,12 @@
       
         
           <a class="sidebar-nav-item" href="/life/resume/">Resume</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/life/tags/">Tags</a>
         
       
     
@@ -101,6 +117,96 @@
 
       <div class="container content">
         <div class="posts">
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/life/2017/01/31/Machine-Learning/">
+        Machine-Learning
+      </a>
+    </h1>
+
+    <span class="post-date">31 Jan 2017</span>
+
+    <h2 id="machine-learning">Machine Learning</h2>
+
+
+
+    <a href="/life/2017/01/31/Machine-Learning/">Continue reading...</a>
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/life/2017/01/10/Docker/">
+        Docker
+      </a>
+    </h1>
+
+    <span class="post-date">10 Jan 2017</span>
+
+    <h2 id="containers">Containers</h2>
+
+
+
+    <a href="/life/2017/01/10/Docker/">Continue reading...</a>
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/life/2017/01/09/Regular-Expressions/">
+        Regular Expressions
+      </a>
+    </h1>
+
+    <span class="post-date">09 Jan 2017</span>
+
+    <h2 id="phps-regular-expressions-support">PHP’s Regular Expressions Support</h2>
+
+<ul>
+  <li><a href="https://github.com/ambuilding/LevelUp/blob/master/regex.php">PHP’s Regular Expressions Support(github-regex.php)</a></li>
+</ul>
+
+<h2 id="character-sets">Character Sets</h2>
+
+<ul>
+  <li><code class="highlighter-rouge">/[w]{3}/</code> <code class="highlighter-rouge">/[w]{3,5}/</code> <code class="highlighter-rouge">/[w]*/</code> <code class="highlighter-rouge">/[w]+/</code> <code class="highlighter-rouge">/[w]?/</code> <code class="highlighter-rouge">/www\.([^\.]+)/</code></li>
+</ul>
+
+<h2 id="greediness">Greediness</h2>
+
+<ul>
+  <li><code class="highlighter-rouge">/@(\w+)/</code> <code class="highlighter-rouge">&lt;a href="https://www.dniya.com/$1"&gt;$1&lt;/a&gt;</code> <code class="highlighter-rouge">[a-zA-Z0-9_]</code></li>
+</ul>
+
+<h2 id="lookaheads-and-lookbehinds">Lookaheads and Lookbehinds</h2>
+
+<ul>
+  <li><code class="highlighter-rouge">/google(?=&lt;)/i</code> <code class="highlighter-rouge">/google(?!&lt;)/i</code> <code class="highlighter-rouge">(?=string) (?!string) (?&lt;=string) (?&lt;!string)</code></li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$string = '$name = "Dniya"; My name is Dniya.';
+
+$result = preg_replace('/(?&lt;=\$)name/', 'VARIABLE', $string);
+
+var_dump($result);
+</code></pre>
+</div>
+
+<h2 id="link">Link</h2>
+<ul>
+  <li>
+    <p><a href="https://regexr.com/">RegExr is an online tool to learn, build, &amp; test Regular Expressions (RegEx / RegExp):</a> https://regexr.com/</p>
+  </li>
+  <li>
+    <p><a href="http://www.phpliveregex.com">A live regular expression tester for PHP:</a> http://www.phpliveregex.com</p>
+  </li>
+  <li>
+    <p>https://regexper.com</p>
+  </li>
+</ul>
+
+
+    <a href="/life/2017/01/09/Regular-Expressions/">Continue reading...</a>
+  </div>
   
   <div class="post">
     <h1 class="post-title">
@@ -151,6 +257,8 @@ $ curl -I https://31.13.95.36/
 </code></pre>
 </div>
 
+
+    <a href="/life/2017/01/08/RESTful-APIs/">Continue reading...</a>
   </div>
   
   <div class="post">
@@ -188,142 +296,15 @@ $ curl -I https://31.13.95.36/
 
 <h2 id="how-to-set-up-a-firewall-using-firewalld-on-centos-7"><a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-using-firewalld-on-centos-7">How To Set Up a Firewall Using FirewallD on CentOS 7</a></h2>
 
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="/life/2017/01/02/Virtual-Private-Network/">
-        Virtual private network
-      </a>
-    </h1>
 
-    <span class="post-date">02 Jan 2017</span>
-
-    <h2 id="virtual-private-network">Virtual private network</h2>
-
-<p>It redirects your connection to the Internet via a remote server run by a VPN provider. The VPN server becomes secure launching pad for you before you access various websites.</p>
-
-<p><img src="https://s1.nordcdn.com/nordvpn/3.15.0/images/global/illustrations/schemes/vpn-scheme.svg" alt="vpn-scheme" />
-<small>1. Your device; 2. Encrypted VPN tunnel; 3. The Internet</small></p>
-
-<p>All the network traffic between your device and the VPN server is directed through a secure virtual tunnel. All of the data sent and received is encrypted. Your device appears to have the IP address of the VPN server, protecting your true identity. You’re browsing from the server’s geographical location, not your computer’s location.</p>
-
-<h2 id="how-does-it-work">How does it work?</h2>
-
-<p>Usually, when you connect to the Internet, you start by connecting to your ISP, which then redirects you to any websites or applications that you wish to visit. All your Internet traffic can be viewed by your ISP as it passes through their servers.</p>
-
-<p>If you have VPN enabled, you first connect to a server run by your VPN provider through an encrypted connection, which is also called a VPN tunnel. All data traveling between your device and the VPN server is encrypted so that only you and the server can see it.</p>
-
-<h2 id="what-happens-when-you-connect-to-it">What happens when you connect to it?</h2>
-<ul>
-  <li>Your ISP no longer knows what you do on the Internet.</li>
-  <li>Your IP address is replaced with the IP of the VPN server.</li>
-  <li>Your Internet traffic is safe on public Wi-Fi hotspots</li>
-</ul>
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="/life/2017/01/01/SSH-VPS/">
-        SSH VPS
-      </a>
-    </h1>
-
-    <span class="post-date">01 Jan 2017</span>
-
-    <h2 id="ssh">SSH</h2>
-
-<h3 id="generate-ssh-key"><a href="https://www.vultr.com/docs/how-do-i-generate-ssh-keys">Generate SSH Key</a></h3>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>`ssh-keygen -t rsa -b 4096`
-`cat ~/.ssh/id_rsa.pub` backup
-`ssh-copy-id user@&lt;host&gt;`
-`ssh -i /path/to/id_rsa user@x.x.x.x`
-</code></pre>
-</div>
-
-<h3 id="ssh-basic-usage-secure-shell"><a href="https://abcdabcd987.com/ssh/">SSH Basic Usage Secure Shell</a></h3>
-
-<h2 id="vps">VPS</h2>
-
-<ul>
-  <li>Test downloads speed.</li>
-</ul>
-
-<h2 id="bbr">BBR</h2>
-
-<div class="highlighter-rouge"><pre class="highlight"><code># wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh
-# chmod +x bbr.sh
-# ./bbr.sh
-</code></pre>
-</div>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>`uname -r`
-`sysctl net.ipv4.tcp_available_congestion_control`
-`sysctl net.ipv4.tcp_congestion_control`
-`sysctl net.core.default_qdisc`
-`lsmod | grep bbr`
-</code></pre>
-</div>
-
-<h2 id="shadowsocksr">ShadowsocksR</h2>
-
-<ul>
-  <li><a href="https://github.com/shadowsocks/ShadowsocksX-NG/releases">ShadowsocksX-NG</a></li>
-  <li><a href="https://github.com/shadowsocks/shadowsocks-android/releases">Android</a></li>
-</ul>
-
-<div class="highlighter-rouge"><pre class="highlight"><code># wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocksR.sh
-# chmod +x shadowsocksR.sh
-# ./shadowsocksR.sh 2&gt;&amp;1 | tee shadowsocksR.log
-</code></pre>
-</div>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>`/etc/init.d/shadowsocks start`
-`/etc/init.d/shadowsocks stop`
-`/etc/init.d/shadowsocks restart`
-`/etc/init.d/shadowsocks status`
-</code></pre>
-</div>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>配置文件路径：/etc/shadowsocks.json
-日志文件路径：/var/log/shadowsocks.log
-代码安装目录：/usr/local/shadowsocks
-Uninstall: ./shadowsocksR.sh uninstall
-</code></pre>
-</div>
-
-<p><img src="http://upload-images.jianshu.io/upload_images/9485-b0d99d196d019ec3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" />
-<a href="http://vc2tea.com/whats-shadowsocks/">Why</a></p>
-
-<h3 id="连接-vps">连接 VPS</h3>
-<ul>
-  <li>Windows: SSH 客户端（Tunnelier）; Mac: SSH 客户端(Issh): <code class="highlighter-rouge">ssh root@&lt;host&gt;</code>.</li>
-</ul>
-
-<h3 id="技巧">技巧：</h3>
-<p>分享同一个 SSH 代理， 四步新建一受限 VPS 用户:</p>
-<ol>
-  <li>
-    <p>登录 VPS: <code class="highlighter-rouge">SSH root@&lt;host&gt;</code></p>
-  </li>
-  <li>
-    <p>创建一个用户组：<code class="highlighter-rouge">groupadd hahaha</code>  //“hahaha”可替换成任意名字。</p>
-  </li>
-  <li>
-    <p>创建受限用户：<code class="highlighter-rouge">useradd -d /home/dotcom -m -g hahaha -s /bin/false dotcom</code>
-以上命令将会在 “hahaha” 创建一个新的 SSH 用户 “dotcom”，该用户只能使用 SSH 代理，不能登录你的 VPS 帐户。</p>
-  </li>
-</ol>
-
+    <a href="/life/2017/01/07/Linux-Man/">Continue reading...</a>
   </div>
   
 </div>
 
 <div class="pagination">
   
-    <span class="pagination-item older">Older</span>
+    <a class="pagination-item older" href="/life/page3">Older</a>
   
   
     

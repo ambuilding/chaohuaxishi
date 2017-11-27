@@ -4,13 +4,108 @@
  <title>Zhao Hua Xi Shi</title>
  <link href="http://localhost:4000/life/atom.xml" rel="self"/>
  <link href="http://localhost:4000/life/"/>
- <updated>2017-11-22T23:41:12+08:00</updated>
+ <updated>2017-11-27T17:34:59+08:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Wo</name>
    <email>explorewo@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Elasticsearch-PHP</title>
+   <link href="http://localhost:4000/2017/03/06/Elasticsearch-PHP/"/>
+   <updated>2017-03-06T00:00:00+08:00</updated>
+   <id>http://localhost:4000/life/2017/03/06/Elasticsearch-PHP</id>
+   <content type="html">&lt;h3 id=&quot;hi&quot;&gt;Hi&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Index a document: index, type, id and a document body.&lt;/li&gt;
+  &lt;li&gt;Configuration&lt;/li&gt;
+  &lt;li&gt;Elasticsearch-PHP uses an interchangeable HTTP transport layer called RingPHP.&lt;/li&gt;
+  &lt;li&gt;“future” or “async” mode. &lt;code class=&quot;highlighter-rouge&quot;&gt;'future' =&amp;gt; 'lazy'&lt;/code&gt; PHP is fundamentally single-threaded, however libcurl provides functionality called the “multi interface”.  With the multi interface, the time to execute n requests is the latency of the slowest request. Furthermore, the multi-interface allows requests to different hosts simultaneously, which means the Elasticsearch-PHP client can more effectively utilize your full cluster.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;link&quot;&gt;Link&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.elastic.co/guide/en/elasticsearch/client/php-api/current/index.html&quot;&gt;Elasticsearch-PHP&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>AWS Amazon web service</title>
+   <link href="http://localhost:4000/2017/03/01/AWS-Amazon-web-service/"/>
+   <updated>2017-03-01T00:00:00+08:00</updated>
+   <id>http://localhost:4000/life/2017/03/01/AWS-Amazon-web-service</id>
+   <content type="html">&lt;h2 id=&quot;hello&quot;&gt;Hello&lt;/h2&gt;
+
+&lt;h3 id=&quot;rds&quot;&gt;RDS&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Connect to the database / Sequel Pro / Security group add rule&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Elastic beanstalk&lt;/li&gt;
+  &lt;li&gt;AWS Security Credentials
+    &lt;ul&gt;
+      &lt;li&gt;Root vs. IAM User Credentials&lt;/li&gt;
+      &lt;li&gt;Access keys sign programmatic requests / CLIs&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Creating IAM users (Console)
+    &lt;ul&gt;
+      &lt;li&gt;Create group&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;.ebextensions
+    &lt;ul&gt;
+      &lt;li&gt;config/container_commands&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;cli&quot;&gt;CLI&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;ssh
+    &lt;ul&gt;
+      &lt;li&gt;ssh -i&lt;/li&gt;
+      &lt;li&gt;Key pairs&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;link&quot;&gt;Link&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://aws.amazon.com/elasticbeanstalk/&quot;&gt;elasticbeanstalk&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://deliciousbrains.com/scaling-laravel-using-aws-elastic-beanstalk-part-3-setting-elastic-beanstalk/&quot;&gt;Laravel / Setting up Elastic Beanstalk&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://blog.mallow-tech.com/2016/03/deploying-laravel-applications-using-aws-elastic-beanstalk/&quot;&gt;Deploying Laravel applications using AWS Elastic Beanstalk&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://blog.goforyt.com/laravel-5-aws-elastic-beanstalk-production-guide/&quot;&gt;Laravel 5 on AWS Elastic Beanstalk – Production Guide&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customize-environment-resources-elasticache.html#customize-environment-resources-elasticache-targetedvpc&quot;&gt;Example Snippets: ElastiCache / Redis&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;elasicache&quot;&gt;ElasiCache&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;A cache cluster in ElasiCache&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Best practices and Usage patterns&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://aws.amazon.com/elasticache/getting-started/&quot;&gt;Getting Started with Amazon ElastiCache&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Kibana</title>
+   <link href="http://localhost:4000/2017/02/17/Kibana/"/>
+   <updated>2017-02-17T00:00:00+08:00</updated>
+   <id>http://localhost:4000/life/2017/02/17/Kibana</id>
+   <content type="html">
+</content>
+ </entry>
  
  <entry>
    <title>Elasticsearch</title>
@@ -294,6 +389,15 @@ SELECT state, COUNT(*) FROM bank GROUP BY state ORDER BY COUNT(*) DESC
 }
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
+
+&lt;h3 id=&quot;link&quot;&gt;Link&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.elastic.co/guide/en/elasticsearch/reference/current/getting-started.html&quot;&gt;Elasticsearch Reference [6.0]&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.elastic.co/start&quot;&gt;Starting Elasticsearch / Kibana / X-Pack&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.ruanyifeng.com/blog/2017/08/elasticsearch.html&quot;&gt;ruanyifeng&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.jianshu.com/p/05cff717563c&quot;&gt;http://www.jianshu.com/p/05cff717563c&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </content>
  </entry>
  

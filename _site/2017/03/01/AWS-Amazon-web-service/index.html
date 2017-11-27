@@ -13,7 +13,7 @@
 
   <title>
     
-      Linux Man &middot; Zhao Hua Xi Shi
+      AWS Amazon web service &middot; Zhao Hua Xi Shi
     
   </title>
 
@@ -117,33 +117,65 @@
 
       <div class="container content">
         <div class="post">
-  <h1 class="post-title">Linux Man</h1>
-  <span class="post-date">07 Jan 2017</span>
-  <h2 id="linux-man">Linux Man</h2>
+  <h1 class="post-title">AWS Amazon web service</h1>
+  <span class="post-date">01 Mar 2017</span>
+  <h2 id="hello">Hello</h2>
 
-<h3 id="install-net-tools-command-in-centos-7--rhel-7"><a href="https://www.ostechnix.com/linux-troubleshooting-netstat-command-not-found-in-centos-7-rhel-7/">Install net-tools command in CentOS 7 / RHEL 7</a></h3>
+<h3 id="rds">RDS</h3>
+<ul>
+  <li>
+    <p>Connect to the database / Sequel Pro / Security group add rule</p>
+  </li>
+  <li>Elastic beanstalk</li>
+  <li>AWS Security Credentials
+    <ul>
+      <li>Root vs. IAM User Credentials</li>
+      <li>Access keys sign programmatic requests / CLIs</li>
+    </ul>
+  </li>
+  <li>Creating IAM users (Console)
+    <ul>
+      <li>Create group</li>
+    </ul>
+  </li>
+  <li>.ebextensions
+    <ul>
+      <li>config/container_commands</li>
+    </ul>
+  </li>
+</ul>
 
-<p>First, we should find out which package provides ‘netstat’ command.</p>
+<h2 id="cli">CLI</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>`# yum provides */netstat`
-`# yum whatprovides */netstat`
+<ul>
+  <li>ssh
+    <ul>
+      <li>ssh -i</li>
+      <li>Key pairs</li>
+    </ul>
+  </li>
+</ul>
 
-`# yum install net-tools`
+<h2 id="link">Link</h2>
+<ul>
+  <li><a href="https://aws.amazon.com/elasticbeanstalk/">elasticbeanstalk</a></li>
+  <li><a href="https://deliciousbrains.com/scaling-laravel-using-aws-elastic-beanstalk-part-3-setting-elastic-beanstalk/">Laravel / Setting up Elastic Beanstalk</a></li>
+  <li><a href="http://blog.mallow-tech.com/2016/03/deploying-laravel-applications-using-aws-elastic-beanstalk/">Deploying Laravel applications using AWS Elastic Beanstalk</a></li>
+  <li>
+    <p><a href="http://blog.goforyt.com/laravel-5-aws-elastic-beanstalk-production-guide/">Laravel 5 on AWS Elastic Beanstalk – Production Guide</a></p>
+  </li>
+  <li><a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customize-environment-resources-elasticache.html#customize-environment-resources-elasticache-targetedvpc">Example Snippets: ElastiCache / Redis</a></li>
+</ul>
 
-`# netstat`
-</code></pre>
-</div>
+<h2 id="elasicache">ElasiCache</h2>
 
-<h2 id="how-to-open-a-port-in-the-firewall-on-centos-or-rhel"><a href="http://ask.xmodulo.com/open-port-firewall-centos-rhel.html">How to open a port in the firewall on CentOS or RHEL</a></h2>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>`# iptables -L`
-`# firewall-cmd --zone=public --add-port=80/tcp --permanent`
-`# firewall-cmd --reload`
-`# firewall-cmd --list-all`
-</code></pre>
-</div>
-
-<h2 id="how-to-set-up-a-firewall-using-firewalld-on-centos-7"><a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-using-firewalld-on-centos-7">How To Set Up a Firewall Using FirewallD on CentOS 7</a></h2>
+<ul>
+  <li>
+    <p>A cache cluster in ElasiCache</p>
+  </li>
+  <li>Best practices and Usage patterns</li>
+  <li><a href="https://aws.amazon.com/elasticache/getting-started/">Getting Started with Amazon ElastiCache</a></li>
+</ul>
 
 </div>
 
@@ -162,18 +194,18 @@
     
       <li>
         <h3>
-          <a href="/life/2017/03/01/AWS-Amazon-web-service/">
-            AWS Amazon web service
-            <small>01 Mar 2017</small>
+          <a href="/life/2017/02/17/Kibana/">
+            Kibana
+            <small>17 Feb 2017</small>
           </a>
         </h3>
       </li>
     
       <li>
         <h3>
-          <a href="/life/2017/02/17/Kibana/">
-            Kibana
-            <small>17 Feb 2017</small>
+          <a href="/life/2017/02/15/Elasticsearch/">
+            Elasticsearch
+            <small>15 Feb 2017</small>
           </a>
         </h3>
       </li>
