@@ -5,6 +5,8 @@ title: Elasticsearch-PHP
 
 ### Hi
 
+- `composer require elasticsearch/elasticsearch`
+
 - Index a document: index, type, id and a document body.
 - Configuration
 - Elasticsearch-PHP uses an interchangeable HTTP transport layer called RingPHP.
@@ -16,17 +18,8 @@ title: Elasticsearch-PHP
 
 ### Link
 - [Elasticsearch-PHP](https://www.elastic.co/guide/en/elasticsearch/client/php-api/current/index.html)
+- [How to integrate your Laravel app with Elasticsearch](https://blog.madewithlove.be/post/how-to-integrate-your-laravel-app-with-elasticsearch/)
 - [Laravel scout customer driven](https://gist.github.com/lukepolo/b63d303b076a7cd58bbaa54b3b9f0370)
+- [ErickTamayo/laravel-scout-elastic](https://github.com/ErickTamayo/laravel-scout-elastic)
 - [lukepolo](https://github.com/lukepolo)
 
-
-
-### Text search
-- Analyze
-  - tokens breakdown of the text. (By word)
-  - query: term and match
-- Link
-  - [Basic understanding of text search in elasticsearch](https://blog.madewithlove.be/post/basic-understanding-of-text-search/)
-  - [Analyze-Doc](https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-analyze.html)
-  - [Validate API](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-validate.html#search-validate)
-  - [Strings are dead, long live strings!](https://www.elastic.co/blog/strings-are-dead-long-live-strings)

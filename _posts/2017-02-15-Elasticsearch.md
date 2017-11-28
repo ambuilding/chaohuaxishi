@@ -3,7 +3,7 @@ layout: post
 title: Elasticsearch
 ---
 
-## Getting started
+### Getting started
 - Elasticsearch is a highly scalable open-source full-text search and analytics engine. It allows us to store, search, and analyze big volumes of data quickly and in near real time. (Log and search)
 
 ### Foundation
@@ -267,11 +267,19 @@ SELECT state, COUNT(*) FROM bank GROUP BY state ORDER BY COUNT(*) DESC
 
 
 ### Text search
+- Analyze
+- tokens breakdown of the text. (By word)
+- query: term and match
 
-- Analyzers
-  - split the string into chunks (tokenizing)
-  - apply some formatting on each of those tokens (lowercasing, convert special chars, …)
-  - the default behavior is described by the standard analyzer. It will split the texts by word and those words will be lowercased.
+- split the string into chunks (tokenizing)
+- apply some formatting on each of those tokens (lowercasing, convert special chars, …)
+- the default behavior is described by the standard analyzer. It will split the texts by word and those words will be lowercased.
+
+- Link
+  - [Basic understanding of text search in elasticsearch](https://blog.madewithlove.be/post/basic-understanding-of-text-search/)
+  - [Analyze-Doc](https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-analyze.html)
+  - [Validate API](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-validate.html#search-validate)
+  - [Strings are dead, long live strings!](https://www.elastic.co/blog/strings-are-dead-long-live-strings)
 
 
 ### With Security
