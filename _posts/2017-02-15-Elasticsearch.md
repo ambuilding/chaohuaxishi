@@ -263,6 +263,7 @@ SELECT state, COUNT(*) FROM bank GROUP BY state ORDER BY COUNT(*) DESC
 - [Starting Elasticsearch / Kibana / X-Pack](https://www.elastic.co/start)
 - [ruanyifeng](http://www.ruanyifeng.com/blog/2017/08/elasticsearch.html)
 - [http://www.jianshu.com/p/05cff717563c](http://www.jianshu.com/p/05cff717563c)
+- [Elasticsearch with Docker](https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html#_image_types)
 
 
 ### Text search
@@ -271,3 +272,8 @@ SELECT state, COUNT(*) FROM bank GROUP BY state ORDER BY COUNT(*) DESC
   - split the string into chunks (tokenizing)
   - apply some formatting on each of those tokens (lowercasing, convert special chars, …)
   - the default behavior is described by the standard analyzer. It will split the texts by word and those words will be lowercased.
+
+
+### With Security
+
+- Generate default passwords... `bin/x-pack/setup-passwords auto`
