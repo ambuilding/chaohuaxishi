@@ -5,6 +5,14 @@ title: AWS Amazon web service
 
 ## Hello
 
+### EC2
+
+- The Amazon Linux AMI is an EBS-backed, AWS-supported image. The default image includes AWS command line tools, Python, Ruby, Perl, and Java. The repositories include Docker, PHP, MySQL, PostgreSQL, and other packages.
+
+- [Amazon Elastic Compute Cloud](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html)
+- [Launch a Linux Virtual Machine
+with Amazon EC2](https://aws.amazon.com/getting-started/tutorials/launch-a-virtual-machine/)
+
 ### RDS
 - Connect to the database / Sequel Pro / Security group add rule
 

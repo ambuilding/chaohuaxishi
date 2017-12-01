@@ -18,8 +18,11 @@ title: Elasticsearch-PHP
 
 ### Link
 - [Elasticsearch-PHP](https://www.elastic.co/guide/en/elasticsearch/client/php-api/current/index.html)
-- [How to integrate your Laravel app with Elasticsearch](https://blog.madewithlove.be/post/how-to-integrate-your-laravel-app-with-elasticsearch/)
+- [How to integrate your Laravel app with Elasticsearch](https://blog.madewithlove.be/post/how-to-integrate-your-laravel-app-with-elasticsearch/) `docker run -d -p 9200:9200 elasticsearch`
 - [Laravel scout customer driven](https://gist.github.com/lukepolo/b63d303b076a7cd58bbaa54b3b9f0370)
 - [ErickTamayo/laravel-scout-elastic](https://github.com/ErickTamayo/laravel-scout-elastic)
+- [YABhq/laravel-scout-mysql-driver](https://github.com/YABhq/laravel-scout-mysql-driver)
 - [lukepolo](https://github.com/lukepolo)
+- [Learning Elasticsearch with Laravel](https://michaelstivala.com/learning-elasticsearch-with-laravel/)
+- [Freek Van der Herten, a partner & developer at Spatie](https://murze.be/me)
 

@@ -4,6 +4,14 @@ title: Elasticsearch
 ---
 
 ### Getting started
+- `docker.elastic.co/elasticsearch/elasticsearch   6.0.0               b685d8dba1a4        2 weeks ago         537MB
+`
+- `docker run -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:6.0.0
+`
+- `docker run -d -p 9200:9200 elasticsearch`
+
+- [Docker docs elasticsearch](https://docs.docker.com/samples/library/elasticsearch/)
+
 - Elasticsearch is a highly scalable open-source full-text search and analytics engine. It allows us to store, search, and analyze big volumes of data quickly and in near real time. (Log and search)
 
 ### Foundation
