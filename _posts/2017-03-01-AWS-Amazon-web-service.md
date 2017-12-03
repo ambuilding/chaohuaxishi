@@ -12,6 +12,7 @@ title: AWS Amazon web service
 - [Amazon Elastic Compute Cloud](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html)
 - [Launch a Linux Virtual Machine
 with Amazon EC2](https://aws.amazon.com/getting-started/tutorials/launch-a-virtual-machine/)
+- [Tutorial: Installing a LAMP Web Server on Amazon Linux](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/install-LAMP.html)
 
 ### RDS
 - Connect to the database / Sequel Pro / Security group add rule
