@@ -10,7 +10,7 @@ title: Resume
 ## 联系方式
 
 - 手机：176 1218 2757
-- Email：jmxcn@sina.cn
+- Email：explorewo@gmail.com
 
 ---
 

@@ -13,6 +13,9 @@ title: AWS Amazon web service
 - [Launch a Linux Virtual Machine
 with Amazon EC2](https://aws.amazon.com/getting-started/tutorials/launch-a-virtual-machine/)
 - [Tutorial: Installing a LAMP Web Server on Amazon Linux](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/install-LAMP.html)
+  - Install the Mbstring PHP Extension / php 7.0 `$ sudo yum install php70-mbstring`
+  - `sudo chmod 777 -R storage/`
+  - `sudo chmod 777 -R bootstrap/`
 
 ### RDS
 - Connect to the database / Sequel Pro / Security group add rule
