@@ -12,10 +12,21 @@ title: AWS Amazon web service
 - [Amazon Elastic Compute Cloud](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html)
 - [Launch a Linux Virtual Machine
 with Amazon EC2](https://aws.amazon.com/getting-started/tutorials/launch-a-virtual-machine/)
-- [Tutorial: Installing a LAMP Web Server on Amazon Linux](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/install-LAMP.html)
+- [Installing a LAMP Web Server on Amazon Linux](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/install-LAMP.html)
+  - Apache `/etc/httpd/conf/httpd.conf` `sudo service httpd restart` `sudo a2enmod rewrite`
+  - [Set up mod_rewrite](https://www.digitalocean.com/community/tutorials/how-to-set-up-mod_rewrite-for-apache-on-centos-7)
+
   - Install the Mbstring PHP Extension / php 7.0 `$ sudo yum install php70-mbstring`
-  - `sudo chmod 777 -R storage/`
-  - `sudo chmod 777 -R bootstrap/`
+  - Permission:
+  - `sudo chmod 775 -R storage/`
+  - `sudo chmod 775 -R bootstrap/cache`
+
+- [Configure Apache Web Server on Amazon Linux to Use SSL/TLS](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/SSL-on-an-instance.html)
+
+- [Install Git on Linux](https://git-scm.com/download/linux) `sudo yum install git`
+
+- `$ cd /var/www` `$ composer install --no-dev`
+- `php artisan key:generate` `php artisan storage:link`
 
 ### RDS
 - Connect to the database / Sequel Pro / Security group add rule
