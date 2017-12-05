@@ -1,9 +1,17 @@
 ---
 layout: post
-title: Linux Man
+title: LinuxMan Apache Composer Redis
 ---
 
-### Linux Man
+### Redis
+
+- [Install redis on EC2 Amazon linux AMI](https://gist.github.com/ambuilding/1fd59869f8944f2eb834eb42cb5e470c)
+- [Redis Quick Start](https://redis.io/topics/quickstart)
+- [Install Redis v3.2 on AWS EC2 Instance](https://medium.com/@andrewcbass/install-redis-v3-2-on-aws-ec2-instance-93259d40a3ce)
+
+### Composer
+
+- [Install composer on Amazon EC2 Linux](https://gist.github.com/ambuilding/ad26e36ecc14a20dcb625554620e3689)
 
 ### Apache
 
