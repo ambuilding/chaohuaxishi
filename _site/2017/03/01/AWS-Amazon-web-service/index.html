@@ -41,7 +41,7 @@
 <!-- Toggleable sidebar -->
 <div class="sidebar" id="sidebar">
   <div class="sidebar-item">
-    <p>A reserved <a href="http://jekyllrb.com" target="_blank">Jekyll</a> theme that places the utmost gravity on content with a hidden drawer. Made by <a href="https://twitter.com/" target="_blank">@Hi</a>.</p>
+    <p><a href="https://twitter.com/" target="_blank">@Hi</a>.</p>
   </div>
 
   <nav class="sidebar-nav">
@@ -90,9 +90,8 @@
       
     
 
-    <a class="sidebar-nav-item" href="/archive/v1.0.0.zip">Download</a>
-    <a class="sidebar-nav-item" href="">GitHub project</a>
-    <span class="sidebar-nav-item">Currently v1.0.0</span>
+    <a class="sidebar-nav-item" href="https://github.com/ambuilding">GitHub</a>
+    <span class="sidebar-nav-item">V2.0.0</span>
   </nav>
 
   <div class="sidebar-item">
@@ -120,6 +119,37 @@
   <h1 class="post-title">AWS Amazon web service</h1>
   <span class="post-date">01 Mar 2017</span>
   <h2 id="hello">Hello</h2>
+
+<h3 id="ec2">EC2</h3>
+
+<ul>
+  <li>
+    <p>The Amazon Linux AMI is an EBS-backed, AWS-supported image. The default image includes AWS command line tools, Python, Ruby, Perl, and Java. The repositories include Docker, PHP, MySQL, PostgreSQL, and other packages.</p>
+  </li>
+  <li><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html">Amazon Elastic Compute Cloud</a></li>
+  <li><a href="https://aws.amazon.com/getting-started/tutorials/launch-a-virtual-machine/">Launch a Linux Virtual Machine
+with Amazon EC2</a></li>
+  <li><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/install-LAMP.html">Installing a LAMP Web Server on Amazon Linux</a>
+    <ul>
+      <li>Apache <code class="highlighter-rouge">/etc/httpd/conf/httpd.conf</code> <code class="highlighter-rouge">sudo service httpd restart</code> <code class="highlighter-rouge">sudo a2enmod rewrite</code></li>
+      <li>
+        <p><a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-mod_rewrite-for-apache-on-centos-7">Set up mod_rewrite</a></p>
+      </li>
+      <li>Install the Mbstring PHP Extension / php 7.0 <code class="highlighter-rouge">$ sudo yum install php70-mbstring</code></li>
+      <li>Permission:</li>
+      <li><code class="highlighter-rouge">sudo chmod 775 -R storage/</code></li>
+      <li><code class="highlighter-rouge">sudo chmod 775 -R bootstrap/cache</code></li>
+    </ul>
+  </li>
+  <li>
+    <p><a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/SSL-on-an-instance.html">Configure Apache Web Server on Amazon Linux to Use SSL/TLS</a></p>
+  </li>
+  <li>
+    <p><a href="https://git-scm.com/download/linux">Install Git on Linux</a> <code class="highlighter-rouge">sudo yum install git</code></p>
+  </li>
+  <li><code class="highlighter-rouge">$ cd /var/www</code> <code class="highlighter-rouge">$ composer install --no-dev</code></li>
+  <li><code class="highlighter-rouge">php artisan key:generate</code> <code class="highlighter-rouge">php artisan storage:link</code></li>
+</ul>
 
 <h3 id="rds">RDS</h3>
 <ul>

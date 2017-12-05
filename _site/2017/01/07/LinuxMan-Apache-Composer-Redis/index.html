@@ -13,7 +13,7 @@
 
   <title>
     
-      Linux Man &middot; Zhao Hua Xi Shi
+      LinuxMan Apache Composer Redis &middot; Zhao Hua Xi Shi
     
   </title>
 
@@ -41,7 +41,7 @@
 <!-- Toggleable sidebar -->
 <div class="sidebar" id="sidebar">
   <div class="sidebar-item">
-    <p>A reserved <a href="http://jekyllrb.com" target="_blank">Jekyll</a> theme that places the utmost gravity on content with a hidden drawer. Made by <a href="https://twitter.com/" target="_blank">@Hi</a>.</p>
+    <p><a href="https://twitter.com/" target="_blank">@Hi</a>.</p>
   </div>
 
   <nav class="sidebar-nav">
@@ -90,9 +90,8 @@
       
     
 
-    <a class="sidebar-nav-item" href="/archive/v1.0.0.zip">Download</a>
-    <a class="sidebar-nav-item" href="">GitHub project</a>
-    <span class="sidebar-nav-item">Currently v1.0.0</span>
+    <a class="sidebar-nav-item" href="https://github.com/ambuilding">GitHub</a>
+    <span class="sidebar-nav-item">V2.0.0</span>
   </nav>
 
   <div class="sidebar-item">
@@ -117,9 +116,40 @@
 
       <div class="container content">
         <div class="post">
-  <h1 class="post-title">Linux Man</h1>
+  <h1 class="post-title">LinuxMan Apache Composer Redis</h1>
   <span class="post-date">07 Jan 2017</span>
-  <h2 id="linux-man">Linux Man</h2>
+  <h3 id="redis">Redis</h3>
+
+<ul>
+  <li><a href="https://gist.github.com/ambuilding/1fd59869f8944f2eb834eb42cb5e470c">Install redis on EC2 Amazon linux AMI / The latest stable Redis version</a></li>
+  <li><a href="https://redis.io/topics/quickstart">Redis Quick Start</a></li>
+  <li><a href="https://medium.com/@andrewcbass/install-redis-v3-2-on-aws-ec2-instance-93259d40a3ce">Install Redis v3.2 on AWS EC2 Instance</a></li>
+</ul>
+
+<h3 id="composer">Composer</h3>
+
+<ul>
+  <li><a href="https://gist.github.com/ambuilding/ad26e36ecc14a20dcb625554620e3689">Install composer on Amazon EC2 Linux</a></li>
+</ul>
+
+<h3 id="apache">Apache</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Apache:
+Apachectl: $ sudo apachectl start / stop / restart
+Php.ini: /usr/local/php5/lib/php.ini
+
+Hosts: $ vi /etc/hosts
+
+A. $ cd /etc/apache2/
+B. $ vi httpd.conf
+# uncomment the following lines:
+LoadModule deflate_module libexec/apache2/mod_deflate.so
+LoadModule expires_module libexec/apache2/mod_expires.so
+LoadModule rewrite_module libexec/apache2/mod_rewrite.so
+
+/Library/WebServer/Documents
+</code></pre>
+</div>
 
 <h3 id="install-net-tools-command-in-centos-7--rhel-7"><a href="https://www.ostechnix.com/linux-troubleshooting-netstat-command-not-found-in-centos-7-rhel-7/">Install net-tools command in CentOS 7 / RHEL 7</a></h3>
 
@@ -134,7 +164,7 @@
 </code></pre>
 </div>
 
-<h2 id="how-to-open-a-port-in-the-firewall-on-centos-or-rhel"><a href="http://ask.xmodulo.com/open-port-firewall-centos-rhel.html">How to open a port in the firewall on CentOS or RHEL</a></h2>
+<h3 id="how-to-open-a-port-in-the-firewall-on-centos-or-rhel"><a href="http://ask.xmodulo.com/open-port-firewall-centos-rhel.html">How to open a port in the firewall on CentOS or RHEL</a></h3>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>`# iptables -L`
 `# firewall-cmd --zone=public --add-port=80/tcp --permanent`
@@ -143,7 +173,7 @@
 </code></pre>
 </div>
 
-<h2 id="how-to-set-up-a-firewall-using-firewalld-on-centos-7"><a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-using-firewalld-on-centos-7">How To Set Up a Firewall Using FirewallD on CentOS 7</a></h2>
+<h3 id="how-to-set-up-a-firewall-using-firewalld-on-centos-7"><a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-using-firewalld-on-centos-7">How To Set Up a Firewall Using FirewallD on CentOS 7</a></h3>
 
 </div>
 

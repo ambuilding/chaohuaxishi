@@ -4,7 +4,7 @@
  <title>Zhao Hua Xi Shi</title>
  <link href="http://localhost:4000/life/atom.xml" rel="self"/>
  <link href="http://localhost:4000/life/"/>
- <updated>2017-11-27T17:34:59+08:00</updated>
+ <updated>2017-12-05T23:19:37+08:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Wo</name>
@@ -20,6 +20,9 @@
    <content type="html">&lt;h3 id=&quot;hi&quot;&gt;Hi&lt;/h3&gt;
 
 &lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;composer require elasticsearch/elasticsearch&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
   &lt;li&gt;Index a document: index, type, id and a document body.&lt;/li&gt;
   &lt;li&gt;Configuration&lt;/li&gt;
   &lt;li&gt;Elasticsearch-PHP uses an interchangeable HTTP transport layer called RingPHP.&lt;/li&gt;
@@ -29,7 +32,15 @@
 &lt;h3 id=&quot;link&quot;&gt;Link&lt;/h3&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.elastic.co/guide/en/elasticsearch/client/php-api/current/index.html&quot;&gt;Elasticsearch-PHP&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://blog.madewithlove.be/post/how-to-integrate-your-laravel-app-with-elasticsearch/&quot;&gt;How to integrate your Laravel app with Elasticsearch&lt;/a&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;docker run -d -p 9200:9200 elasticsearch&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://gist.github.com/lukepolo/b63d303b076a7cd58bbaa54b3b9f0370&quot;&gt;Laravel scout customer driven&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/ErickTamayo/laravel-scout-elastic&quot;&gt;ErickTamayo/laravel-scout-elastic&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/YABhq/laravel-scout-mysql-driver&quot;&gt;YABhq/laravel-scout-mysql-driver&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/lukepolo&quot;&gt;lukepolo&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://michaelstivala.com/learning-elasticsearch-with-laravel/&quot;&gt;Learning Elasticsearch with Laravel&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://murze.be/me&quot;&gt;Freek Van der Herten, a partner &amp;amp; developer at Spatie&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
 </content>
  </entry>
  
@@ -39,6 +50,37 @@
    <updated>2017-03-01T00:00:00+08:00</updated>
    <id>http://localhost:4000/life/2017/03/01/AWS-Amazon-web-service</id>
    <content type="html">&lt;h2 id=&quot;hello&quot;&gt;Hello&lt;/h2&gt;
+
+&lt;h3 id=&quot;ec2&quot;&gt;EC2&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;The Amazon Linux AMI is an EBS-backed, AWS-supported image. The default image includes AWS command line tools, Python, Ruby, Perl, and Java. The repositories include Docker, PHP, MySQL, PostgreSQL, and other packages.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html&quot;&gt;Amazon Elastic Compute Cloud&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://aws.amazon.com/getting-started/tutorials/launch-a-virtual-machine/&quot;&gt;Launch a Linux Virtual Machine
+with Amazon EC2&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/install-LAMP.html&quot;&gt;Installing a LAMP Web Server on Amazon Linux&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Apache &lt;code class=&quot;highlighter-rouge&quot;&gt;/etc/httpd/conf/httpd.conf&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo service httpd restart&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo a2enmod rewrite&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;a href=&quot;https://www.digitalocean.com/community/tutorials/how-to-set-up-mod_rewrite-for-apache-on-centos-7&quot;&gt;Set up mod_rewrite&lt;/a&gt;&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Install the Mbstring PHP Extension / php 7.0 &lt;code class=&quot;highlighter-rouge&quot;&gt;$ sudo yum install php70-mbstring&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;Permission:&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo chmod 775 -R storage/&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo chmod 775 -R bootstrap/cache&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/SSL-on-an-instance.html&quot;&gt;Configure Apache Web Server on Amazon Linux to Use SSL/TLS&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://git-scm.com/download/linux&quot;&gt;Install Git on Linux&lt;/a&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo yum install git&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$ cd /var/www&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;$ composer install --no-dev&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;php artisan key:generate&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;php artisan storage:link&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h3 id=&quot;rds&quot;&gt;RDS&lt;/h3&gt;
 &lt;ul&gt;
@@ -112,7 +154,20 @@
    <link href="http://localhost:4000/2017/02/15/Elasticsearch/"/>
    <updated>2017-02-15T00:00:00+08:00</updated>
    <id>http://localhost:4000/life/2017/02/15/Elasticsearch</id>
-   <content type="html">&lt;h2 id=&quot;getting-started&quot;&gt;Getting started&lt;/h2&gt;
+   <content type="html">&lt;h3 id=&quot;getting-started&quot;&gt;Getting started&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;docker.elastic.co/elasticsearch/elasticsearch   6.0.0               b685d8dba1a4        2 weeks ago         537MB
+&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;docker run -p 9200:9200 -p 9300:9300 -e &quot;discovery.type=single-node&quot; docker.elastic.co/elasticsearch/elasticsearch:6.0.0
+&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;docker run -d -p 9200:9200 elasticsearch&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://docs.docker.com/samples/library/elasticsearch/&quot;&gt;Docker docs elasticsearch&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Elasticsearch is a highly scalable open-source full-text search and analytics engine. It allows us to store, search, and analyze big volumes of data quickly and in near real time. (Log and search)&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h3 id=&quot;foundation&quot;&gt;Foundation&lt;/h3&gt;
 &lt;ul&gt;
@@ -120,7 +175,7 @@
   &lt;li&gt;This is in stark contrast to many other platforms such as SQL wherein you may initially get a partial subset of your query results up-front and then you have to continuously go back to the server if you want to fetch (or page through) the rest of the results using some kind of stateful server-side cursor.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;installation-java-and-elasticsearch-running-node&quot;&gt;Installation: Java and Elasticsearch; Running node.&lt;/h3&gt;
+&lt;h3 id=&quot;installation-java-and-elasticsearch-running-node-or-docker&quot;&gt;Installation: Java and Elasticsearch; Running node. (or Docker)&lt;/h3&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;curl -L -O https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.0.0.tar.gz
 tar -xvf elasticsearch-6.0.0.tar.gz
@@ -397,6 +452,35 @@ SELECT state, COUNT(*) FROM bank GROUP BY state ORDER BY COUNT(*) DESC
   &lt;li&gt;&lt;a href=&quot;https://www.elastic.co/start&quot;&gt;Starting Elasticsearch / Kibana / X-Pack&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;http://www.ruanyifeng.com/blog/2017/08/elasticsearch.html&quot;&gt;ruanyifeng&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;http://www.jianshu.com/p/05cff717563c&quot;&gt;http://www.jianshu.com/p/05cff717563c&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html#_image_types&quot;&gt;Elasticsearch with Docker&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;text-search&quot;&gt;Text search&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Analyze&lt;/li&gt;
+  &lt;li&gt;tokens breakdown of the text. (By word)&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;query: term and match&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;split the string into chunks (tokenizing)&lt;/li&gt;
+  &lt;li&gt;apply some formatting on each of those tokens (lowercasing, convert special chars, …)&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;the default behavior is described by the standard analyzer. It will split the texts by word and those words will be lowercased.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Link
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://blog.madewithlove.be/post/basic-understanding-of-text-search/&quot;&gt;Basic understanding of text search in elasticsearch&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-analyze.html&quot;&gt;Analyze-Doc&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-validate.html#search-validate&quot;&gt;Validate API&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://www.elastic.co/blog/strings-are-dead-long-live-strings&quot;&gt;Strings are dead, long live strings!&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;with-security&quot;&gt;With Security&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Generate default passwords… &lt;code class=&quot;highlighter-rouge&quot;&gt;bin/x-pack/setup-passwords auto&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </content>
  </entry>
@@ -550,7 +634,13 @@ SELECT state, COUNT(*) FROM bank GROUP BY state ORDER BY COUNT(*) DESC
    <link href="http://localhost:4000/2017/01/10/Docker/"/>
    <updated>2017-01-10T00:00:00+08:00</updated>
    <id>http://localhost:4000/life/2017/01/10/Docker</id>
-   <content type="html">&lt;h2 id=&quot;containers&quot;&gt;Containers&lt;/h2&gt;
+   <content type="html">&lt;h3 id=&quot;docker-laravel&quot;&gt;Docker Laravel&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://blog.cloud66.com/deploying-your-laravel-php-applications-with-cloud-66/&quot;&gt;Deploying your Laravel/PHP applications in production using Docker
+&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;containers&quot;&gt;Containers&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
@@ -562,6 +652,10 @@ SELECT state, COUNT(*) FROM bank GROUP BY state ORDER BY COUNT(*) DESC
 &lt;/ul&gt;
 
 &lt;h3 id=&quot;setup--docker-run-hello-world&quot;&gt;Setup &lt;code class=&quot;highlighter-rouge&quot;&gt;$ docker run hello-world&lt;/code&gt;&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.vultr.com/docs/one-click-docker&quot;&gt;One-click Docker / Vultr&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h3 id=&quot;get-started&quot;&gt;Get Started&lt;/h3&gt;
 
@@ -863,11 +957,42 @@ $ curl -I https://31.13.95.36/
  </entry>
  
  <entry>
-   <title>Linux Man</title>
-   <link href="http://localhost:4000/2017/01/07/Linux-Man/"/>
+   <title>LinuxMan Apache Composer Redis</title>
+   <link href="http://localhost:4000/2017/01/07/LinuxMan-Apache-Composer-Redis/"/>
    <updated>2017-01-07T00:00:00+08:00</updated>
-   <id>http://localhost:4000/life/2017/01/07/Linux-Man</id>
-   <content type="html">&lt;h2 id=&quot;linux-man&quot;&gt;Linux Man&lt;/h2&gt;
+   <id>http://localhost:4000/life/2017/01/07/LinuxMan-Apache-Composer-Redis</id>
+   <content type="html">&lt;h3 id=&quot;redis&quot;&gt;Redis&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://gist.github.com/ambuilding/1fd59869f8944f2eb834eb42cb5e470c&quot;&gt;Install redis on EC2 Amazon linux AMI / The latest stable Redis version&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://redis.io/topics/quickstart&quot;&gt;Redis Quick Start&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://medium.com/@andrewcbass/install-redis-v3-2-on-aws-ec2-instance-93259d40a3ce&quot;&gt;Install Redis v3.2 on AWS EC2 Instance&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;composer&quot;&gt;Composer&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://gist.github.com/ambuilding/ad26e36ecc14a20dcb625554620e3689&quot;&gt;Install composer on Amazon EC2 Linux&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;apache&quot;&gt;Apache&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Apache:
+Apachectl: $ sudo apachectl start / stop / restart
+Php.ini: /usr/local/php5/lib/php.ini
+
+Hosts: $ vi /etc/hosts
+
+A. $ cd /etc/apache2/
+B. $ vi httpd.conf
+# uncomment the following lines:
+LoadModule deflate_module libexec/apache2/mod_deflate.so
+LoadModule expires_module libexec/apache2/mod_expires.so
+LoadModule rewrite_module libexec/apache2/mod_rewrite.so
+
+/Library/WebServer/Documents
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;h3 id=&quot;install-net-tools-command-in-centos-7--rhel-7&quot;&gt;&lt;a href=&quot;https://www.ostechnix.com/linux-troubleshooting-netstat-command-not-found-in-centos-7-rhel-7/&quot;&gt;Install net-tools command in CentOS 7 / RHEL 7&lt;/a&gt;&lt;/h3&gt;
 
@@ -882,7 +1007,7 @@ $ curl -I https://31.13.95.36/
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;h2 id=&quot;how-to-open-a-port-in-the-firewall-on-centos-or-rhel&quot;&gt;&lt;a href=&quot;http://ask.xmodulo.com/open-port-firewall-centos-rhel.html&quot;&gt;How to open a port in the firewall on CentOS or RHEL&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id=&quot;how-to-open-a-port-in-the-firewall-on-centos-or-rhel&quot;&gt;&lt;a href=&quot;http://ask.xmodulo.com/open-port-firewall-centos-rhel.html&quot;&gt;How to open a port in the firewall on CentOS or RHEL&lt;/a&gt;&lt;/h3&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;`# iptables -L`
 `# firewall-cmd --zone=public --add-port=80/tcp --permanent`
@@ -891,7 +1016,7 @@ $ curl -I https://31.13.95.36/
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;h2 id=&quot;how-to-set-up-a-firewall-using-firewalld-on-centos-7&quot;&gt;&lt;a href=&quot;https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-using-firewalld-on-centos-7&quot;&gt;How To Set Up a Firewall Using FirewallD on CentOS 7&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id=&quot;how-to-set-up-a-firewall-using-firewalld-on-centos-7&quot;&gt;&lt;a href=&quot;https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-using-firewalld-on-centos-7&quot;&gt;How To Set Up a Firewall Using FirewallD on CentOS 7&lt;/a&gt;&lt;/h3&gt;
 </content>
  </entry>
  
@@ -945,7 +1070,13 @@ $ curl -I https://31.13.95.36/
 &lt;h2 id=&quot;vps&quot;&gt;VPS&lt;/h2&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Test downloads speed.&lt;/li&gt;
+  &lt;li&gt;Test downloads speed.
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://www.vultr.com/faq/#downloadspeedtests&quot;&gt;How can I test Vultr download speeds?&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;New York (NJ) / Seattle, Washington /&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.vultr.com/docs/installing-docker-on-centos-7&quot;&gt;installing-docker-on-centos-7&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;bbr&quot;&gt;BBR&lt;/h2&gt;
@@ -955,6 +1086,11 @@ $ curl -I https://31.13.95.36/
 # ./bbr.sh
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://teddysun.com/489.html&quot;&gt;BBR / Install / Enable&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.vultr.com/docs/how-to-deploy-google-bbr-on-centos-7&quot;&gt;How to Deploy Google BBR on CentOS 7&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;`uname -r`
 `sysctl net.ipv4.tcp_available_congestion_control`
@@ -969,9 +1105,13 @@ $ curl -I https://31.13.95.36/
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://github.com/shadowsocks/ShadowsocksX-NG/releases&quot;&gt;ShadowsocksX-NG&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://github.com/shadowsocks/shadowsocks-android/releases&quot;&gt;Android&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://shadowsocks.org/en/config/advanced.html&quot;&gt;Optimize&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocksR.sh
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# Four in One
+# wget --no-check-certificate -O shadowsocks-all.sh https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-all.sh
+
+# wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocksR.sh
 # chmod +x shadowsocksR.sh
 # ./shadowsocksR.sh 2&amp;gt;&amp;amp;1 | tee shadowsocksR.log
 &lt;/code&gt;&lt;/pre&gt;

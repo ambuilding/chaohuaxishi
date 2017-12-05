@@ -41,7 +41,7 @@
 <!-- Toggleable sidebar -->
 <div class="sidebar" id="sidebar">
   <div class="sidebar-item">
-    <p>A reserved <a href="http://jekyllrb.com" target="_blank">Jekyll</a> theme that places the utmost gravity on content with a hidden drawer. Made by <a href="https://twitter.com/" target="_blank">@Hi</a>.</p>
+    <p><a href="https://twitter.com/" target="_blank">@Hi</a>.</p>
   </div>
 
   <nav class="sidebar-nav">
@@ -90,9 +90,8 @@
       
     
 
-    <a class="sidebar-nav-item" href="/archive/v1.0.0.zip">Download</a>
-    <a class="sidebar-nav-item" href="">GitHub project</a>
-    <span class="sidebar-nav-item">Currently v1.0.0</span>
+    <a class="sidebar-nav-item" href="https://github.com/ambuilding">GitHub</a>
+    <span class="sidebar-nav-item">V2.0.0</span>
   </nav>
 
   <div class="sidebar-item">
@@ -119,7 +118,20 @@
         <div class="post">
   <h1 class="post-title">Elasticsearch</h1>
   <span class="post-date">15 Feb 2017</span>
-  <h2 id="getting-started">Getting started</h2>
+  <h3 id="getting-started">Getting started</h3>
+<ul>
+  <li><code class="highlighter-rouge">docker.elastic.co/elasticsearch/elasticsearch   6.0.0               b685d8dba1a4        2 weeks ago         537MB
+</code></li>
+  <li><code class="highlighter-rouge">docker run -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:6.0.0
+</code></li>
+  <li>
+    <p><code class="highlighter-rouge">docker run -d -p 9200:9200 elasticsearch</code></p>
+  </li>
+  <li>
+    <p><a href="https://docs.docker.com/samples/library/elasticsearch/">Docker docs elasticsearch</a></p>
+  </li>
+  <li>Elasticsearch is a highly scalable open-source full-text search and analytics engine. It allows us to store, search, and analyze big volumes of data quickly and in near real time. (Log and search)</li>
+</ul>
 
 <h3 id="foundation">Foundation</h3>
 <ul>
@@ -127,7 +139,7 @@
   <li>This is in stark contrast to many other platforms such as SQL wherein you may initially get a partial subset of your query results up-front and then you have to continuously go back to the server if you want to fetch (or page through) the rest of the results using some kind of stateful server-side cursor.</li>
 </ul>
 
-<h3 id="installation-java-and-elasticsearch-running-node">Installation: Java and Elasticsearch; Running node.</h3>
+<h3 id="installation-java-and-elasticsearch-running-node-or-docker">Installation: Java and Elasticsearch; Running node. (or Docker)</h3>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>curl -L -O https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.0.0.tar.gz
 tar -xvf elasticsearch-6.0.0.tar.gz
@@ -404,6 +416,35 @@ SELECT state, COUNT(*) FROM bank GROUP BY state ORDER BY COUNT(*) DESC
   <li><a href="https://www.elastic.co/start">Starting Elasticsearch / Kibana / X-Pack</a></li>
   <li><a href="http://www.ruanyifeng.com/blog/2017/08/elasticsearch.html">ruanyifeng</a></li>
   <li><a href="http://www.jianshu.com/p/05cff717563c">http://www.jianshu.com/p/05cff717563c</a></li>
+  <li><a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html#_image_types">Elasticsearch with Docker</a></li>
+</ul>
+
+<h3 id="text-search">Text search</h3>
+<ul>
+  <li>Analyze</li>
+  <li>tokens breakdown of the text. (By word)</li>
+  <li>
+    <p>query: term and match</p>
+  </li>
+  <li>split the string into chunks (tokenizing)</li>
+  <li>apply some formatting on each of those tokens (lowercasing, convert special chars, …)</li>
+  <li>
+    <p>the default behavior is described by the standard analyzer. It will split the texts by word and those words will be lowercased.</p>
+  </li>
+  <li>Link
+    <ul>
+      <li><a href="https://blog.madewithlove.be/post/basic-understanding-of-text-search/">Basic understanding of text search in elasticsearch</a></li>
+      <li><a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-analyze.html">Analyze-Doc</a></li>
+      <li><a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/search-validate.html#search-validate">Validate API</a></li>
+      <li><a href="https://www.elastic.co/blog/strings-are-dead-long-live-strings">Strings are dead, long live strings!</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="with-security">With Security</h3>
+
+<ul>
+  <li>Generate default passwords… <code class="highlighter-rouge">bin/x-pack/setup-passwords auto</code></li>
 </ul>
 
 </div>

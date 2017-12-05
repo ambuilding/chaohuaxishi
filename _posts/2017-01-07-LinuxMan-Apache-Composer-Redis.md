@@ -45,7 +45,7 @@ First, we should find out which package provides ‘netstat’ command.
 `# netstat`
 ```
 
-## [How to open a port in the firewall on CentOS or RHEL](http://ask.xmodulo.com/open-port-firewall-centos-rhel.html)
+### [How to open a port in the firewall on CentOS or RHEL](http://ask.xmodulo.com/open-port-firewall-centos-rhel.html)
 
 ```
 `# iptables -L`
@@ -54,4 +54,4 @@ First, we should find out which package provides ‘netstat’ command.
 `# firewall-cmd --list-all`
 ```
 
-## [How To Set Up a Firewall Using FirewallD on CentOS 7](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-using-firewalld-on-centos-7)
+### [How To Set Up a Firewall Using FirewallD on CentOS 7](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-using-firewalld-on-centos-7)
