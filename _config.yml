@@ -16,6 +16,7 @@ author:
   name:           'Wo'
   url:            https://twitter.com/
   email:             explorewo@gmail.com
+  repo:           https://github.com/ambuilding
 
 # Custom vars
 version:             1.0.0
