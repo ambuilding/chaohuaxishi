@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Machine-Learning
+title: Machine Learning
 ---
 
 ## Machine Learning

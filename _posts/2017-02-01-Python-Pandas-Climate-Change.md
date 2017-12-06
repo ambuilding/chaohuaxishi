@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Data-Science-with-Python-Pandas-Climate-Change
+title: Data Science with Python Pandas Climate Change
 ---
 
 ### Dataset: Earth surface temperatures since 1750

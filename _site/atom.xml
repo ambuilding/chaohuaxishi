@@ -4,45 +4,13 @@
  <title>Zhao Hua Xi Shi</title>
  <link href="http://localhost:4000/life/atom.xml" rel="self"/>
  <link href="http://localhost:4000/life/"/>
- <updated>2017-12-05T23:19:37+08:00</updated>
+ <updated>2017-12-06T13:52:30+08:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Wo</name>
    <email>explorewo@gmail.com</email>
  </author>
 
- 
- <entry>
-   <title>Elasticsearch-PHP</title>
-   <link href="http://localhost:4000/2017/03/06/Elasticsearch-PHP/"/>
-   <updated>2017-03-06T00:00:00+08:00</updated>
-   <id>http://localhost:4000/life/2017/03/06/Elasticsearch-PHP</id>
-   <content type="html">&lt;h3 id=&quot;hi&quot;&gt;Hi&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;composer require elasticsearch/elasticsearch&lt;/code&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Index a document: index, type, id and a document body.&lt;/li&gt;
-  &lt;li&gt;Configuration&lt;/li&gt;
-  &lt;li&gt;Elasticsearch-PHP uses an interchangeable HTTP transport layer called RingPHP.&lt;/li&gt;
-  &lt;li&gt;“future” or “async” mode. &lt;code class=&quot;highlighter-rouge&quot;&gt;'future' =&amp;gt; 'lazy'&lt;/code&gt; PHP is fundamentally single-threaded, however libcurl provides functionality called the “multi interface”.  With the multi interface, the time to execute n requests is the latency of the slowest request. Furthermore, the multi-interface allows requests to different hosts simultaneously, which means the Elasticsearch-PHP client can more effectively utilize your full cluster.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;link&quot;&gt;Link&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.elastic.co/guide/en/elasticsearch/client/php-api/current/index.html&quot;&gt;Elasticsearch-PHP&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://blog.madewithlove.be/post/how-to-integrate-your-laravel-app-with-elasticsearch/&quot;&gt;How to integrate your Laravel app with Elasticsearch&lt;/a&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;docker run -d -p 9200:9200 elasticsearch&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://gist.github.com/lukepolo/b63d303b076a7cd58bbaa54b3b9f0370&quot;&gt;Laravel scout customer driven&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/ErickTamayo/laravel-scout-elastic&quot;&gt;ErickTamayo/laravel-scout-elastic&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/YABhq/laravel-scout-mysql-driver&quot;&gt;YABhq/laravel-scout-mysql-driver&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/lukepolo&quot;&gt;lukepolo&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://michaelstivala.com/learning-elasticsearch-with-laravel/&quot;&gt;Learning Elasticsearch with Laravel&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://murze.be/me&quot;&gt;Freek Van der Herten, a partner &amp;amp; developer at Spatie&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-</content>
- </entry>
  
  <entry>
    <title>AWS Amazon web service</title>
@@ -482,11 +450,36 @@ SELECT state, COUNT(*) FROM bank GROUP BY state ORDER BY COUNT(*) DESC
 &lt;ul&gt;
   &lt;li&gt;Generate default passwords… &lt;code class=&quot;highlighter-rouge&quot;&gt;bin/x-pack/setup-passwords auto&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h3 id=&quot;elasticsearch-php&quot;&gt;Elasticsearch-PHP&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;composer require elasticsearch/elasticsearch&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Index a document: index, type, id and a document body.&lt;/li&gt;
+  &lt;li&gt;Configuration&lt;/li&gt;
+  &lt;li&gt;Elasticsearch-PHP uses an interchangeable HTTP transport layer called RingPHP.&lt;/li&gt;
+  &lt;li&gt;“future” or “async” mode. &lt;code class=&quot;highlighter-rouge&quot;&gt;'future' =&amp;gt; 'lazy'&lt;/code&gt; PHP is fundamentally single-threaded, however libcurl provides functionality called the “multi interface”.  With the multi interface, the time to execute n requests is the latency of the slowest request. Furthermore, the multi-interface allows requests to different hosts simultaneously, which means the Elasticsearch-PHP client can more effectively utilize your full cluster.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;link-1&quot;&gt;Link&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.elastic.co/guide/en/elasticsearch/client/php-api/current/index.html&quot;&gt;Docs Elasticsearch-PHP&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://blog.madewithlove.be/post/how-to-integrate-your-laravel-app-with-elasticsearch/&quot;&gt;How to integrate your Laravel app with Elasticsearch&lt;/a&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;docker run -d -p 9200:9200 elasticsearch&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://gist.github.com/lukepolo/b63d303b076a7cd58bbaa54b3b9f0370&quot;&gt;Laravel scout customer driven&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/ErickTamayo/laravel-scout-elastic&quot;&gt;ErickTamayo/laravel-scout-elastic&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/YABhq/laravel-scout-mysql-driver&quot;&gt;YABhq/laravel-scout-mysql-driver&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/lukepolo&quot;&gt;lukepolo&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://michaelstivala.com/learning-elasticsearch-with-laravel/&quot;&gt;Learning Elasticsearch with Laravel&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://murze.be/me&quot;&gt;Freek Van der Herten, a partner &amp;amp; developer at Spatie&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
 </content>
  </entry>
  
  <entry>
-   <title>Data-Science-with-Python-Pandas-Climate-Change</title>
+   <title>Data Science with Python Pandas Climate Change</title>
    <link href="http://localhost:4000/2017/02/01/Python-Pandas-Climate-Change/"/>
    <updated>2017-02-01T00:00:00+08:00</updated>
    <id>http://localhost:4000/life/2017/02/01/Python-Pandas-Climate-Change</id>
@@ -562,7 +555,7 @@ SELECT state, COUNT(*) FROM bank GROUP BY state ORDER BY COUNT(*) DESC
  </entry>
  
  <entry>
-   <title>Machine-Learning</title>
+   <title>Machine Learning</title>
    <link href="http://localhost:4000/2017/01/31/Machine-Learning/"/>
    <updated>2017-01-31T00:00:00+08:00</updated>
    <id>http://localhost:4000/life/2017/01/31/Machine-Learning</id>
