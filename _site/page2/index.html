@@ -212,20 +212,25 @@ var_dump($result);
   <li>Register</li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>curl -X POST http://localhost:8000/api/register
--H "Accept: application/json"
--H "Content-Type: application/json"
+<div class="highlighter-rouge"><pre class="highlight"><code>curl -X POST http://localhost:8000/api/register \
+-H "Accept: application/json" \
+-H "Content-Type: application/json" \
 -d '{"name": "Andy", "email": "andy@example.com", "password": "andydufresne", "password_confirmation": "andydufresne"}' | python -mjson.tool
 </code></pre>
 </div>
 
 <ul>
-  <li>Login</li>
+  <li>Login
+    <ul>
+      <li>To send the token in a request, you can do it by sending an attribute api_token in the payload</li>
+      <li>or as a bearer token in the request headers in the form of Authorization: Bearer api_token.</li>
+    </ul>
+  </li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ curl -X POST localhost:8000/api/login
--H "Accept: appliation/json"
--H "Content-type: application/json"
+<div class="highlighter-rouge"><pre class="highlight"><code>curl -X POST localhost:8000/api/login \
+-H "Accept: appliation/json" \
+-H "Content-type: application/json" \
 -d "{\"email\": \"andy@example.com\", \"password\": \"andydufresne\" }" | python -mjson.tool
 </code></pre>
 </div>

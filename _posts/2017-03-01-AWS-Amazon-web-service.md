@@ -25,7 +25,9 @@ with Amazon EC2](https://aws.amazon.com/getting-started/tutorials/launch-a-virtu
 
 - [Install Git on Linux](https://git-scm.com/download/linux) `sudo yum install git`
 
-- `$ cd /var/www` `$ composer install --no-dev`
+- `$ cd /var/www` `$ composer update`
+- `$ composer install --no-dev`
+- `composer install --optimize-autoloader`
 - `php artisan key:generate` `php artisan storage:link`
 
 ### RDS

@@ -10,18 +10,22 @@ title: RESTful APIs
 - Register
 
 ```
-curl -X POST http://localhost:8000/api/register
--H "Accept: application/json"
--H "Content-Type: application/json"
+curl -X POST http://localhost:8000/api/register \
+-H "Accept: application/json" \
+-H "Content-Type: application/json" \
 -d '{"name": "Andy", "email": "andy@example.com", "password": "andydufresne", "password_confirmation": "andydufresne"}' | python -mjson.tool
 ```
 
 - Login
+  - To send the token in a request, you can do it by sending an attribute api_token in the payload
+  - or as a bearer token in the request headers in the form of Authorization: Bearer api_token.
+
+
 
 ```
-$ curl -X POST localhost:8000/api/login
--H "Accept: appliation/json"
--H "Content-type: application/json"
+curl -X POST localhost:8000/api/login \
+-H "Accept: appliation/json" \
+-H "Content-type: application/json" \
 -d "{\"email\": \"andy@example.com\", \"password\": \"andydufresne\" }" | python -mjson.tool
 ```
 

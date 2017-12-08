@@ -4,7 +4,7 @@
  <title>Zhao Hua Xi Shi</title>
  <link href="http://localhost:4000/life/atom.xml" rel="self"/>
  <link href="http://localhost:4000/life/"/>
- <updated>2017-12-06T13:52:30+08:00</updated>
+ <updated>2017-12-07T13:44:10+08:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Wo</name>
@@ -915,20 +915,25 @@ var_dump($result);
   &lt;li&gt;Register&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;curl -X POST http://localhost:8000/api/register
--H &quot;Accept: application/json&quot;
--H &quot;Content-Type: application/json&quot;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;curl -X POST http://localhost:8000/api/register \
+-H &quot;Accept: application/json&quot; \
+-H &quot;Content-Type: application/json&quot; \
 -d '{&quot;name&quot;: &quot;Andy&quot;, &quot;email&quot;: &quot;andy@example.com&quot;, &quot;password&quot;: &quot;andydufresne&quot;, &quot;password_confirmation&quot;: &quot;andydufresne&quot;}' | python -mjson.tool
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Login&lt;/li&gt;
+  &lt;li&gt;Login
+    &lt;ul&gt;
+      &lt;li&gt;To send the token in a request, you can do it by sending an attribute api_token in the payload&lt;/li&gt;
+      &lt;li&gt;or as a bearer token in the request headers in the form of Authorization: Bearer api_token.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ curl -X POST localhost:8000/api/login
--H &quot;Accept: appliation/json&quot;
--H &quot;Content-type: application/json&quot;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;curl -X POST localhost:8000/api/login \
+-H &quot;Accept: appliation/json&quot; \
+-H &quot;Content-type: application/json&quot; \
 -d &quot;{\&quot;email\&quot;: \&quot;andy@example.com\&quot;, \&quot;password\&quot;: \&quot;andydufresne\&quot; }&quot; | python -mjson.tool
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
