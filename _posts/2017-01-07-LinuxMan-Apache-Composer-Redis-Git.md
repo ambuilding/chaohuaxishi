@@ -1,6 +1,6 @@
 ---
 layout: post
-title: LinuxMan Apache Composer Redis
+title: LinuxMan Apache Composer Redis Git
 ---
 
 ### Redis
@@ -55,3 +55,9 @@ First, we should find out which package provides ‘netstat’ command.
 ```
 
 ### [How To Set Up a Firewall Using FirewallD on CentOS 7](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-using-firewalld-on-centos-7)
+
+
+### Git
+
+- [Install Git on Linux](https://git-scm.com/download/linux) `sudo yum install git`
+- `git clone -b <name> repo`

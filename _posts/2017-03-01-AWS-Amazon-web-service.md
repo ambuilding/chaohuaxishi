@@ -14,7 +14,7 @@ title: AWS Amazon web service
 with Amazon EC2](https://aws.amazon.com/getting-started/tutorials/launch-a-virtual-machine/)
 - [Installing a LAMP Web Server on Amazon Linux](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/install-LAMP.html)
   - Apache `/etc/httpd/conf/httpd.conf` `sudo service httpd restart` `sudo a2enmod rewrite`
-  - [Set up mod_rewrite](https://www.digitalocean.com/community/tutorials/how-to-set-up-mod_rewrite-for-apache-on-centos-7)
+  - [Set up mod_rewrite / for Apache on CentOS 7](https://www.digitalocean.com/community/tutorials/how-to-set-up-mod_rewrite-for-apache-on-centos-7)
 
   - Install the Mbstring PHP Extension / php 7.0 `$ sudo yum install php70-mbstring`
   - Permission:
@@ -23,12 +23,12 @@ with Amazon EC2](https://aws.amazon.com/getting-started/tutorials/launch-a-virtu
 
 - [Configure Apache Web Server on Amazon Linux to Use SSL/TLS](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/SSL-on-an-instance.html)
 
-- [Install Git on Linux](https://git-scm.com/download/linux) `sudo yum install git`
-
 - `$ cd /var/www` `$ composer update`
 - `$ composer install --no-dev`
 - `composer install --optimize-autoloader`
 - `php artisan key:generate` `php artisan storage:link`
+- Make sure to turn on production mode when deploying for production. (Vue)
+
 
 ### RDS
 - Connect to the database / Sequel Pro / Security group add rule
