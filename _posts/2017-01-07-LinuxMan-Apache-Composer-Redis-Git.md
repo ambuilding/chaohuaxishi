@@ -9,6 +9,28 @@ title: LinuxMan Apache Composer Redis Git
 - [Redis Quick Start](https://redis.io/topics/quickstart)
 - [Install Redis v3.2 on AWS EC2 Instance](https://medium.com/@andrewcbass/install-redis-v3-2-on-aws-ec2-instance-93259d40a3ce)
 
+### A Chat Application with Redis / socket.io
+
+### PubSub
+- PubSub, where a message is sent to a centralized topic channel.
+- Interested parties can subscribe to this channel to be notified of updates.
+- This pattern decouples the publisher and subscribers, so that the set of subscribers can grow or shrink without the knowledge of the publisher.
+
+- PubSub is implemented on a backend server, to which clients communicate using WebSockets.
+- WebSockets is a persistent TCP connection that provides a channel for data to be streamed bidirectionally between the client and server.
+
+- Single-Server PubSub Architecture / Multiserver architecture
+
+
+- A production system would likely modularize the UI components using external .vue files and transpiling using webpack on build.
+
+### Link
+
+- [nstalling Node.js via package manager](https://nodejs.org/en/download/package-manager/)
+- [PM2](http://pm2.keymetrics.io/docs/usage/quick-start/)
+- [How to Build a Chat Application with Amazon ElastiCache for Redis](https://aws.amazon.com/blogs/database/how-to-build-a-chat-application-with-amazon-elasticache-for-redis/)
+
+
 ### Composer
 
 - [Install composer on Amazon EC2 Linux](https://gist.github.com/ambuilding/ad26e36ecc14a20dcb625554620e3689)
