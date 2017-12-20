@@ -18,7 +18,7 @@ title: Resume
 
  - 王琪/男
  - 计算机信息管理/中州大学
- - 开发经历：2年
+ - 工作经历：2年
  - [Github](https://github.com/ambuilding)：https://github.com/ambuilding
  - [技术博客](https://ambuilding.github.io/life/)
  - 期望职位：PHP开发工程师
@@ -36,8 +36,10 @@ title: Resume
    - 评论：可删除/更新评论，评论里@用户，可自动完成用户名，并通知该用户；
    - 反垃圾(帖文和评论)：检测无效恶意输入；一分钟内最多可发一条评论；
    - 个人主页(简介)：上传头像/最近(Timeline)的操作记录(发帖/评论/点赞)；
+   - 搜索：MySQL / Scout & Elasticsearch
    - Laravel Debugbar: 优化查询；
    - Package: Laravel/Vue/Axios(Ajax)/moment.js/at.js/jquery.caret
+   - [Git Repo](https://github.com/ambuilding/Forum)
 
  - [MashUp](https://github.com/ambuilding/Mashup)：
    - PHP 脚本导入 GEO 地理位置数据到数据库；
@@ -58,16 +60,17 @@ title: Resume
 
 以下为我熟悉使用的技能(侧重后端)
 
-- Web开发：PHP/Node
-- Web框架：Laravel/Symfony
-- 数据库相关：MySQL/PDO/Reids
-- 版本管理&自动化部署工具：Git/Composer
+- Web开发：PHP / Node
+- Web框架：Laravel / Symfony
+- 数据库相关：MySQL / PDO / Reids / Elasticsearch
+- 版本管理&自动化部署工具：Git / Composer
 - 单元测试：PHPUnit
+- 云主机：亚马逊 / Vultr - LAMP & LNMP & Docker
 
 - 前端框架：Bootstrap/Vue/jQuery/Bulma
 - 前端工具：Gulp/SaSS/LeSS
-- Linux/Unix/Apache
 - iOS开发：完成斯坦福公开课(Developing ios apps with Swift)
+- [Python](https://github.com/ambuilding/PythonPandas)：使用 Pandas 数据分析
 - 可阅读英文文档，会弹吉他
 
 <small>参考Github: [Level up](https://github.com/ambuilding/LevelUp) & [Enjoy](https://github.com/ambuilding/Enjoy)</small>
