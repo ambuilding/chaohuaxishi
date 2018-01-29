@@ -7,11 +7,7 @@ title: LinuxMan Apache Composer Redis Git
 
 - [My gist - Linux Unix Command](https://gist.github.com/ambuilding/3ba2567c2b40f3aeb786988e42201b51)
 
-### Redis
 
-- [Install redis on EC2 Amazon linux AMI / The latest stable Redis version](https://gist.github.com/ambuilding/1fd59869f8944f2eb834eb42cb5e470c)
-- [Redis Quick Start](https://redis.io/topics/quickstart)
-- [Install Redis v3.2 on AWS EC2 Instance](https://medium.com/@andrewcbass/install-redis-v3-2-on-aws-ec2-instance-93259d40a3ce)
 
 ### A Chat Application with Redis / socket.io
 
