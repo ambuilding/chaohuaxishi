@@ -30,6 +30,7 @@ title: Resume
 ## 项目和作品
 
  - [Forum](https://github.com/ambuilding/Forum)：论坛功能简介(TDD)
+   - LAMP / AWS 上线
    - 管理员：超级权限，删除/锁定任一帖文，锁定帖文无法被评论；
    - 用户：注册新用户收到确认邮件，确认后可发帖/评论/点赞；帖主可以标注最佳答案；用户关注博文后，博文有新评论，关注者实时收到通知；
    - 帖文：可通过用户名/分类标签/零回复/活跃筛选帖文；唯一URI(标题)；最受欢迎&访问量(Redis)；
@@ -65,13 +66,14 @@ title: Resume
 - 数据库相关：MySQL / PDO / Reids / Elasticsearch
 - 版本管理&自动化部署工具：Git / Composer
 - 单元测试：PHPUnit
-- 云主机：亚马逊 / Vultr - LAMP & LNMP & Docker
+- 云主机：AWS / Vultr - LAMP & LNMP & Docker
 
 - 前端框架：Bootstrap/Vue/jQuery/Bulma
 - 前端工具：Gulp/SaSS/LeSS
 - iOS开发：完成斯坦福公开课(Developing ios apps with Swift)
 - [Python](https://github.com/ambuilding/PythonPandas)：使用 Pandas 数据分析
-- 可阅读英文文档，会弹吉他
+- 可阅读英文文档
+- 会弹吉他(现场演唱)
 
 <small>参考Github: [Level up](https://github.com/ambuilding/LevelUp) & [Enjoy](https://github.com/ambuilding/Enjoy)</small>
 
