@@ -27,13 +27,12 @@ title: Answering challenging job interview questions
 
 ### Tell Me About Yourself & Where Do You See Yourself in 5 Years & Long Term Career Goals
 
-### Why should we hire you?
-- What are your long term career goals? S.E.E.C
+### Why should we hire you? S.E.E.C
   - show: passion
   - explain: skill set
   - elaborate: future plans
   - connect: your ambitions with the company's
-  - Because I believe here's an ideal place for me to achieve my goals.
+  - Mention that you chose the company. Because I believe here's an ideal place for me to achieve my goals.
 
 - What is your ideal job now and in the future?
 - What does success mean to you?
@@ -51,6 +50,7 @@ title: Answering challenging job interview questions
   -This will help you understand its direction, its people, its teams and its culture.
 
 - Set future goals aligned with company.
+- Make sure your goals fit with the company.
   - Doing this will allow you to see how you can fit within the organisation, now, and in the future.
 
 - Understand your field and your skills.
@@ -143,3 +143,33 @@ title: Answering challenging job interview questions
   - send thank-you email
   - send letter of appreciation
   - write a postcard
+
+### Question and answer
+#### What are your long term career goals?
+#### Where do you see yourself in five years?(similar)
+
+    Well you see, I understand there is a lot I need to learn
+    in the field
+    and I would like to continue building my skills in terms of day to day management.
+    And I'd like to learn more about personnel management.
+    Because I believe that this will help prepare me for a higher level position in the future,
+    because I believe it's really important to stay challenged in our role
+    and in terms of short term goals,
+    I would like to really grow with your company, learning about it more, become a team member, and develop further professionally.
+
+    In terms of long term career goals, that would be great
+    if I would have a chance to run a couple of projects,
+    and manage a team of maybe junior colleagues, so that
+    I could show my leadership skills, and continue growing professionally.
+
+
+    My long term career goal is to be responsible for the design jobs of major corporate events at your company,
+    and to be able to collaborate with internationally renowned brands in the
+    field.
+    I'm willing to invest five years learning all aspects of the job towards professional advancement.
+    In five years, I see myself as a senior product designer at your company doing work at increasing levels of responsibility and skill.
+    I'd love to be the designing team leader mentoring junior designers and managing more people.
+    I find this position appealing because I think it will move me in that direction.
+
+    You should always have goals: recruiters are always looking for
+    people with ambitions, not people who have no idea where they`re going.

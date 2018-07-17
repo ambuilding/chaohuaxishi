@@ -77,6 +77,8 @@ title: English at Work in Asia Job Interviews Preparation
 
 ###Question and answer
 
+    - Tell me about yourself?
+
     I started as a salesman for a six years, so I've gained solid experience understanding this job (the industry).
 
     I worked at my recent company for almost four years,
@@ -109,6 +111,7 @@ title: English at Work in Asia Job Interviews Preparation
 
 
     - Why do you want to work for this company?
+    - Why should we hire you?(similar question)
 
     Well you see, yours is a very reputable company,
     and I have done some research as well,
