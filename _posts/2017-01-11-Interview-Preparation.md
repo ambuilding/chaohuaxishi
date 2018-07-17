@@ -7,18 +7,18 @@ title: English at Work in Asia Job Interviews Preparation
 
 ### 6 Steps to interview success
 - Identify the job requirements
-- Predict possible questions
+- Predict(Plan for) possible questions
 - Customise CV and cover letter
 - Rehearse interview
 - Know the location and be punctual
-- Relax and be confident
+- Relax and be confident / Be modest yet confident
 
 ### Stand Out in an Interview: 4 Strategies
 - Prepare to sell yourself
   - uniqueness
   - hard and soft skills
 
-- Demonstrate your knowledge of the company
+- Demonstrate your knowledge of the company and the job
   - use LinkedIn and company webpage to know:
     - its strengths amongst competitors
     - the reason for job opening
@@ -47,7 +47,6 @@ title: English at Work in Asia Job Interviews Preparation
 - How would you manage yourself?
 - What have you most impoved in the last twelve months?
 
-- What do you consider to be your most significant accomplishment so far?
 - "Tell me about an experience", or in this case "Tell me about an accomplishment in your career".
 
     Using the STAR technique. This will help you better organise your ideas. STAR stands for the four steps in answering a question - Situation, Task, Activity and Result.
@@ -84,7 +83,7 @@ title: English at Work in Asia Job Interviews Preparation
     and I worked myself up in the this company
     and you can see that I just kept progressing,
     then I move up as a sales manager - which is responsible for the global marketing -  in the September,2016.
-    And there is an assistant, working with me, in that period.
+    And there is an assistant, supporting me, in that period.
 
     I just felt that it's about time that I need to expand my horizon.
     So, I applied to quit my job, then I left my current company in February,2018.

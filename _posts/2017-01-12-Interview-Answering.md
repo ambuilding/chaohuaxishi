@@ -5,11 +5,9 @@ title: Answering Job interview questions
 
 ### Mistakes to Avoid
 
-- Be modest yet confident
 - During an interview:
   - stand up when the interviewer enters the room
   - give a firm handshake
-  - know the company, know the job
   - avoid distracting behaviour
   - pay 100% attention to the interviewer
 
@@ -22,7 +20,6 @@ title: Answering Job interview questions
   - be punctual
 
 - Before an interview:
-  - research the interviewer
   - be cautious of what you eat
   - turn your phone off
 
@@ -34,12 +31,10 @@ title: Answering Job interview questions
 #### Tip
 - Be consistent: body language should match content
 - Be sensitive to your interviewer's culture
-
 - Appear relaxed
 - Speak with authority
 
 ### Effective Intonation
-
 - How can I make a good impression with my intonation?
 - Remeber, it's not only what you say, but also how you say it.
 
@@ -51,17 +46,25 @@ title: Answering Job interview questions
 ### Tips for answering interview questions
 - Observe your interviewer
 - Be aware of time; provide concise answers
-- Plan for possible questions
 - Keep calm & Carry on for unexpected questions
-- Be creative; response outside the box
+
+- Support your answers with examples
+- Remember, demonstrate what you have done in the past by giving examples.
 
 - Personally, I think whatever the question that the HR asks you,
   - it's a golden opportunity for you to sell yourself;
   - why you are suitable for that position.
 
-- Support your answers with examples
-- Remember, demonstrate what you have done in the past by giving examples.
-
 - Be prepared to explain whatever you have listed on your CV.
+
+#### Why do you want to work for this company?
+- Don't go off-topic
+- How your education, experience and overall background is connected to the current position.
+
+- Companies want to make sure you:
+  - are worth investig in
+  - plan to grow with the company
+  - share the company's philosophy
+  - plan to develop both personally and professionally
 
 ### Non-verbal communication

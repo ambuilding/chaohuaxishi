@@ -4,13 +4,14 @@ title: Answering challenging job interview questions
 ---
 
 ###  What single project or task would you consider the most significant accomplishment in your career so far?
+- What do you consider to be your most significant accomplishment so far?
 
 ### What makes a candidate stand out?
 - Being sincere.
   - If you can fake sincerity then you can do everything.
   - Allow your true personality to genuinely shine through, even if you're timid, ovely enthusiastic or shy
 
-- Being creative in your answers.
+- Being creative in your answers, response outside the box.
   - How can you answer questions creatively?
   - What makes you different from other candidates?
   - How can you show that difference?
@@ -26,71 +27,59 @@ title: Answering challenging job interview questions
 
 ### Tell Me About Yourself & Where Do You See Yourself in 5 Years & Long Term Career Goals
 
-- Why do you want to work for this company?
-  - Tips for anwerting questions
-    - Don't go off-topic
-    - How your education, experience and overall background is connected to the current position.
-
-  - Companies want to make sure you:
-    - are worth investig in
-    - plan to grow with the company
-    - share the company's philosophy
-    - plan to develop both personally and professionally
-
 ### Why should we hire you?
-
-- What are your long term career goals?
-  - S.E.E.C
+- What are your long term career goals? S.E.E.C
   - show: passion
   - explain: skill set
   - elaborate: future plans
   - connect: your ambitions with the company's
   - Because I believe here's an ideal place for me to achieve my goals.
+
 - What is your ideal job now and in the future?
 - What does success mean to you?
 - Are you willing to work overtime?
 - Could you share with us what makes you so passionate about design?
 
-- Can you tell us Why we should hire you?
-  - Interviwers want to see skill sets that:
-    - match their requirements
-    - do you have the chemistry that they're looking for?
-    - add value to the company
-    - demonstrate adaptability when leading and supporting
+#### Can you tell us Why we should hire you?
+- Interviwers want to see skill sets that:
+  - match their requirements
+  - do you have the chemistry that they're looking for?
+  - add value to the company
+  - demonstrate adaptability when leading and supporting
 
-  - Research the company.
-    -This will help you understand its direction, its people, its teams and its culture.
-  - Set future goals aligned with company.
-    - Doing this will allow you to see how you can fit within the organisation, now, and in the future.
-  - Understand your field and your skills.
-    - Highlight your skills and how you might be different from someone else competing for the same job.
-    - Don't forget to use action verbs from your CV.
-  - Show sincerity when answering.
-    - Be confident, but also be truthful about what you can do,
-    - what you want to do and where you plan to go with the company.
+- Research the company.
+  -This will help you understand its direction, its people, its teams and its culture.
+- Set future goals aligned with company.
+  - Doing this will allow you to see how you can fit within the organisation, now, and in the future.
+- Understand your field and your skills.
+  - Highlight your skills and how you might be different from someone else competing for the same job.
+  - Don't forget to use action verbs from your CV.
+- Show sincerity when answering.
+  - Be confident, but also be truthful about what you can do,
+  - what you want to do and where you plan to go with the company.
 
 ### Expressing opinion and delaying answers
-- Why do you want to leave your job?
-  - Expressing personal and professional growth
-    - develop further
-    - have further career growth
-    - seek exposure
-    - take up new challenges
-    - work with a diverse team
+#### Why do you want to leave your job?
+- Expressing personal and professional growth
+  - develop further
+  - have further career growth
+  - seek exposure
+  - take up new challenges
+  - work with a diverse team
 
-- What is your weakness?
-  - Strategy: overcoming weaknesses
-  - Clearly state one quality
-  - Briefly describe possible problem
-  - Specifically outline action taken
+#### What is your weakness?
+- Strategy: overcoming weaknesses
+- Clearly state one quality
+- Briefly describe possible problem
+- Specifically outline action taken
 
-- What would you do if you disagreed with a superior?
-- How to delay an answer.
+
+#### What would you do if you disagreed with a superior?
+#### How to delay an answer.
   - That's a good question. Can I think about it for a moment please?
 
 
 ### Language page: appropriate expressions
-
 - Using discourse markers
 - Hedging
 - Comparing and contrasting
