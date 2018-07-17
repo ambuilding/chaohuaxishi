@@ -49,16 +49,20 @@ title: Answering challenging job interview questions
 
 - Research the company.
   -This will help you understand its direction, its people, its teams and its culture.
+
 - Set future goals aligned with company.
   - Doing this will allow you to see how you can fit within the organisation, now, and in the future.
+
 - Understand your field and your skills.
   - Highlight your skills and how you might be different from someone else competing for the same job.
   - Don't forget to use action verbs from your CV.
+
 - Show sincerity when answering.
   - Be confident, but also be truthful about what you can do,
   - what you want to do and where you plan to go with the company.
 
 ### Expressing opinion and delaying answers
+
 #### Why do you want to leave your job?
 - Expressing personal and professional growth
   - develop further
@@ -75,6 +79,7 @@ title: Answering challenging job interview questions
 
 
 #### What would you do if you disagreed with a superior?
+
 #### How to delay an answer.
   - That's a good question. Can I think about it for a moment please?
 

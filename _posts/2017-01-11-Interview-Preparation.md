@@ -88,7 +88,9 @@ title: English at Work in Asia Job Interviews Preparation
     I just felt that it's about time that I need to expand my horizon.
     So, I applied to quit my job, then I left my current company in February,2018.
 
+
     - What motivates you to do well?
+
     Well, I would say opportunity to learn new things.
     You see in my previous job, I had a great chance to manage a team;
     it was a small team; but I've seen the impact,
@@ -97,13 +99,16 @@ title: English at Work in Asia Job Interviews Preparation
     and I've learned so much from this, so I would say learning new things and seeing people around you succeed.
     That's the best motivation.
 
+
     - What is your weakness?
+
     My weakness. I would say [being] over-committed basically, I love
     to learn and I'm eager to help, so, sometimes I've just over-committed
     myself, to projects and to others;
     but I've learned my lesson, I know my limits, so what I will do coming forward, I'll prioritise and just choose the best project that I can really excel [at].
 
-    Why do you want to work for this company?
+
+    - Why do you want to work for this company?
 
     Well you see, yours is a very reputable company,
     and I have done some research as well,
