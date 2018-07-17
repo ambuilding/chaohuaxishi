@@ -43,7 +43,7 @@ title: Answering Job interview questions
 - How can I make a good impression with my intonation?
 - Remeber, it's not only what you say, but also how you say it.
 
-- [Language page: Intonation | pdf](https://prod-edxapp.edx-cdn.org/assets/courseware/v1/f33ddc09403496e0d76745a18713645b/asset-v1:HKPolyUx+EWA1.2x+3T2017+type@asset+block/2.5_Language_page_-_Intonation.pdf)
+- [Language page: Intonation pdf](https://prod-edxapp.edx-cdn.org/assets/courseware/v1/f33ddc09403496e0d76745a18713645b/asset-v1:HKPolyUx+EWA1.2x+3T2017+type@asset+block/2.5_Language_page_-_Intonation.pdf)
 
 ### Interview question answer practice
 - Practice Record Share Listen
