@@ -1,115 +1,43 @@
 ---
 layout: post
-title: Interview B
+title: Answering challenging job interview questions
 ---
 
-#### Answering Job interview questions
+###  What single project or task would you consider the most significant accomplishment in your career so far?
 
-##### Mistakes to Avoid
-
-- Be modest yet confident
-
-- During an interview:
-  - stand up when the interviewer enters the room
-  - give a firm handshake
-  - know the company, know the job
-  - avoid distracting behaviour
-  - pay 100% attention to the interviewer
-
-  - dress appropriately
-  - ask the interviewer appropriate questions
-  - project confident body language
-
-  - keep good eye contact avoid fidgeting
-  - avoid figdeting
-  - use appropriate facial expressions
-  - be punctual
-
-
-- Before an interview:
-  - research the interviewer
-  - be cautious of what you eat
-  - turn your phone off
-
-##### How to develop phrases that would demonstrate confidence in a modest manner but first
-- A normal voice speed and speaking clearly are a sign of confidence.
-
-##### Non-verbal communication
-
-###### Tip
-- Be consistent: body language should match content
-- Maintain good eye contact
-- Offer a firm handshake
-- Be sensitive to your interviewer's culture
-
-- Appear relaxed
-- Appear confident
-- Speak with authority
-- Dress appropriately
-
-##### Effective Intonation
-
-- How can I make a good impression with my intonation?
-- Remeber, it's not only what you say, but also how you say it.
-
-- [Language page: Intonation | pdf](https://prod-edxapp.edx-cdn.org/assets/courseware/v1/f33ddc09403496e0d76745a18713645b/asset-v1:HKPolyUx+EWA1.2x+3T2017+type@asset+block/2.5_Language_page_-_Intonation.pdf)
-
-##### Interview question answer practice
-- Practice Record Share Listen
-
-
-##### Six tips for answering interview questions
-- Observe your interviewer
-- Support your answers with examples
-- Be aware of time; provide concise answers
-- Plan for possible questions
-- Keep calm & Carry on for unexpected questions
-- Be creative; response outside the box
-
-- Personally, I think whatever the question that the HR asks you,
-  - it's a golden opportunity for you to sell yourself;
-  - why you are suitable for that position.
-
-- Remember, demonstrate what you have done in the past by giving examples.
-
-- Be prepared to explain whatever you have listed on your CV.
-
-##### Non-verbal communication
-
-
-#### Answering challenging job interview questions
-
-#####  What single project or task would you consider the most significant accomplishment in your career so far?
-
-##### What makes a candidate stand out?
-
+### What makes a candidate stand out?
 - Being sincere.
   - If you can fake sincerity then you can do everything.
   - Allow your true personality to genuinely shine through, even if you're timid, ovely enthusiastic or shy
+
 - Being creative in your answers.
   - How can you answer questions creatively?
   - What makes you different from other candidates?
   - How can you show that difference?
+
 - Being confident with what you have to offer.
 - Being comfortable by adapting to the interviewers style.
 
 - Being able to accept themselves.
-  - If you accept yourself, then you will accept others. Then you will be more willing to forgive others, and you will be able to build a team. And if you are uncomfortable with yourself, then how can the interviewer expect you to be comfortable with other people?
+  - If you accept yourself, then you will accept others.
+  - Then you will be more willing to forgive others, and you will be able to build a team.
+  - And if you are uncomfortable with yourself, then how can the interviewer expect you to be comfortable with other people?
 
 
-##### Tell Me About Yourself & Where Do You See Yourself in 5 Years & Long Term Career Goals
+### Tell Me About Yourself & Where Do You See Yourself in 5 Years & Long Term Career Goals
 
 - Why do you want to work for this company?
   - Tips for anwerting questions
     - Don't go off-topic
     - How your education, experience and overall background is connected to the current position.
+
   - Companies want to make sure you:
     - are worth investig in
     - plan to grow with the company
     - share the company's philosophy
     - plan to develop both personally and professionally
 
-##### Why should we hire you?
+### Why should we hire you?
 
 - What are your long term career goals?
   - S.E.E.C
@@ -141,8 +69,7 @@ title: Interview B
     - Be confident, but also be truthful about what you can do,
     - what you want to do and where you plan to go with the company.
 
-
-##### Expressing opinion and delaying answers
+### Expressing opinion and delaying answers
 - Why do you want to leave your job?
   - Expressing personal and professional growth
     - develop further
@@ -162,25 +89,24 @@ title: Interview B
   - That's a good question. Can I think about it for a moment please?
 
 
-##### Language page: appropriate expressions
+### Language page: appropriate expressions
 
 - Using discourse markers
 - Hedging
 - Comparing and contrasting
 - Delaying the answers
-- [Language page: appropriate expressions | pdf](https://prod-edxapp.edx-cdn.org/assets/courseware/v1/e6be05b79968242e658f08c0beb63ebe/asset-v1:HKPolyUx+EWA1.2x+3T2017+type@asset+block/3.5_Language_page_-_appropriate_expressions.pdf)
+- [Language page: appropriate expressions PDF](https://prod-edxapp.edx-cdn.org/assets/courseware/v1/e6be05b79968242e658f08c0beb63ebe/asset-v1:HKPolyUx+EWA1.2x+3T2017+type@asset+block/3.5_Language_page_-_appropriate_expressions.pdf)
 
 
-##### Word stress
-##### Using Effective Word Stress
+### Word stress
+### Using Effective Word Stress
 - By identifying the stressed words in a question, you can have a clear focus in your answer.
 - By stressing key words in your answers, you will have ensured your key points are noticed.
 - [Language page: word stress](https://prod-edxapp.edx-cdn.org/assets/courseware/v1/da1c40db7f8aecb66d0dc131010667c9/asset-v1:HKPolyUx+EWA1.2x+3T2017+type@asset+block/3.6_Language_page_-_word_stress.pdf)
 
-##### Interview Question Answer Practice
+### Interview Question Answer Practice
 
-
-#### Further Resources, Learning Materials
+### Further Resources, Learning Materials
 
 - [Week 1](https://courses.edx.org/courses/course-v1:HKPolyUx+EWA1.2x+3T2017/courseware/2f07a65e1e5d421491055efed045ade4/d926cc6b133f46b0b4928576d448ae70/6?activate_block_id=block-v1%3AHKPolyUx%2BEWA1.2x%2B3T2017%2Btype%40vertical%2Bblock%40905587eee41c4ce381ba5ced5d5777df)
 
@@ -189,11 +115,9 @@ title: Interview B
 - [Week 3](https://courses.edx.org/courses/course-v1:HKPolyUx+EWA1.2x+3T2017/courseware/fc38158e9b434be585b952be2f617811/8bbfc5a17c914b75a531327c960d9ee9/1?activate_block_id=block-v1%3AHKPolyUx%2BEWA1.2x%2B3T2017%2Btype%40vertical%2Bblock%4002032f3bc89e4e68b15985662ba879ef)
 
 
-#### Ending the job interview
+## Ending the job interview
 
-##### Asking Questions in an Interview
-
-###### Ask questions that:
+### Ask questions that:
 - show your interest
 - show your personality
 - assess company's suitability for you
@@ -204,8 +128,7 @@ title: Interview B
 - Why am I here
 - Why do I want to this job
 
-
-###### Plan and ask for:
+### Plan and ask for:
 - guidance on how you can contribute
 - information about the company's operation
 - confirmation of your suitability
@@ -219,16 +142,10 @@ title: Interview B
 - I'm interested in knowing more about your company's plans.
   - Could you tell me a little more about your company's directions?
 
-
-##### What you should do after an interview?
-
-###### What should you do once an interview is over?
+### What you should do after an interview?
+### What should you do once an interview is over?
 - Follow-up actions
   - wait patiently
   - send thank-you email
   - send letter of appreciation
   - write a postcard
-
-
-
-
