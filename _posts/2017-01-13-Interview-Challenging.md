@@ -40,6 +40,23 @@ title: Answering challenging job interview questions
 - Could you share with us what makes you so passionate about design?
 
 #### Can you tell us Why we should hire you?
+
+    Because I'm a good fit for this position.
+
+    Well, you're looking for someone who's immediately available to handle a full set of accounting for your subsidiary companies.
+    With my years of working experience as an Accounts Assistant, I'm familiar with the job and am ready to take charge any time.
+
+    Also, it sounds to me that you need an Accounting Executive who coordinates with overseas offices based mainly in Singapore.
+    As a Singaporean who has been living and working in Hong Kong for 3 years, I'm probably the ideal person to do that.
+
+    I also have a good command of written and spoken English and Chinese, and have been able to develop solid communication and interpersonal
+    skills through my customer service experience in Singapore.
+    I'm also able to work under pressure and within time limits.
+
+    So I'm confident I would be a valuable addition to your team.
+
+    I understand their needs and their wants.
+
 - Interviwers want to see skill sets that:
   - match their requirements
   - do you have the chemistry that they're looking for?
@@ -64,6 +81,15 @@ title: Answering challenging job interview questions
 ### Expressing opinion and delaying answers
 
 #### Why do you want to leave your job?
+
+    Well, you see I started as a fresh graduate, like with no experience whatsoever in the field, and having worked in the company for a couple of years, I feel like I have a better understanding of the industry and nature of my job as well.
+
+    And I'd really like to move further, and I'd like to develop further my skills. Unfortunately it seems that in the company where I'm working at the moment, there mightn't be enough opportunities for further career growth and this is what I am looking for at the moment. So, that's the main reason.
+
+    I've been with my company for a while so I think it's time for me to seek exposure in the field.
+    I love learning new challenges take up new challenges, learning new things, and work with a diverse team,
+    I just want to expand my horizon,I think it's about time for me to, seek new opportunities, Yes, basically it's just mainly curiosity has brought me here today.
+
 - Expressing personal and professional growth
   - develop further
   - have further career growth
@@ -79,9 +105,18 @@ title: Answering challenging job interview questions
 
 
 #### What would you do if you disagreed with a superior?
+#### Describing a time when you didn't get along with a co-worker
+
+    Once I worked in a project with my manager, and a few colleagues
+    and my manager suggested that I should devise a new marketing plan
+    which actually contradicts with the client's original idea
+    so it took me a while to negotiate with my manager
+    and also my clients, and at last I made it,
+    and they both just like the marketing plans.
 
 #### How to delay an answer.
   - That's a good question. Can I think about it for a moment please?
+  - I;m not absolutely sure, but I'm sure I could figure it out.
 
 
 ### Language page: appropriate expressions
@@ -99,6 +134,7 @@ title: Answering challenging job interview questions
 - [Language page: word stress](https://prod-edxapp.edx-cdn.org/assets/courseware/v1/da1c40db7f8aecb66d0dc131010667c9/asset-v1:HKPolyUx+EWA1.2x+3T2017+type@asset+block/3.6_Language_page_-_word_stress.pdf)
 
 ### Interview Question Answer Practice
+- What are your unique selling points?
 
 ### Further Resources, Learning Materials
 
