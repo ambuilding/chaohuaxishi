@@ -1,4 +1,6 @@
-
+---
+layout: post
+title: Resume
 ---
 
 ## 联系方式
